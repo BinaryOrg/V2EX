@@ -10,6 +10,9 @@
 
 #import <MFHUDManager.h>
 #import "UIColor+CustomColors.h"
+
+#import "ZDDTabOneViewController.h"
+#import "ZDDTabTwoViewController.h"
 @implementation ZDDLaunchManager
 + (instancetype)sharedInstance {
     static ZDDLaunchManager *manager = nil;
@@ -28,22 +31,17 @@
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
-//    GODMainViewController *main = [[GODMainViewController alloc] init];
-//    GODMusicViewController *music = [[GODMusicViewController alloc] init];
-//    GODPersonViewController *person = [[GODPersonViewController alloc] init];
-//    GODDynamicController *dynamic = [[GODDynamicController alloc] init];
-//    UINavigationController *mainNavi = [[UINavigationController alloc] initWithRootViewController:main];
-//    UINavigationController *personNavi = [[UINavigationController alloc] initWithRootViewController:person];
-//    UINavigationController *musicNavi = [[UINavigationController alloc] initWithRootViewController:music];
-//    UINavigationController *dynamicNavi = [[UINavigationController alloc] initWithRootViewController:dynamic];
+    ZDDTabOneViewController *one = [[ZDDTabOneViewController alloc] initWithImageName:@"tab_now_nor" selectedImageName:@"tab_now_press" title:@"首页"];
+    ZDDTabTwoViewController *two = [[ZDDTabTwoViewController alloc] initWithImageName:@"tab_see_nor" selectedImageName:@"tab_see_press" title:@"测试"];
+    
+    UINavigationController *oneNavi = [[UINavigationController alloc] initWithRootViewController:one];
+    UINavigationController *twoNavi = [[UINavigationController alloc] initWithRootViewController:two];
 //    
-//    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-//    tabBarController.viewControllers = @[
-//                                         mainNavi,
-//                                         musicNavi,
-//                                         dynamicNavi,
-//                                         personNavi
-//                                         ];
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[
+                                         oneNavi,
+                                         twoNavi,
+                                         ];
 //    window.rootViewController = tabBarController;
     
     window.backgroundColor = [UIColor whiteColor];

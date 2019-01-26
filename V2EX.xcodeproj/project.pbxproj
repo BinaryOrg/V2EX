@@ -26,6 +26,8 @@
 		5E6DE83E21FC06A300E2BF78 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE83521FC06A300E2BF78 /* NSObject+YYModel.m */; };
 		5E6DE84221FC06F400E2BF78 /* ZDDSDKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE84121FC06F400E2BF78 /* ZDDSDKManager.m */; };
 		5E6DE84721FC089200E2BF78 /* ZDDBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE84621FC089200E2BF78 /* ZDDBaseNavigationViewController.m */; };
+		5E6DE85021FC208800E2BF78 /* ZDDTabOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE84F21FC208800E2BF78 /* ZDDTabOneViewController.m */; };
+		5E6DE85321FC209700E2BF78 /* ZDDTabTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE85221FC209700E2BF78 /* ZDDTabTwoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,10 @@
 		5E6DE84321FC075E00E2BF78 /* ZDDSDKConfigKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDSDKConfigKey.h; sourceTree = "<group>"; };
 		5E6DE84521FC089200E2BF78 /* ZDDBaseNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDBaseNavigationViewController.h; sourceTree = "<group>"; };
 		5E6DE84621FC089200E2BF78 /* ZDDBaseNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDBaseNavigationViewController.m; sourceTree = "<group>"; };
+		5E6DE84E21FC208800E2BF78 /* ZDDTabOneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTabOneViewController.h; sourceTree = "<group>"; };
+		5E6DE84F21FC208800E2BF78 /* ZDDTabOneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTabOneViewController.m; sourceTree = "<group>"; };
+		5E6DE85121FC209700E2BF78 /* ZDDTabTwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTabTwoViewController.h; sourceTree = "<group>"; };
+		5E6DE85221FC209700E2BF78 /* ZDDTabTwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTabTwoViewController.m; sourceTree = "<group>"; };
 		EF5926A9D7392BAC123873B3 /* libPods-V2EX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-V2EX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -112,6 +118,7 @@
 		5E6DE80121FC00BF00E2BF78 /* V2EX */ = {
 			isa = PBXGroup;
 			children = (
+				5E6DE84821FC1FEF00E2BF78 /* Controller */,
 				5E6DE84421FC086E00E2BF78 /* ZDDBaseNavigationController */,
 				5E6DE81C21FC062400E2BF78 /* ZDDUtil */,
 				5E6DE83F21FC06D500E2BF78 /* ZDDSDKManager */,
@@ -182,6 +189,33 @@
 				5E6DE84621FC089200E2BF78 /* ZDDBaseNavigationViewController.m */,
 			);
 			path = ZDDBaseNavigationController;
+			sourceTree = "<group>";
+		};
+		5E6DE84821FC1FEF00E2BF78 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E6DE84A21FC200900E2BF78 /* ZDDTwoViewController */,
+				5E6DE84921FC1FFC00E2BF78 /* ZDDOneViewController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E6DE84921FC1FFC00E2BF78 /* ZDDOneViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5E6DE84E21FC208800E2BF78 /* ZDDTabOneViewController.h */,
+				5E6DE84F21FC208800E2BF78 /* ZDDTabOneViewController.m */,
+			);
+			path = ZDDOneViewController;
+			sourceTree = "<group>";
+		};
+		5E6DE84A21FC200900E2BF78 /* ZDDTwoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5E6DE85121FC209700E2BF78 /* ZDDTabTwoViewController.h */,
+				5E6DE85221FC209700E2BF78 /* ZDDTabTwoViewController.m */,
+			);
+			path = ZDDTwoViewController;
 			sourceTree = "<group>";
 		};
 		EBAAE181558823C7D6C330A9 /* Pods */ = {
@@ -316,6 +350,7 @@
 			files = (
 				5E6DE81B21FC05ED00E2BF78 /* ZDDLaunchManager.m in Sources */,
 				5E6DE83B21FC06A300E2BF78 /* YYClassInfo.m in Sources */,
+				5E6DE85321FC209700E2BF78 /* ZDDTabTwoViewController.m in Sources */,
 				5E6DE84221FC06F400E2BF78 /* ZDDSDKManager.m in Sources */,
 				5E6DE82D21FC065200E2BF78 /* UIView+LH.m in Sources */,
 				5E6DE82A21FC065200E2BF78 /* NSString+Regex.m in Sources */,
@@ -329,6 +364,7 @@
 				5E6DE83D21FC06A300E2BF78 /* GODUserTool.m in Sources */,
 				5E6DE82821FC065200E2BF78 /* ASButtonNode+LHExtension.m in Sources */,
 				5E6DE82B21FC065200E2BF78 /* UIColor+CustomColors.m in Sources */,
+				5E6DE85021FC208800E2BF78 /* ZDDTabOneViewController.m in Sources */,
 				5E6DE83A21FC06A300E2BF78 /* GODNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
