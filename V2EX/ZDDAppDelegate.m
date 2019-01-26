@@ -7,7 +7,8 @@
 //
 
 #import "ZDDAppDelegate.h"
-
+#import "ZDDSDKManager/ZDDSDKManager.h"
+#import "ZDDLaunchManager/ZDDLaunchManager.h"
 @interface ZDDAppDelegate ()
 
 @end
@@ -16,7 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [[ZDDSDKManager sharedInstance] launchInWindow:self.window];
+    [[ZDDLaunchManager sharedInstance] launchInWindow:self.window];
     return YES;
 }
 
