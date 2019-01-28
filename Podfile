@@ -11,8 +11,8 @@ pod 'QMUIKit'
 pod ‘MFNetworkManager’
 pod ‘MFHUDManager’
 pod ‘MFPictureBrowser’
-pod ‘MJRefresh’
-pod ‘MBProgressHUD’
+# pod ‘MJRefresh’
+# pod ‘MBProgressHUD’
 pod 'DZNEmptyDataSet'
 # pod 'JPush'
 pod 'FFPopup'
@@ -23,4 +23,5 @@ pod 'Texture'
 pod 'mob_smssdk'
 pod 'DateTools'
 pod 'JXCategoryView'
+pod 'EaseUI', :git => 'https://github.com/easemob/easeui-ios-cocoapods.git'
 end
