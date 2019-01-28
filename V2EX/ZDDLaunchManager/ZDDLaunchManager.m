@@ -7,9 +7,9 @@
 //
 
 #import "ZDDLaunchManager.h"
-
+#import "UIColor+ZDDColor.h"
 #import <MFHUDManager.h>
-#import "UIColor+CustomColors.h"
+
 
 #import "ZDDTabOneViewController.h"
 #import "ZDDTabTwoViewController.h"
@@ -42,7 +42,7 @@
                                          oneNavi,
                                          twoNavi,
                                          ];
-//    window.rootViewController = tabBarController;
+    window.rootViewController = tabBarController;
     
     window.backgroundColor = [UIColor whiteColor];
     [window makeKeyAndVisible];

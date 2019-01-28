@@ -209,7 +209,7 @@ static BOOL _showing;
         hud.dismissTimer = timer;
         [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     } else {
-        NSTimer *timer = [NSTimer mf_scheduledTimerWithTimeInterval:1.5 repeats:NO block:^{
+        NSTimer *timer = [NSTimer mf_scheduledTimerWithTimeInterval:1.5 repeats:NO block:^(NSTimer * _Nonnull timer) {
             [MFNotificationHUD dismiss];
         }];
         hud.dismissTimer = timer;

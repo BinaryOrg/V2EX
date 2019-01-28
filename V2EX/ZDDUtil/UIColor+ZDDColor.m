@@ -1,14 +1,14 @@
 //
-//  UIColor+CustomColors.m
-//  Blogger
+//  UIColor+ZDDColor.m
+//  V2EX
 //
-//  Created by pipelining on 2019/1/15.
-//  Copyright © 2019年 GodzzZZZ. All rights reserved.
+//  Created by 张冬冬 on 2019/1/28.
+//  Copyright © 2019 binary. All rights reserved.
 //
 
-#import "UIColor+CustomColors.h"
-@implementation UIColor (CustomColors)
+#import "UIColor+ZDDColor.h"
 
+@implementation UIColor (ZDDColor)
 + (UIColor *)themeColor {
     return [self colorWithRed:58 green:69 blue:77];
 }
@@ -179,5 +179,4 @@
                             blue:(float)(blue/255.f)
                            alpha:alpha];
 }
-
 @end

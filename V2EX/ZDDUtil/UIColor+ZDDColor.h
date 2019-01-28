@@ -1,15 +1,16 @@
 //
-//  UIColor+CustomColors.h
-//  Blogger
+//  UIColor+ZDDColor.h
+//  V2EX
 //
-//  Created by pipelining on 2019/1/15.
-//  Copyright © 2019年 GodzzZZZ. All rights reserved.
+//  Created by 张冬冬 on 2019/1/28.
+//  Copyright © 2019 binary. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (CustomColors)
+NS_ASSUME_NONNULL_BEGIN
 
+@interface UIColor (ZDDColor)
 + (UIColor *)themeColor;
 + (UIColor *)customGrayColor;
 + (UIColor *)customRedColor;
@@ -54,5 +55,6 @@
 + (UIColor *)gradientColor14;
 + (UIColor *)gradientColor15;
 + (UIColor *)gradientColor16;
-
 @end
+
+NS_ASSUME_NONNULL_END

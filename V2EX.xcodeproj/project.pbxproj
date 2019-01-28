@@ -8,21 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		403E52BDAAD3EB536432FD20 /* libPods-V2EX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5926A9D7392BAC123873B3 /* libPods-V2EX.a */; };
+		4A39B41021FE9E8C00437B6A /* UIColor+ZDDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A39B40F21FE9E8C00437B6A /* UIColor+ZDDColor.m */; };
 		5E6DE80421FC00BF00E2BF78 /* ZDDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE80321FC00BF00E2BF78 /* ZDDAppDelegate.m */; };
 		5E6DE80C21FC00BF00E2BF78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6DE80B21FC00BF00E2BF78 /* Assets.xcassets */; };
 		5E6DE80F21FC00BF00E2BF78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E6DE80D21FC00BF00E2BF78 /* LaunchScreen.storyboard */; };
 		5E6DE81221FC00BF00E2BF78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE81121FC00BF00E2BF78 /* main.m */; };
 		5E6DE81B21FC05ED00E2BF78 /* ZDDLaunchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE81A21FC05ED00E2BF78 /* ZDDLaunchManager.m */; };
-		5E6DE82821FC065200E2BF78 /* ASButtonNode+LHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE81F21FC065100E2BF78 /* ASButtonNode+LHExtension.m */; };
 		5E6DE82921FC065200E2BF78 /* NSMutableDictionary+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE82021FC065100E2BF78 /* NSMutableDictionary+Attributes.m */; };
 		5E6DE82A21FC065200E2BF78 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE82121FC065100E2BF78 /* NSString+Regex.m */; };
-		5E6DE82B21FC065200E2BF78 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE82221FC065100E2BF78 /* UIColor+CustomColors.m */; };
 		5E6DE82C21FC065200E2BF78 /* NSMutableAttributedString+Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE82321FC065100E2BF78 /* NSMutableAttributedString+Chain.m */; };
-		5E6DE82D21FC065200E2BF78 /* UIView+LH.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE82721FC065200E2BF78 /* UIView+LH.m */; };
 		5E6DE83A21FC06A300E2BF78 /* GODNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE82F21FC06A200E2BF78 /* GODNotification.m */; };
 		5E6DE83B21FC06A300E2BF78 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE83021FC06A200E2BF78 /* YYClassInfo.m */; };
 		5E6DE83C21FC06A300E2BF78 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE83121FC06A200E2BF78 /* UINavigationController+FDFullscreenPopGesture.m */; };
-		5E6DE83D21FC06A300E2BF78 /* GODUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE83421FC06A200E2BF78 /* GODUserTool.m */; };
 		5E6DE83E21FC06A300E2BF78 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE83521FC06A300E2BF78 /* NSObject+YYModel.m */; };
 		5E6DE84221FC06F400E2BF78 /* ZDDSDKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE84121FC06F400E2BF78 /* ZDDSDKManager.m */; };
 		5E6DE84721FC089200E2BF78 /* ZDDBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE84621FC089200E2BF78 /* ZDDBaseNavigationViewController.m */; };
@@ -32,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		2E70102E457AD26B59A5ECB6 /* Pods-V2EX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-V2EX/Pods-V2EX.debug.xcconfig"; sourceTree = "<group>"; };
+		4A39B40E21FE9E8C00437B6A /* UIColor+ZDDColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZDDColor.h"; sourceTree = "<group>"; };
+		4A39B40F21FE9E8C00437B6A /* UIColor+ZDDColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZDDColor.m"; sourceTree = "<group>"; };
 		58C4A74BA29D5A1BC2D94D8F /* Pods-V2EX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX.release.xcconfig"; path = "Pods/Target Support Files/Pods-V2EX/Pods-V2EX.release.xcconfig"; sourceTree = "<group>"; };
 		5E6DE7FF21FC00BF00E2BF78 /* V2EX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = V2EX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6DE80221FC00BF00E2BF78 /* ZDDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDAppDelegate.h; sourceTree = "<group>"; };
@@ -42,24 +41,16 @@
 		5E6DE81121FC00BF00E2BF78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E6DE81921FC05ED00E2BF78 /* ZDDLaunchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDLaunchManager.h; sourceTree = "<group>"; };
 		5E6DE81A21FC05ED00E2BF78 /* ZDDLaunchManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDLaunchManager.m; sourceTree = "<group>"; };
-		5E6DE81D21FC065000E2BF78 /* ASButtonNode+LHExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASButtonNode+LHExtension.h"; sourceTree = "<group>"; };
 		5E6DE81E21FC065100E2BF78 /* NSMutableDictionary+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Attributes.h"; sourceTree = "<group>"; };
-		5E6DE81F21FC065100E2BF78 /* ASButtonNode+LHExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ASButtonNode+LHExtension.m"; sourceTree = "<group>"; };
 		5E6DE82021FC065100E2BF78 /* NSMutableDictionary+Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Attributes.m"; sourceTree = "<group>"; };
 		5E6DE82121FC065100E2BF78 /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regex.m"; sourceTree = "<group>"; };
-		5E6DE82221FC065100E2BF78 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
 		5E6DE82321FC065100E2BF78 /* NSMutableAttributedString+Chain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Chain.m"; sourceTree = "<group>"; };
-		5E6DE82421FC065200E2BF78 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
 		5E6DE82521FC065200E2BF78 /* NSMutableAttributedString+Chain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Chain.h"; sourceTree = "<group>"; };
 		5E6DE82621FC065200E2BF78 /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regex.h"; sourceTree = "<group>"; };
-		5E6DE82721FC065200E2BF78 /* UIView+LH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LH.m"; sourceTree = "<group>"; };
-		5E6DE82E21FC06A100E2BF78 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
 		5E6DE82F21FC06A200E2BF78 /* GODNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODNotification.m; sourceTree = "<group>"; };
 		5E6DE83021FC06A200E2BF78 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
 		5E6DE83121FC06A200E2BF78 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		5E6DE83221FC06A200E2BF78 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
-		5E6DE83321FC06A200E2BF78 /* GODUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODUserTool.h; sourceTree = "<group>"; };
-		5E6DE83421FC06A200E2BF78 /* GODUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODUserTool.m; sourceTree = "<group>"; };
 		5E6DE83521FC06A300E2BF78 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
 		5E6DE83621FC06A300E2BF78 /* GODDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODDefine.h; sourceTree = "<group>"; };
 		5E6DE83721FC06A300E2BF78 /* GODNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODNotification.h; sourceTree = "<group>"; };
@@ -148,26 +139,20 @@
 				5E6DE83621FC06A300E2BF78 /* GODDefine.h */,
 				5E6DE83721FC06A300E2BF78 /* GODNotification.h */,
 				5E6DE82F21FC06A200E2BF78 /* GODNotification.m */,
-				5E6DE83321FC06A200E2BF78 /* GODUserTool.h */,
-				5E6DE83421FC06A200E2BF78 /* GODUserTool.m */,
 				5E6DE83221FC06A200E2BF78 /* NSObject+YYModel.h */,
 				5E6DE83521FC06A300E2BF78 /* NSObject+YYModel.m */,
 				5E6DE83821FC06A300E2BF78 /* UINavigationController+FDFullscreenPopGesture.h */,
 				5E6DE83121FC06A200E2BF78 /* UINavigationController+FDFullscreenPopGesture.m */,
 				5E6DE83921FC06A300E2BF78 /* YYClassInfo.h */,
 				5E6DE83021FC06A200E2BF78 /* YYClassInfo.m */,
-				5E6DE82E21FC06A100E2BF78 /* YYModel.h */,
-				5E6DE81D21FC065000E2BF78 /* ASButtonNode+LHExtension.h */,
-				5E6DE81F21FC065100E2BF78 /* ASButtonNode+LHExtension.m */,
 				5E6DE82521FC065200E2BF78 /* NSMutableAttributedString+Chain.h */,
 				5E6DE82321FC065100E2BF78 /* NSMutableAttributedString+Chain.m */,
 				5E6DE81E21FC065100E2BF78 /* NSMutableDictionary+Attributes.h */,
 				5E6DE82021FC065100E2BF78 /* NSMutableDictionary+Attributes.m */,
 				5E6DE82621FC065200E2BF78 /* NSString+Regex.h */,
 				5E6DE82121FC065100E2BF78 /* NSString+Regex.m */,
-				5E6DE82421FC065200E2BF78 /* UIColor+CustomColors.h */,
-				5E6DE82221FC065100E2BF78 /* UIColor+CustomColors.m */,
-				5E6DE82721FC065200E2BF78 /* UIView+LH.m */,
+				4A39B40E21FE9E8C00437B6A /* UIColor+ZDDColor.h */,
+				4A39B40F21FE9E8C00437B6A /* UIColor+ZDDColor.m */,
 			);
 			path = ZDDUtil;
 			sourceTree = "<group>";
@@ -352,18 +337,15 @@
 				5E6DE83B21FC06A300E2BF78 /* YYClassInfo.m in Sources */,
 				5E6DE85321FC209700E2BF78 /* ZDDTabTwoViewController.m in Sources */,
 				5E6DE84221FC06F400E2BF78 /* ZDDSDKManager.m in Sources */,
-				5E6DE82D21FC065200E2BF78 /* UIView+LH.m in Sources */,
 				5E6DE82A21FC065200E2BF78 /* NSString+Regex.m in Sources */,
 				5E6DE81221FC00BF00E2BF78 /* main.m in Sources */,
 				5E6DE82921FC065200E2BF78 /* NSMutableDictionary+Attributes.m in Sources */,
 				5E6DE83C21FC06A300E2BF78 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				5E6DE84721FC089200E2BF78 /* ZDDBaseNavigationViewController.m in Sources */,
+				4A39B41021FE9E8C00437B6A /* UIColor+ZDDColor.m in Sources */,
 				5E6DE82C21FC065200E2BF78 /* NSMutableAttributedString+Chain.m in Sources */,
 				5E6DE80421FC00BF00E2BF78 /* ZDDAppDelegate.m in Sources */,
 				5E6DE83E21FC06A300E2BF78 /* NSObject+YYModel.m in Sources */,
-				5E6DE83D21FC06A300E2BF78 /* GODUserTool.m in Sources */,
-				5E6DE82821FC065200E2BF78 /* ASButtonNode+LHExtension.m in Sources */,
-				5E6DE82B21FC065200E2BF78 /* UIColor+CustomColors.m in Sources */,
 				5E6DE85021FC208800E2BF78 /* ZDDTabOneViewController.m in Sources */,
 				5E6DE83A21FC06A300E2BF78 /* GODNotification.m in Sources */,
 			);
