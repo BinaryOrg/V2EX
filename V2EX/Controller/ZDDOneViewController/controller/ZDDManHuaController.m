@@ -10,6 +10,8 @@
 
 @interface ZDDManHuaController ()
 
+@property (nonatomic, strong) UIImageView *iv;
+
 @end
 
 @implementation ZDDManHuaController
@@ -23,8 +25,14 @@
     [self.view addSubview:self.iv];
     self.iv.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.frame.size.height);
     self.iv.contentMode = UIViewContentModeScaleAspectFit;
-    self.iv.yy_imageURL = [NSURL URLWithString:@"http://b-ssl.duitang.com/uploads/item/201609/09/20160909112601_xiHke.jpeg"];
     
+}
+
+- (void)setImg_url:(NSString *)img_url {
+    
+    _img_url = img_url;
+    self.iv.yy_imageURL = [NSURL URLWithString:[NSString stringWithFormat:@""]];
+
 }
 
 /*

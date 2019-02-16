@@ -56,6 +56,7 @@
     ZDDBookListModel *model = self.dataArray[indexPath.row];
     ZDDCatalogController *vc = [[ZDDCatalogController alloc] init];
     vc.comic_id = model.comic_id;
+    vc.title = model.comic_name;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

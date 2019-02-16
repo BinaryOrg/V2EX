@@ -8,6 +8,7 @@
 
 #import "ZDDCatalogController.h"
 #import "ZDDHomeListController.h"
+#import "ZDDManHuaController.h"
 
 
 #import <MJRefresh.h>
@@ -31,6 +32,7 @@
 }
 
 - (void)setupUI {
+    
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
@@ -93,16 +95,20 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    ZDDManHuaCapterModel *model =  self.mainModel.comic_chapter[indexPath.row];
+
     
+//    ZDDHomeListController *vc = [ZDDHomeListController new];
+    ZDDManHuaController *vc = [ZDDManHuaController new];
+    vc.img_url = model.img_url;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.scrollEnabled = NO;
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
 }

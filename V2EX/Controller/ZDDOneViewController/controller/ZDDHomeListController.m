@@ -9,6 +9,8 @@
 #import "ZDDHomeListController.h"
 #import "ZDDManHuaController.h"
 #import "ShowAPIRequest.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
+
 @interface ZDDHomeListController ()<UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
 @property (nonatomic, strong) UIPageViewController *pageViewController;
@@ -17,6 +19,17 @@
 @end
 
 @implementation ZDDHomeListController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    self.fd_interactivePopDisabled = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.fd_interactivePopDisabled = NO;
+}
 
 
 #pragma mark - Life Cycle
@@ -150,13 +163,13 @@
     }
     // 创建一个新的控制器类，并且分配给相应的数据
     ZDDManHuaController *contentVC = [[ZDDManHuaController alloc] init];
-    contentVC.content = [self.pageContentArray objectAtIndex:index];
-    return contentVC;
+//    contentVC.content = [self.pageContentArray objectAtIndex:index];
+    return @"";
 }
 
 #pragma mark - 数组元素值，得到下标值
 - (NSUInteger)indexOfViewController:(ZDDManHuaController *)viewController {
-    return [self.pageContentArray indexOfObject:viewController.content];
+    return [self.pageContentArray indexOfObject:@""];
 }
 
 
