@@ -96,6 +96,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/MFHUDManager/Image/notice_type_error.png"
   install_resource "${PODS_ROOT}/MFHUDManager/Image/notice_type_success.png"
   install_resource "${PODS_ROOT}/MFHUDManager/Image/notice_type_warnning.png"
+  install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_ROOT}/QMUIKit/QMUIKit/QMUIResources/QMUIResources.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -103,6 +104,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/MFHUDManager/Image/notice_type_error.png"
   install_resource "${PODS_ROOT}/MFHUDManager/Image/notice_type_success.png"
   install_resource "${PODS_ROOT}/MFHUDManager/Image/notice_type_warnning.png"
+  install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_ROOT}/QMUIKit/QMUIKit/QMUIResources/QMUIResources.bundle"
 fi
 

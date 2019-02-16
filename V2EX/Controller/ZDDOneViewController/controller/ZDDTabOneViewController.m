@@ -8,15 +8,18 @@
 
 #import "ZDDTabOneViewController.h"
 #import "ZDDChangeTypeView.h"
-#import "ZDDHomeListController.h"
+#import "ZDDHomeController.h"
 
 @interface ZDDTabOneViewController ()<ZDDChangeTypeViewDelegate, UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
-/** <#class#> */
 @property (nonatomic, strong) ZDDChangeTypeView *changeTypeView;
-@property (nonatomic, strong) NSDictionary *typeDic;
-@property (nonatomic, strong) NSArray <ZDDHomeListController *>*controllerArray;
+@property (nonatomic, strong) NSArray *dataArrray;
+@property (nonatomic, strong) NSArray *titleArray;
+
+@property (nonatomic, strong) NSArray <ZDDHomeController *>*controllerArray;
 @property (nonatomic, strong) UIPageViewController *pageController;
+
+
 @end
 
 @implementation ZDDTabOneViewController
@@ -24,32 +27,59 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupUI];
+    [self loadData];
 }
 
+- (void)loadData {
+    
+    [MFHUDManager showLoading:@"请求中..."];
+    NSDictionary *paragmras = @{
+                                };
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
+    [MFNETWROK post:@"http://kanmanapi-main.321mh.com/v1/book/getBookByType?platform=19&platformname=iphone&booktype=132&productname=aym&pagesize=20&page=0" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        [MFHUDManager dismiss];
+        if (statusCode == 200) {
+            self.dataArrray = [NSArray yy_modelArrayWithClass:ZDDManHuaListModel.class json:result[@"data"][@"book"]];
+            
+            [self setupUI];
+        }else {
+            [MFHUDManager showError:@"请求失败"];
+        }
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        
+        [MFHUDManager dismiss];
+        [MFHUDManager showError:@"请求失败"];
+    }];
+}
 - (void)setupUI {
+    
+    self.title = @"漫画";
     
     [self.view addSubview:self.changeTypeView];
     [self.changeTypeView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.mas_equalTo(0);
+        make.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(NavBarHeight);
         make.height.mas_equalTo(50);
     }];
 
     [self addChildViewController:self.pageController];
     [self.view addSubview:self.pageController.view];
     [self.pageController.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.mas_equalTo(0);
-        make.top.mas_equalTo(50);
+        make.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(self.changeTypeView.mas_bottom);
+        make.bottom.mas_equalTo(-SafeTabBarHeight);
     }];
     
     [self.pageController setViewControllers:@[self.controllerArray.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-
+    
 }
+
+
 
 #pragma mark - UIPageViewControllerDataSource / UIPageViewControllerDelegate
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
     NSInteger index = [self.controllerArray indexOfObject:pageViewController.viewControllers.firstObject];
-    [self.changeTypeView setSelectedIndex:index];
+    [self.changeTypeView setSelectedTag:index];
 }
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     NSInteger index = [self.controllerArray indexOfObject:viewController];
@@ -73,32 +103,24 @@
 
 - (ZDDChangeTypeView *)changeTypeView {
     if (!_changeTypeView) {
-        _changeTypeView = [[ZDDChangeTypeView alloc] initWithTitles:self.typeDic.allValues];
+        _changeTypeView = [[ZDDChangeTypeView alloc] initWithTitles:self.titleArray];
         _changeTypeView.delegate = self;
     }
     return _changeTypeView;
 }
 
-- (NSDictionary *)typeDic {
-    if (!_typeDic) {
-        _typeDic = @{
-                     @"/category/weimanhua/kbmh" : @"恐怖漫画",
-                     @"/category/weimanhua/gushimanhua" : @"故事漫画",
-                     @"/category/duanzishou" : @"段子手",
-                     @"/category/lengzhishi" : @"冷知识",
-                     @"/category/qiqu" : @"奇趣",
-                     @"/category/dianying" : @"电影",
-                     @"/category/gaoxiao" : @"搞笑",
-                     @"/category/mengchong" : @"萌宠",
-                     @"/category/xinqi" : @"新奇",
-                     @"/category/huanqiu" : @"环球",
-                     @"/category/sheying" : @"摄影",
-                     @"/category/wanyi" : @"玩艺",
-                     @"/category/chahua" : @"插画"
-                     };
+- (NSArray *)titleArray {
+    if (!_titleArray) {
+        NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:self.dataArrray.count];
+        for (NSInteger i = 0; i < self.dataArrray.count; i ++) {
+            ZDDManHuaListModel *model = self.dataArrray[i];
+            [tempArr addObject:model.title];
+        }
+        _titleArray = tempArr.copy;
     }
-    return _typeDic;
+    return _titleArray;
 }
+
 
 - (UIPageViewController *)pageController {
     if (!_pageController) {
@@ -109,14 +131,14 @@
     return _pageController;
 }
 
-- (NSArray<ZDDHomeListController *> *)controllerArray {
+- (NSArray<ZDDHomeController *> *)controllerArray {
     if (!_controllerArray) {
-        NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:self.typeDic.allKeys.count];
-        for (NSInteger i = 0; i < self.typeDic.allKeys.count; i ++) {
-            NSString *title = self.typeDic.allValues[i];
-            ZDDHomeListController *vc = [[ZDDHomeListController alloc] init];
-            vc.title = title;
-            vc.reuestId = self.typeDic.allKeys[i];
+        NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:self.dataArrray.count];
+        for (NSInteger i = 0; i < self.dataArrray.count; i ++) {
+            ZDDManHuaListModel *model = self.dataArrray[i];
+            ZDDHomeController *vc = [[ZDDHomeController alloc] init];
+            vc.title = model.title;
+            vc.dataArray = model.comic_info;
             [tempArr addObject:vc];
         }
         _controllerArray = tempArr.copy;

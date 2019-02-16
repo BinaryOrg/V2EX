@@ -15,5 +15,5 @@
 @interface ZDDChangeTypeView : UIView
 @property (nonatomic, weak) id <ZDDChangeTypeViewDelegate> delegate;
 - (instancetype)initWithTitles:(NSArray *)titles;
-- (void)setSelectedIndex:(NSInteger)index;
+@property (nonatomic, assign) NSInteger selectedTag;
 @end

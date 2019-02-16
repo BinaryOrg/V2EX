@@ -13,6 +13,8 @@
 
 #import "ZDDTabOneViewController.h"
 #import "ZDDTabTwoViewController.h"
+#import "ZDDNavController.h"
+
 @implementation ZDDLaunchManager
 + (instancetype)sharedInstance {
     static ZDDLaunchManager *manager = nil;
@@ -31,11 +33,11 @@
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     
-    ZDDTabOneViewController *one = [[ZDDTabOneViewController alloc] initWithImageName:@"tab_now_nor" selectedImageName:@"tab_now_press" title:@"首页"];
-    ZDDTabTwoViewController *two = [[ZDDTabTwoViewController alloc] initWithImageName:@"tab_see_nor" selectedImageName:@"tab_see_press" title:@"测试"];
+    ZDDTabOneViewController *one = [[ZDDTabOneViewController alloc] initWithImageName:@"tab_now_nor" selectedImageName:@"tab_now_press" title:@"漫画"];
+    ZDDTabTwoViewController *two = [[ZDDTabTwoViewController alloc] initWithImageName:@"tab_see_nor" selectedImageName:@"tab_see_press" title:@"诗词"];
     
-    UINavigationController *oneNavi = [[UINavigationController alloc] initWithRootViewController:one];
-    UINavigationController *twoNavi = [[UINavigationController alloc] initWithRootViewController:two];
+    ZDDNavController *oneNavi = [[ZDDNavController alloc] initWithRootViewController:one];
+    ZDDNavController *twoNavi = [[ZDDNavController alloc] initWithRootViewController:two];
 //    
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = @[

@@ -6,11 +6,10 @@
 //  Copyright © 2019 binary. All rights reserved.
 //
 
-#import "ZDDBaseNavigationViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZDDManHuaController : ZDDBaseNavigationViewController
+@interface ZDDManHuaController : UIViewController
 /** <#class#> */
 @property (nonatomic, strong) UIImageView *iv;
 /** <#class#> */

@@ -11,7 +11,7 @@ pod 'QMUIKit'
 pod ‘MFNetworkManager’
 pod ‘MFHUDManager’
 pod ‘MFPictureBrowser’
-# pod ‘MJRefresh’
+pod ‘MJRefresh’
 # pod ‘MBProgressHUD’
 pod 'DZNEmptyDataSet'
 # pod 'JPush'

@@ -12,6 +12,16 @@
 		377F019D221538C700E00378 /* ZDDManHuaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F019C221538C700E00378 /* ZDDManHuaController.m */; };
 		377F01A022153B5900E00378 /* ZDDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F019F22153B5900E00378 /* ZDDTool.m */; };
 		377F01A62215461200E00378 /* ShowAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F01A52215461200E00378 /* ShowAPIRequest.m */; };
+		37DF00032217AED4008F7CEF /* ZDDHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF00022217AED4008F7CEF /* ZDDHomeController.m */; };
+		37DF00092217B358008F7CEF /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF00082217B358008F7CEF /* UIView+ZDD.m */; };
+		37DF000C2217B760008F7CEF /* ZDDHomeCelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF000B2217B760008F7CEF /* ZDDHomeCelNode.m */; };
+		37DF000F2217C294008F7CEF /* ZDDNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF000E2217C294008F7CEF /* ZDDNavController.m */; };
+		37DF00152217E552008F7CEF /* ZDDPoetryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF00142217E552008F7CEF /* ZDDPoetryModel.m */; };
+		37DF00182217E68A008F7CEF /* ZDDPoetryListCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF00172217E68A008F7CEF /* ZDDPoetryListCellNode.m */; };
+		37DF001B2217EF31008F7CEF /* NSMutableDictionary+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF001A2217EF31008F7CEF /* NSMutableDictionary+ZDD.m */; };
+		37DF001E221807EE008F7CEF /* ZDDManHuaListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF001D221807EE008F7CEF /* ZDDManHuaListModel.m */; };
+		37DF0021221812AB008F7CEF /* ZDDCatalogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF0020221812AB008F7CEF /* ZDDCatalogController.m */; };
+		37DF002422181441008F7CEF /* ZDDManHuaCatalogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF002322181441008F7CEF /* ZDDManHuaCatalogModel.m */; };
 		403E52BDAAD3EB536432FD20 /* libPods-V2EX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5926A9D7392BAC123873B3 /* libPods-V2EX.a */; };
 		4A39B41021FE9E8C00437B6A /* UIColor+ZDDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A39B40F21FE9E8C00437B6A /* UIColor+ZDDColor.m */; };
 		5E6DE80421FC00BF00E2BF78 /* ZDDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE80321FC00BF00E2BF78 /* ZDDAppDelegate.m */; };
@@ -45,6 +55,26 @@
 		377F019F22153B5900E00378 /* ZDDTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTool.m; sourceTree = "<group>"; };
 		377F01A42215461200E00378 /* ShowAPIRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowAPIRequest.h; sourceTree = "<group>"; };
 		377F01A52215461200E00378 /* ShowAPIRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowAPIRequest.m; sourceTree = "<group>"; };
+		37DF00012217AED4008F7CEF /* ZDDHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDHomeController.h; sourceTree = "<group>"; };
+		37DF00022217AED4008F7CEF /* ZDDHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDHomeController.m; sourceTree = "<group>"; };
+		37DF00072217B358008F7CEF /* UIView+ZDD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZDD.h"; sourceTree = "<group>"; };
+		37DF00082217B358008F7CEF /* UIView+ZDD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZDD.m"; sourceTree = "<group>"; };
+		37DF000A2217B760008F7CEF /* ZDDHomeCelNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDHomeCelNode.h; sourceTree = "<group>"; };
+		37DF000B2217B760008F7CEF /* ZDDHomeCelNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDHomeCelNode.m; sourceTree = "<group>"; };
+		37DF000D2217C294008F7CEF /* ZDDNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDNavController.h; sourceTree = "<group>"; };
+		37DF000E2217C294008F7CEF /* ZDDNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDNavController.m; sourceTree = "<group>"; };
+		37DF00132217E552008F7CEF /* ZDDPoetryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDPoetryModel.h; sourceTree = "<group>"; };
+		37DF00142217E552008F7CEF /* ZDDPoetryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDPoetryModel.m; sourceTree = "<group>"; };
+		37DF00162217E68A008F7CEF /* ZDDPoetryListCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDPoetryListCellNode.h; sourceTree = "<group>"; };
+		37DF00172217E68A008F7CEF /* ZDDPoetryListCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDPoetryListCellNode.m; sourceTree = "<group>"; };
+		37DF00192217EF31008F7CEF /* NSMutableDictionary+ZDD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+ZDD.h"; sourceTree = "<group>"; };
+		37DF001A2217EF31008F7CEF /* NSMutableDictionary+ZDD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+ZDD.m"; sourceTree = "<group>"; };
+		37DF001C221807EE008F7CEF /* ZDDManHuaListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDManHuaListModel.h; sourceTree = "<group>"; };
+		37DF001D221807EE008F7CEF /* ZDDManHuaListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDManHuaListModel.m; sourceTree = "<group>"; };
+		37DF001F221812AB008F7CEF /* ZDDCatalogController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDCatalogController.h; sourceTree = "<group>"; };
+		37DF0020221812AB008F7CEF /* ZDDCatalogController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDCatalogController.m; sourceTree = "<group>"; };
+		37DF002222181441008F7CEF /* ZDDManHuaCatalogModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDManHuaCatalogModel.h; sourceTree = "<group>"; };
+		37DF002322181441008F7CEF /* ZDDManHuaCatalogModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDManHuaCatalogModel.m; sourceTree = "<group>"; };
 		4A39B40E21FE9E8C00437B6A /* UIColor+ZDDColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZDDColor.h"; sourceTree = "<group>"; };
 		4A39B40F21FE9E8C00437B6A /* UIColor+ZDDColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZDDColor.m"; sourceTree = "<group>"; };
 		58C4A74BA29D5A1BC2D94D8F /* Pods-V2EX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX.release.xcconfig"; path = "Pods/Target Support Files/Pods-V2EX/Pods-V2EX.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +137,10 @@
 		3704AB942212C8CC00D07862 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				37DF001C221807EE008F7CEF /* ZDDManHuaListModel.h */,
+				37DF001D221807EE008F7CEF /* ZDDManHuaListModel.m */,
+				37DF002222181441008F7CEF /* ZDDManHuaCatalogModel.h */,
+				37DF002322181441008F7CEF /* ZDDManHuaCatalogModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -116,6 +150,8 @@
 			children = (
 				3704AB972212C90A00D07862 /* ZDDChangeTypeView.h */,
 				3704AB982212C90A00D07862 /* ZDDChangeTypeView.m */,
+				37DF000A2217B760008F7CEF /* ZDDHomeCelNode.h */,
+				37DF000B2217B760008F7CEF /* ZDDHomeCelNode.m */,
 			);
 			path = "view+node";
 			sourceTree = "<group>";
@@ -125,12 +161,43 @@
 			children = (
 				5E6DE84E21FC208800E2BF78 /* ZDDTabOneViewController.h */,
 				5E6DE84F21FC208800E2BF78 /* ZDDTabOneViewController.m */,
+				37DF00012217AED4008F7CEF /* ZDDHomeController.h */,
+				37DF00022217AED4008F7CEF /* ZDDHomeController.m */,
+				37DF001F221812AB008F7CEF /* ZDDCatalogController.h */,
+				37DF0020221812AB008F7CEF /* ZDDCatalogController.m */,
 				377F019822151FC900E00378 /* ZDDHomeListController.h */,
 				377F019922151FC900E00378 /* ZDDHomeListController.m */,
 				377F019B221538C700E00378 /* ZDDManHuaController.h */,
 				377F019C221538C700E00378 /* ZDDManHuaController.m */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		37DF00102217E521008F7CEF /* model */ = {
+			isa = PBXGroup;
+			children = (
+				37DF00132217E552008F7CEF /* ZDDPoetryModel.h */,
+				37DF00142217E552008F7CEF /* ZDDPoetryModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		37DF00112217E522008F7CEF /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E6DE85121FC209700E2BF78 /* ZDDTabTwoViewController.h */,
+				5E6DE85221FC209700E2BF78 /* ZDDTabTwoViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		37DF00122217E522008F7CEF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				37DF00162217E68A008F7CEF /* ZDDPoetryListCellNode.h */,
+				37DF00172217E68A008F7CEF /* ZDDPoetryListCellNode.m */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		5E6DE7F621FC00BF00E2BF78 = {
@@ -189,6 +256,10 @@
 				5E6DE82F21FC06A200E2BF78 /* GODNotification.m */,
 				5E6DE83221FC06A200E2BF78 /* NSObject+YYModel.h */,
 				5E6DE83521FC06A300E2BF78 /* NSObject+YYModel.m */,
+				37DF00072217B358008F7CEF /* UIView+ZDD.h */,
+				37DF00082217B358008F7CEF /* UIView+ZDD.m */,
+				37DF00192217EF31008F7CEF /* NSMutableDictionary+ZDD.h */,
+				37DF001A2217EF31008F7CEF /* NSMutableDictionary+ZDD.m */,
 				5E6DE83821FC06A300E2BF78 /* UINavigationController+FDFullscreenPopGesture.h */,
 				5E6DE83121FC06A200E2BF78 /* UINavigationController+FDFullscreenPopGesture.m */,
 				5E6DE83921FC06A300E2BF78 /* YYClassInfo.h */,
@@ -222,6 +293,8 @@
 			children = (
 				5E6DE84521FC089200E2BF78 /* ZDDBaseNavigationViewController.h */,
 				5E6DE84621FC089200E2BF78 /* ZDDBaseNavigationViewController.m */,
+				37DF000D2217C294008F7CEF /* ZDDNavController.h */,
+				37DF000E2217C294008F7CEF /* ZDDNavController.m */,
 			);
 			path = ZDDBaseNavigationController;
 			sourceTree = "<group>";
@@ -248,8 +321,9 @@
 		5E6DE84A21FC200900E2BF78 /* ZDDTwoViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5E6DE85121FC209700E2BF78 /* ZDDTabTwoViewController.h */,
-				5E6DE85221FC209700E2BF78 /* ZDDTabTwoViewController.m */,
+				37DF00112217E522008F7CEF /* controller */,
+				37DF00102217E521008F7CEF /* model */,
+				37DF00122217E522008F7CEF /* view */,
 			);
 			path = ZDDTwoViewController;
 			sourceTree = "<group>";
@@ -342,6 +416,7 @@
 				"${PODS_ROOT}/MFHUDManager/Image/notice_type_error.png",
 				"${PODS_ROOT}/MFHUDManager/Image/notice_type_success.png",
 				"${PODS_ROOT}/MFHUDManager/Image/notice_type_warnning.png",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/QMUIKit/QMUIKit/QMUIResources/QMUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -350,6 +425,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/notice_type_error.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/notice_type_success.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/notice_type_warnning.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QMUIResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,17 +461,27 @@
 				377F019A22151FC900E00378 /* ZDDHomeListController.m in Sources */,
 				5E6DE81B21FC05ED00E2BF78 /* ZDDLaunchManager.m in Sources */,
 				5E6DE83B21FC06A300E2BF78 /* YYClassInfo.m in Sources */,
+				37DF00182217E68A008F7CEF /* ZDDPoetryListCellNode.m in Sources */,
+				37DF00092217B358008F7CEF /* UIView+ZDD.m in Sources */,
 				5E6DE85321FC209700E2BF78 /* ZDDTabTwoViewController.m in Sources */,
+				37DF002422181441008F7CEF /* ZDDManHuaCatalogModel.m in Sources */,
 				3704AB992212C90A00D07862 /* ZDDChangeTypeView.m in Sources */,
 				5E6DE84221FC06F400E2BF78 /* ZDDSDKManager.m in Sources */,
 				5E6DE82A21FC065200E2BF78 /* NSString+Regex.m in Sources */,
+				37DF000F2217C294008F7CEF /* ZDDNavController.m in Sources */,
 				5E6DE81221FC00BF00E2BF78 /* main.m in Sources */,
 				5E6DE82921FC065200E2BF78 /* NSMutableDictionary+Attributes.m in Sources */,
 				5E6DE83C21FC06A300E2BF78 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				37DF001B2217EF31008F7CEF /* NSMutableDictionary+ZDD.m in Sources */,
 				377F019D221538C700E00378 /* ZDDManHuaController.m in Sources */,
 				5E6DE84721FC089200E2BF78 /* ZDDBaseNavigationViewController.m in Sources */,
+				37DF001E221807EE008F7CEF /* ZDDManHuaListModel.m in Sources */,
+				37DF0021221812AB008F7CEF /* ZDDCatalogController.m in Sources */,
+				37DF000C2217B760008F7CEF /* ZDDHomeCelNode.m in Sources */,
 				377F01A022153B5900E00378 /* ZDDTool.m in Sources */,
 				4A39B41021FE9E8C00437B6A /* UIColor+ZDDColor.m in Sources */,
+				37DF00032217AED4008F7CEF /* ZDDHomeController.m in Sources */,
+				37DF00152217E552008F7CEF /* ZDDPoetryModel.m in Sources */,
 				5E6DE82C21FC065200E2BF78 /* NSMutableAttributedString+Chain.m in Sources */,
 				377F01A62215461200E00378 /* ShowAPIRequest.m in Sources */,
 				5E6DE80421FC00BF00E2BF78 /* ZDDAppDelegate.m in Sources */,

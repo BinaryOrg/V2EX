@@ -20,19 +20,20 @@
 
 
 #pragma mark - Life Cycle
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-}
-
--(void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
-}
+//-(void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:YES];
+//}
+//
+//-(void)viewWillDisappear:(BOOL)animated {
+//    [super viewWillDisappear:animated];
+//    [self.navigationController setNavigationBarHidden:NO animated:NO];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"漫画详情";
     // 设置UIPageViewController的配置项
     //    NSDictionary *options = @{UIPageViewControllerOptionInterPageSpacingKey : @(20)};
     NSDictionary *options = @{UIPageViewControllerOptionSpineLocationKey : @(UIPageViewControllerSpineLocationMin)};
