@@ -54,4 +54,10 @@ fprintf(stderr, "-------\n");                                               \
 #define SAFE_BLOCK(BlockName, ...) ({ !BlockName ? nil : BlockName(__VA_ARGS__); })
 
 
+
+
+#define yiyuanSign @"3e62dcb055264fd3b9d15db3e366d4e7"
+#define yiyuanId @"87106"
+
+
 #endif /* GODDefine_h */

@@ -23,5 +23,4 @@ pod 'Texture'
 pod 'mob_smssdk'
 pod 'DateTools'
 pod 'JXCategoryView'
-pod 'EaseUI', :git => 'https://github.com/easemob/easeui-ios-cocoapods.git'
 end
