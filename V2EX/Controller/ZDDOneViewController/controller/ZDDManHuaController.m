@@ -7,11 +7,13 @@
 //
 
 #import "ZDDManHuaController.h"
-
+#import <YYImage.h>
+#import "UIImageView+TransitionImage.h"
 @interface ZDDManHuaController ()
 
 @property (nonatomic, strong) UIImageView *iv;
-
+// 下载 operation
+@property (nonatomic, strong) YYWebImageOperation *operation;
 @end
 
 @implementation ZDDManHuaController
@@ -21,18 +23,56 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.iv = [[UIImageView alloc] init];
+    self.iv = [[YYAnimatedImageView alloc] init];
     [self.view addSubview:self.iv];
     self.iv.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.frame.size.height);
     self.iv.contentMode = UIViewContentModeScaleAspectFit;
-    
+    NSLog(@"%@",@(YYImageWebPAvailable()));
 }
 
 - (void)setImg_url:(NSString *)img_url {
+    __weak __typeof(self)weakSelf = self;
+    NSLog(@"%@", img_url);
     
-    _img_url = img_url;
-    self.iv.yy_imageURL = [NSURL URLWithString:[NSString stringWithFormat:img_url]];
-
+    self.operation = [[YYWebImageManager sharedManager] requestImageWithURL:[NSURL URLWithString:img_url] options:YYWebImageOptionProgressiveBlur progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+    } transform:nil completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+        NSLog(@"%@", url.absoluteString);
+        NSLog(@"%@", image);
+        NSLog(@"%lu", (unsigned long)from);
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        if (!error && stage == YYWebImageStageFinished) {
+            strongSelf.operation = nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIImage *webpImage = (YYImage *)image;
+                if (webpImage) {
+                    [strongSelf.iv animatedTransitionImage:webpImage];
+                }
+            });
+        }else if (error) {
+            NSLog(@"%@",error.userInfo);
+            strongSelf.operation = nil;
+        }
+    }];
+    
+//    self.operation = [[YYWebImageManager sharedManager] requestImageWithURL:[NSURL URLWithString:@"http://res.cloudinary.com/demo/image/upload/w_300/sample.webp"] options:YYWebImageOptionProgressiveBlur progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//    } transform:nil completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+//        NSLog(@"%@", url.absoluteString);
+//        NSLog(@"%@", image);
+//        NSLog(@"%lu", (unsigned long)from);
+//        __strong __typeof(weakSelf)strongSelf = weakSelf;
+//        if (!error && stage == YYWebImageStageFinished) {
+//            strongSelf.operation = nil;
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                UIImage *webpImage = (YYImage *)image;
+//                if (webpImage) {
+//                    [strongSelf.iv animatedTransitionImage:webpImage];
+//                }
+//            });
+//        }else if (error) {
+//            NSLog(@"%@",error.userInfo);
+//            strongSelf.operation = nil;
+//        }
+//    }];
 }
 
 /*

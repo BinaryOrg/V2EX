@@ -99,12 +99,15 @@
 
     
 //    ZDDHomeListController *vc = [ZDDHomeListController new];
+    NSString *temp = [model.chapter_image.middle stringByReplacingOccurrencesOfString:@"$$" withString:[NSString stringWithFormat:@"%@", model.chapter_id]];
     
+    NSCharacterSet *encode_set= [NSCharacterSet URLUserAllowedCharacterSet];
+    temp = [temp stringByAddingPercentEncodingWithAllowedCharacters:encode_set];
     
-    NSString *url = [NSString stringWithFormat:@"http://mhpic.jumanhua.com/%@", model.chapter_image.middle];
-    url = [url stringByReplacingOccurrencesOfString:@"$$" withString:[NSString stringWithFormat:@"%@", model.chapter_id]];
+    NSString *url = [NSString stringWithFormat:@"http://mhpic.jumanhua.com/%@", temp];
     
     ZDDManHuaController *vc = [ZDDManHuaController new];
+    NSLog(@"%@", url);
     vc.img_url = url;
     [self.navigationController pushViewController:vc animated:YES];
 }

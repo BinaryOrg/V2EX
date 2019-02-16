@@ -40,6 +40,7 @@
 		5E6DE84721FC089200E2BF78 /* ZDDBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE84621FC089200E2BF78 /* ZDDBaseNavigationViewController.m */; };
 		5E6DE85021FC208800E2BF78 /* ZDDTabOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE84F21FC208800E2BF78 /* ZDDTabOneViewController.m */; };
 		5E6DE85321FC209700E2BF78 /* ZDDTabTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE85221FC209700E2BF78 /* ZDDTabTwoViewController.m */; };
+		5E8462CF221870CB00C011BB /* UIImageView+TransitionImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8462CD221870CA00C011BB /* UIImageView+TransitionImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,8 @@
 		5E6DE84F21FC208800E2BF78 /* ZDDTabOneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTabOneViewController.m; sourceTree = "<group>"; };
 		5E6DE85121FC209700E2BF78 /* ZDDTabTwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTabTwoViewController.h; sourceTree = "<group>"; };
 		5E6DE85221FC209700E2BF78 /* ZDDTabTwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTabTwoViewController.m; sourceTree = "<group>"; };
+		5E8462CD221870CA00C011BB /* UIImageView+TransitionImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+TransitionImage.m"; sourceTree = "<group>"; };
+		5E8462CE221870CB00C011BB /* UIImageView+TransitionImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+TransitionImage.h"; sourceTree = "<group>"; };
 		EF5926A9D7392BAC123873B3 /* libPods-V2EX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-V2EX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -249,6 +252,8 @@
 		5E6DE81C21FC062400E2BF78 /* ZDDUtil */ = {
 			isa = PBXGroup;
 			children = (
+				5E8462CE221870CB00C011BB /* UIImageView+TransitionImage.h */,
+				5E8462CD221870CA00C011BB /* UIImageView+TransitionImage.m */,
 				5E6DE83621FC06A300E2BF78 /* GODDefine.h */,
 				377F01A42215461200E00378 /* ShowAPIRequest.h */,
 				377F01A52215461200E00378 /* ShowAPIRequest.m */,
@@ -459,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				377F019A22151FC900E00378 /* ZDDHomeListController.m in Sources */,
+				5E8462CF221870CB00C011BB /* UIImageView+TransitionImage.m in Sources */,
 				5E6DE81B21FC05ED00E2BF78 /* ZDDLaunchManager.m in Sources */,
 				5E6DE83B21FC06A300E2BF78 /* YYClassInfo.m in Sources */,
 				37DF00182217E68A008F7CEF /* ZDDPoetryListCellNode.m in Sources */,
