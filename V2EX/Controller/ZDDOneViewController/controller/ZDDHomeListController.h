@@ -11,8 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDDHomeListController : UIViewController
 
-/** <#class#> */
-@property (nonatomic, strong) NSString *reuestId;
+@property (nonatomic, strong) NSArray *imagesArray;
+
 
 @end
 

@@ -31,6 +31,16 @@
     self.fd_interactivePopDisabled = NO;
 }
 
+-(void)setImagesArray:(NSArray *)imagesArray {
+    _imagesArray = imagesArray;
+    NSMutableArray *arrayM = [[NSMutableArray alloc] init];
+    for (int i = 1; i < imagesArray.count + 1; i++) {
+        NSString *contentString = [[NSString alloc] initWithFormat:@"This is the page %d of content displayed using UIPageViewController", i];
+        [arrayM addObject:contentString];
+    }
+    _pageContentArray = arrayM;
+    
+}
 
 #pragma mark - Life Cycle
 //-(void)viewWillAppear:(BOOL)animated {
@@ -78,47 +88,47 @@
     [self.view addSubview:_pageViewController.view];
     
 }
-
-- (void)setReuestId:(NSString *)reuestId {
-    _reuestId = reuestId;
-    
-    [MFHUDManager showLoading:@"发布中"];
-    NSDictionary *paragmras = @{
-                                @"showapi_appid" : yiyuanId,
-                                @"showapi_sign" : yiyuanSign,
-                                @"showapi_timestamp" : [ZDDTool getCurrentTime],
-                                @"showapi_res_gzip" : @(0),
-                                @"type" : reuestId,
-                                @"page" : @(1)
-                                };
-    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK post:@"http://route.showapi.com/958-1" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
-        NSLog(@"%@", result);
-        [MFHUDManager dismiss];
-        if ([result[@"code"] integerValue] == 200) {
-           
-        }else {
-            [MFHUDManager showError:@"发布失败"];
-        }
-    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-        
-        [MFHUDManager dismiss];
-        [MFHUDManager showError:@"发布失败"];
-    }];
-    
-    ShowAPIRequest *request=[[ShowAPIRequest alloc] initWithAppid:yiyuanId andSign:yiyuanSign];
-    //调用接口
-    [request post:@"http://route.showapi.com/958-1"//注意您需要先订购该接口套餐才能测试
-          timeout:18//超时设置为20秒
-           params:[[NSDictionary alloc] initWithObjectsAndKeys:reuestId,@"type",@"1",@"page", nil]//传入参数
-   withCompletion:^(NSDictionary *result) {
-       //打印返回结果
-       NSData *jsonData = [NSJSONSerialization dataWithJSONObject:result options:NSJSONWritingPrettyPrinted error:nil];
-       // NSData转为NSString
-       NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-       NSLog(@"返回结果为：%@",jsonStr);
-   }];
-}
+//
+//- (void)setReuestId:(NSString *)reuestId {
+//    _reuestId = reuestId;
+//    
+//    [MFHUDManager showLoading:@"发布中"];
+//    NSDictionary *paragmras = @{
+//                                @"showapi_appid" : yiyuanId,
+//                                @"showapi_sign" : yiyuanSign,
+//                                @"showapi_timestamp" : [ZDDTool getCurrentTime],
+//                                @"showapi_res_gzip" : @(0),
+//                                @"type" : reuestId,
+//                                @"page" : @(1)
+//                                };
+//    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
+//    [MFNETWROK post:@"http://route.showapi.com/958-1" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+//        NSLog(@"%@", result);
+//        [MFHUDManager dismiss];
+//        if ([result[@"code"] integerValue] == 200) {
+//           
+//        }else {
+//            [MFHUDManager showError:@"发布失败"];
+//        }
+//    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+//        
+//        [MFHUDManager dismiss];
+//        [MFHUDManager showError:@"发布失败"];
+//    }];
+//    
+//    ShowAPIRequest *request=[[ShowAPIRequest alloc] initWithAppid:yiyuanId andSign:yiyuanSign];
+//    //调用接口
+//    [request post:@"http://route.showapi.com/958-1"//注意您需要先订购该接口套餐才能测试
+//          timeout:18//超时设置为20秒
+//           params:[[NSDictionary alloc] initWithObjectsAndKeys:reuestId,@"type",@"1",@"page", nil]//传入参数
+//   withCompletion:^(NSDictionary *result) {
+//       //打印返回结果
+//       NSData *jsonData = [NSJSONSerialization dataWithJSONObject:result options:NSJSONWritingPrettyPrinted error:nil];
+//       // NSData转为NSString
+//       NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+//       NSLog(@"返回结果为：%@",jsonStr);
+//   }];
+//}
 
 #pragma mark - UIPageViewControllerDataSource And UIPageViewControllerDelegate
 
@@ -163,29 +173,14 @@
     }
     // 创建一个新的控制器类，并且分配给相应的数据
     ZDDManHuaController *contentVC = [[ZDDManHuaController alloc] init];
-//    contentVC.content = [self.pageContentArray objectAtIndex:index];
-    return @"";
+    contentVC.content = [self.pageContentArray objectAtIndex:index];
+    contentVC.img_url = self.imagesArray[index];
+    return contentVC;
 }
 
 #pragma mark - 数组元素值，得到下标值
 - (NSUInteger)indexOfViewController:(ZDDManHuaController *)viewController {
-    return [self.pageContentArray indexOfObject:@""];
+    return [self.pageContentArray indexOfObject:viewController.content];
 }
 
-
-
-#pragma mark - Lazy Load
-
-- (NSArray *)pageContentArray {
-    if (!_pageContentArray) {
-        NSMutableArray *arrayM = [[NSMutableArray alloc] init];
-        for (int i = 1; i < 10; i++) {
-            NSString *contentString = [[NSString alloc] initWithFormat:@"This is the page %d of content displayed using UIPageViewController", i];
-            [arrayM addObject:contentString];
-        }
-        _pageContentArray = [[NSArray alloc] initWithArray:arrayM];
-        
-    }
-    return _pageContentArray;
-}
 @end

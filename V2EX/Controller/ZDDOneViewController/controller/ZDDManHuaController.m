@@ -7,10 +7,12 @@
 //
 
 #import "ZDDManHuaController.h"
+#import <YYAnimatedImageView.h>
+#import <YYImage.h>
 
 @interface ZDDManHuaController ()
 
-@property (nonatomic, strong) UIImageView *iv;
+@property (nonatomic, strong) YYAnimatedImageView *iv;
 
 @end
 
@@ -21,18 +23,26 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.iv = [[UIImageView alloc] init];
-    [self.view addSubview:self.iv];
-    self.iv.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.frame.size.height);
-    self.iv.contentMode = UIViewContentModeScaleAspectFit;
+   
     
 }
 
 - (void)setImg_url:(NSString *)img_url {
     
     _img_url = img_url;
-    self.iv.yy_imageURL = [NSURL URLWithString:[NSString stringWithFormat:img_url]];
-
+    
+    self.iv = [[YYAnimatedImageView alloc] init];
+    [self.view addSubview:self.iv];
+    [self.iv mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(NavBarHeight);
+        make.left.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(SafeAreaBottomHeight);
+    }];
+    self.iv.contentMode = UIViewContentModeScaleAspectFit;
+    
+    self.iv.yy_imageURL = [NSURL URLWithString:img_url];
+    self.iv.backgroundColor = [UIColor redColor];
+    NSLog(@"===%@", img_url);
 }
 
 /*
