@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZDDManHuaController : UIViewController
 /** <#class#> */
 @property (nonatomic, strong) NSString *img_url;
+/** <#class#> */
+@property (nonatomic, strong) NSString *content;
 @end
 
 NS_ASSUME_NONNULL_END

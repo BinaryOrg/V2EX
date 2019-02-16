@@ -74,6 +74,8 @@
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
     [MFNETWROK post:@"https://api.apiopen.top/getTangPoetry" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
+        [self.tableNode.view.mj_header endRefreshing];
+
         if ([result[@"code"] integerValue] == 200) {
             if (index == 1) {
                 [self.dataArray removeAllObjects];
@@ -84,7 +86,8 @@
             [MFHUDManager showError:@"请求失败"];
         }
     } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-        
+        [self.tableNode.view.mj_header endRefreshing];
+
         [MFHUDManager dismiss];
         [MFHUDManager showError:@"请求失败"];
     }];

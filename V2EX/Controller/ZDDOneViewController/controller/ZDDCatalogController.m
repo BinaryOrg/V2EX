@@ -56,6 +56,7 @@
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
     [MFNETWROK post:url params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
+        [self.tableView.mj_header endRefreshing];
         if (statusCode == 200) {
             self.mainModel = [ZDDManHuaCatalogModel yy_modelWithJSON:result];
             
@@ -64,7 +65,8 @@
             [MFHUDManager showError:@"请求失败"];
         }
     } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-        
+        [self.tableView.mj_header endRefreshing];
+
         [MFHUDManager dismiss];
         [MFHUDManager showError:@"请求失败"];
     }];
@@ -81,6 +83,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     ZDDManHuaCapterModel *model =  self.mainModel.comic_chapter[indexPath.row];
     cell.textLabel.text = model.chapter_name;
@@ -96,19 +99,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZDDManHuaCapterModel *model =  self.mainModel.comic_chapter[indexPath.row];
-
-    
-//    ZDDHomeListController *vc = [ZDDHomeListController new];
-    NSString *temp = [model.chapter_image.middle stringByReplacingOccurrencesOfString:@"$$" withString:[NSString stringWithFormat:@"%@", model.chapter_id]];
-    
     NSCharacterSet *encode_set= [NSCharacterSet URLUserAllowedCharacterSet];
-    temp = [temp stringByAddingPercentEncodingWithAllowedCharacters:encode_set];
-    
-    NSString *url = [NSString stringWithFormat:@"http://mhpic.jumanhua.com/%@", temp];
-    
-    ZDDManHuaController *vc = [ZDDManHuaController new];
-    NSLog(@"%@", url);
-    vc.img_url = url;
+    ZDDHomeListController *vc = [ZDDHomeListController new];
+    NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:model.end_num];
+    for (NSInteger i = 1; i < model.end_num + 1; i ++) {
+        NSString *temp = [model.chapter_image.middle stringByReplacingOccurrencesOfString:@"$$" withString:[NSString stringWithFormat:@"%@", @(i)]];
+        temp = [temp stringByAddingPercentEncodingWithAllowedCharacters:encode_set];
+        NSString *url = [NSString stringWithFormat:@"http://mhpic.jumanhua.com/%@", temp];
+        [tempArr addObject:url];
+    }
+    vc.imagesArray = [tempArr copy];
+
     [self.navigationController pushViewController:vc animated:YES];
 }
 
