@@ -138,7 +138,7 @@
     
     NSUInteger index = [self indexOfViewController:(ZDDManHuaController *)viewController];
     if ((index == 0) || (index == NSNotFound)) {
-        [self.navigationController popViewControllerAnimated:YES];
+//        [self.navigationController popViewControllerAnimated:YES];
         return nil;
     }
     index--;
