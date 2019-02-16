@@ -31,7 +31,7 @@
 - (void)setImg_url:(NSString *)img_url {
     
     _img_url = img_url;
-    self.iv.yy_imageURL = [NSURL URLWithString:[NSString stringWithFormat:@""]];
+    self.iv.yy_imageURL = [NSURL URLWithString:[NSString stringWithFormat:img_url]];
 
 }
 

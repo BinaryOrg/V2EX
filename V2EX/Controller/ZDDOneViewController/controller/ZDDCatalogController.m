@@ -99,8 +99,13 @@
 
     
 //    ZDDHomeListController *vc = [ZDDHomeListController new];
+    
+    
+    NSString *url = [NSString stringWithFormat:@"http://mhpic.jumanhua.com/%@", model.chapter_image.middle];
+    url = [url stringByReplacingOccurrencesOfString:@"$$" withString:[NSString stringWithFormat:@"%@", model.chapter_id]];
+    
     ZDDManHuaController *vc = [ZDDManHuaController new];
-    vc.img_url = model.img_url;
+    vc.img_url = url;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

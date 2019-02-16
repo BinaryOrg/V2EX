@@ -71,7 +71,7 @@
 @property (nonatomic, strong) NSString *chapter_share_url;
 @property (nonatomic, assign) NSInteger download_price;
 @property (nonatomic, assign) NSInteger price;
-@property (nonatomic, strong) NSString *chapter_image;
+@property (nonatomic, strong) ZDDManHuaImageQualityModel *chapter_image;
 
 @property (nonatomic, assign) NSInteger isbuy;
 @property (nonatomic, assign) NSInteger start_num;
