@@ -8,10 +8,10 @@ target 'V2EX' do
   # Pods for V2EX
 pod 'YYWebImage'
 pod 'QMUIKit'
-pod ‘MFNetworkManager’
-pod ‘MFHUDManager’
-pod ‘MFPictureBrowser’
-pod ‘MJRefresh’
+pod 'MFNetworkManager'
+pod 'MFHUDManager'
+pod 'MFPictureBrowser'
+pod 'MJRefresh'
 # pod ‘MBProgressHUD’
 pod 'DZNEmptyDataSet'
 # pod 'JPush'
@@ -23,6 +23,6 @@ pod 'Texture'
 pod 'mob_smssdk'
 pod 'DateTools'
 pod 'JXCategoryView'
-
+pod 'SuperPlayer'
 
 end

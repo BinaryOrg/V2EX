@@ -13,6 +13,8 @@
 
 #import "ZDDTabOneViewController.h"
 #import "ZDDTabTwoViewController.h"
+#import "ZDDTabTrheeViewController.h"
+
 #import "ZDDNavController.h"
 
 @implementation ZDDLaunchManager
@@ -36,13 +38,17 @@
     ZDDTabOneViewController *one = [[ZDDTabOneViewController alloc] initWithImageName:@"tab_now_nor" selectedImageName:@"tab_now_press" title:@"漫画"];
     ZDDTabTwoViewController *two = [[ZDDTabTwoViewController alloc] initWithImageName:@"tab_see_nor" selectedImageName:@"tab_see_press" title:@"诗词"];
     
+    ZDDTabTrheeViewController *three = [[ZDDTabTrheeViewController alloc] initWithImageName:@"tab_qworld_nor" selectedImageName:@"tab_qworld_press" title:@"搞笑"];
+    
     ZDDNavController *oneNavi = [[ZDDNavController alloc] initWithRootViewController:one];
     ZDDNavController *twoNavi = [[ZDDNavController alloc] initWithRootViewController:two];
+    ZDDNavController *threeNavi = [[ZDDNavController alloc] initWithRootViewController:three];
 //    
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = @[
                                          oneNavi,
                                          twoNavi,
+                                         threeNavi
                                          ];
     window.rootViewController = tabBarController;
     
