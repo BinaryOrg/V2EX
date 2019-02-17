@@ -24,5 +24,6 @@ pod 'mob_smssdk'
 pod 'DateTools'
 pod 'JXCategoryView'
 pod 'SuperPlayer'
+pod 'ESPictureBrowser'
 
 end
