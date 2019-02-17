@@ -7,7 +7,7 @@
 //
 
 #import "ZDDBaseNavigationViewController.h"
-
+#import "UIColor+ZDDColor.h"
 @interface ZDDBaseNavigationViewController ()
 
 @end
@@ -21,7 +21,7 @@
         UIImage *image = [UIImage imageNamed:imageName];
         UIImage *selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:image selectedImage:selectedImage];
-        [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]} forState:UIControlStateSelected];
+        [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor customBlueColor]} forState:UIControlStateSelected];
     }
     return self;
 }

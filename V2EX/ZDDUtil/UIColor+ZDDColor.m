@@ -9,6 +9,11 @@
 #import "UIColor+ZDDColor.h"
 
 @implementation UIColor (ZDDColor)
+
++ (UIColor *)customDeepBlue {
+    return [self colorWithRed:11 green:47 blue:99];
+}
+
 + (UIColor *)themeColor {
     return [self colorWithRed:58 green:69 blue:77];
 }

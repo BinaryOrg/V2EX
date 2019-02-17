@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIColor *)customBlueColor;
 + (UIColor *)customPurpleColor;
 
++ (UIColor *)customDeepBlue;
+
 + (UIColor *)tabColor;
 + (UIColor *)loginColor;
 + (UIColor *)facebookColor;
