@@ -10,9 +10,11 @@
 #import <CoreText/CoreText.h>
 #import <RQShineLabel.h>
 #import <UIImageView+YYWebImage.h>
+#import "UINavigationController+FDFullscreenPopGesture.h"
 #define AUTO_TAIL_LOADING_NUM_SCREENFULS  2.5
 
 @interface ZDDPoetryDetailController ()
+@property (nonatomic, strong) UIButton *backBtn;
 
 @property (nonatomic, strong) UIView *coverView;
 @property (nonatomic, strong) UIImageView *imgView;
@@ -28,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    self.fd_prefersNavigationBarHidden = YES;
     [self.view addSubview:self.imgView];
     [self.view addSubview:self.coverView];
     [self.view addSubview:self.nameLb];
@@ -40,8 +42,20 @@
     }];
     self.imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"aaa_%u", arc4random()%11]];
     
+    
+    self.backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.backBtn setTitle:@"返回" forState:UIControlStateNormal];
+    [self.backBtn addTarget:self action:@selector(clickBakc) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.backBtn];
+    [self.backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.top.mas_equalTo(StatusBarHeight + 20);
+    }];
 }
 
+- (void)clickBakc {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
