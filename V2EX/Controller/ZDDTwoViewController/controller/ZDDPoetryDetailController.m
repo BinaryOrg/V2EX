@@ -38,20 +38,10 @@
         make.centerX.mas_equalTo(0);
         make.top.mas_equalTo(NavBarHeight + 150);
     }];
+    self.imgView.image = [UIImage imageNamed:[NSString stringWithFormat:@"aaa_%u", arc4random()%11]];
     
-    self.imgView.yy_imageURL = [NSURL URLWithString:@"https://source.unsplash.com/random"];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-
-}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -59,7 +49,6 @@
     [self.nameLb shine];
     [self.personLb shine];
     [self.contentLb shine];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
 
 }
 - (void)setName:(NSString *)name {
@@ -123,6 +112,7 @@
     if (!_imgView) {
         _imgView = [[UIImageView alloc] initWithFrame:self.view.frame];
         _imgView.contentMode = UIViewContentModeScaleAspectFill;
+        _imgView.layer.masksToBounds = YES;
     }
     return _imgView;
 }
