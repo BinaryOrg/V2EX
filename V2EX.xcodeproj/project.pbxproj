@@ -12,6 +12,7 @@
 		377F019D221538C700E00378 /* ZDDManHuaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F019C221538C700E00378 /* ZDDManHuaController.m */; };
 		377F01A022153B5900E00378 /* ZDDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F019F22153B5900E00378 /* ZDDTool.m */; };
 		377F01A62215461200E00378 /* ShowAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F01A52215461200E00378 /* ShowAPIRequest.m */; };
+		37CAF60F22196185003B74FC /* ZDDPoetryDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAF60E22196185003B74FC /* ZDDPoetryDetailController.m */; };
 		37DF00032217AED4008F7CEF /* ZDDHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF00022217AED4008F7CEF /* ZDDHomeController.m */; };
 		37DF00092217B358008F7CEF /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF00082217B358008F7CEF /* UIView+ZDD.m */; };
 		37DF000C2217B760008F7CEF /* ZDDHomeCelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF000B2217B760008F7CEF /* ZDDHomeCelNode.m */; };
@@ -73,6 +74,8 @@
 		377F019F22153B5900E00378 /* ZDDTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTool.m; sourceTree = "<group>"; };
 		377F01A42215461200E00378 /* ShowAPIRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowAPIRequest.h; sourceTree = "<group>"; };
 		377F01A52215461200E00378 /* ShowAPIRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowAPIRequest.m; sourceTree = "<group>"; };
+		37CAF60D22196185003B74FC /* ZDDPoetryDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDPoetryDetailController.h; sourceTree = "<group>"; };
+		37CAF60E22196185003B74FC /* ZDDPoetryDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDPoetryDetailController.m; sourceTree = "<group>"; };
 		37DF00012217AED4008F7CEF /* ZDDHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDHomeController.h; sourceTree = "<group>"; };
 		37DF00022217AED4008F7CEF /* ZDDHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDHomeController.m; sourceTree = "<group>"; };
 		37DF00072217B358008F7CEF /* UIView+ZDD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZDD.h"; sourceTree = "<group>"; };
@@ -93,7 +96,6 @@
 		37DF0020221812AB008F7CEF /* ZDDCatalogController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDCatalogController.m; sourceTree = "<group>"; };
 		37DF002222181441008F7CEF /* ZDDManHuaCatalogModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDManHuaCatalogModel.h; sourceTree = "<group>"; };
 		37DF002322181441008F7CEF /* ZDDManHuaCatalogModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDManHuaCatalogModel.m; sourceTree = "<group>"; };
-		4A32A99E221A43370061266B /* V2EX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = V2EX.entitlements; sourceTree = "<group>"; };
 		4A39B40E21FE9E8C00437B6A /* UIColor+ZDDColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZDDColor.h"; sourceTree = "<group>"; };
 		4A39B40F21FE9E8C00437B6A /* UIColor+ZDDColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZDDColor.m"; sourceTree = "<group>"; };
 		58C4A74BA29D5A1BC2D94D8F /* Pods-V2EX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX.release.xcconfig"; path = "Pods/Target Support Files/Pods-V2EX/Pods-V2EX.release.xcconfig"; sourceTree = "<group>"; };
@@ -243,6 +245,8 @@
 			children = (
 				5E6DE85121FC209700E2BF78 /* ZDDTabTwoViewController.h */,
 				5E6DE85221FC209700E2BF78 /* ZDDTabTwoViewController.m */,
+				37CAF60D22196185003B74FC /* ZDDPoetryDetailController.h */,
+				37CAF60E22196185003B74FC /* ZDDPoetryDetailController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -277,7 +281,6 @@
 		5E6DE80121FC00BF00E2BF78 /* V2EX */ = {
 			isa = PBXGroup;
 			children = (
-				4A32A99E221A43370061266B /* V2EX.entitlements */,
 				5E6DE84821FC1FEF00E2BF78 /* Controller */,
 				5E6DE84421FC086E00E2BF78 /* ZDDBaseNavigationController */,
 				5E6DE81C21FC062400E2BF78 /* ZDDUtil */,
@@ -529,14 +532,6 @@
 					5E6DE7FE21FC00BF00E2BF78 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.BackgroundModes = {
-								enabled = 1;
-							};
-							com.apple.Push = {
-								enabled = 1;
-							};
-						};
 					};
 				};
 			};
@@ -674,6 +669,7 @@
 				5E6DE85021FC208800E2BF78 /* ZDDTabOneViewController.m in Sources */,
 				5E8462E62218F26100C011BB /* ZDDDisplayVideoViewController.m in Sources */,
 				5E6DE83A21FC06A300E2BF78 /* GODNotification.m in Sources */,
+				37CAF60F22196185003B74FC /* ZDDPoetryDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,7 +800,6 @@
 			baseConfigurationReference = 2E70102E457AD26B59A5ECB6 /* Pods-V2EX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = V2EX/V2EX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96NZDADFWS;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
@@ -822,7 +817,6 @@
 			baseConfigurationReference = 58C4A74BA29D5A1BC2D94D8F /* Pods-V2EX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = V2EX/V2EX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96NZDADFWS;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
