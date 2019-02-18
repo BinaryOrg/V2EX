@@ -26,4 +26,6 @@ pod 'JXCategoryView'
 pod 'SuperPlayer'
 pod 'ESPictureBrowser'
 
+pod 'RQShineLabel'
+
 end

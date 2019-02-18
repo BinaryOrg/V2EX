@@ -8,7 +8,7 @@
 
 #import "ZDDTabTwoViewController.h"
 #import "ZDDPoetryListCellNode.h"
-
+#import "ZDDPoetryDetailController.h"
 #import <MJRefresh.h>
 
 
@@ -35,8 +35,9 @@
     
     [self.view addSubview:self.tableNode.view];
     [self.tableNode.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(0);
+        make.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(NavBarHeight);
+        make.bottom.mas_equalTo(-SafeTabBarHeight);
     }];
     
     self.tableNode.view.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(tableViewDidTriggerHeaderRefresh)];
@@ -111,7 +112,18 @@
 
 - (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableNode deselectRowAtIndexPath:indexPath animated:YES];
+    ZDDPoetryDetailController *vc = [[ZDDPoetryDetailController alloc] init];
     
+    ZDDPoetryModel *model = self.dataArray[indexPath.row];
+    NSMutableString *content = [NSMutableString stringWithString:[model.content stringByReplacingOccurrencesOfString:@"|" withString:@"\n"]];
+    [content stringByReplacingOccurrencesOfString:@"。" withString:@""];
+    
+    vc.name = model.title;
+    vc.title = model.title;
+    vc.person = model.authors;
+    vc.content = content;
+    
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 

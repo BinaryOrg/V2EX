@@ -86,7 +86,7 @@
 -(ASDisplayNode *)bgv {
     if (!_bgv) {
         _bgv = [ASDisplayNode new];
-        _bgv.backgroundColor = [UIColor purpleColor];//color(176, 176, 176, 1);
+        _bgv.backgroundColor = color(176, 176, 176, 1);
         _bgv.cornerRadius = 6;
 //        _bgv.style.preferredSize = CGSizeMake(ScreenWidth - 40, 200);
     }
