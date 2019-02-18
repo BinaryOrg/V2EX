@@ -10,6 +10,7 @@
 #import <CoreText/CoreText.h>
 #import <RQShineLabel.h>
 #import <UIImageView+YYWebImage.h>
+#import "UINavigationController+FDFullscreenPopGesture.h"
 #define AUTO_TAIL_LOADING_NUM_SCREENFULS  2.5
 
 @interface ZDDPoetryDetailController ()
@@ -28,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    self.fd_prefersNavigationBarHidden = YES;
     [self.view addSubview:self.imgView];
     [self.view addSubview:self.coverView];
     [self.view addSubview:self.nameLb];
@@ -42,16 +43,7 @@
     self.imgView.yy_imageURL = [NSURL URLWithString:@"https://source.unsplash.com/random"];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-}
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-
-}
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -59,7 +51,7 @@
     [self.nameLb shine];
     [self.personLb shine];
     [self.contentLb shine];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
 
 }
 - (void)setName:(NSString *)name {
@@ -123,6 +115,7 @@
     if (!_imgView) {
         _imgView = [[UIImageView alloc] initWithFrame:self.view.frame];
         _imgView.contentMode = UIViewContentModeScaleAspectFill;
+        _imgView.layer.masksToBounds = YES;
     }
     return _imgView;
 }
