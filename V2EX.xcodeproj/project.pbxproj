@@ -98,6 +98,7 @@
 		37DF002322181441008F7CEF /* ZDDManHuaCatalogModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDManHuaCatalogModel.m; sourceTree = "<group>"; };
 		4A39B40E21FE9E8C00437B6A /* UIColor+ZDDColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZDDColor.h"; sourceTree = "<group>"; };
 		4A39B40F21FE9E8C00437B6A /* UIColor+ZDDColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZDDColor.m"; sourceTree = "<group>"; };
+		4AF49DA2221A58E7004F45EB /* V2EX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = V2EX.entitlements; sourceTree = "<group>"; };
 		58C4A74BA29D5A1BC2D94D8F /* Pods-V2EX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX.release.xcconfig"; path = "Pods/Target Support Files/Pods-V2EX/Pods-V2EX.release.xcconfig"; sourceTree = "<group>"; };
 		5E6DE7FF21FC00BF00E2BF78 /* V2EX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = V2EX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6DE80221FC00BF00E2BF78 /* ZDDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDAppDelegate.h; sourceTree = "<group>"; };
@@ -281,6 +282,7 @@
 		5E6DE80121FC00BF00E2BF78 /* V2EX */ = {
 			isa = PBXGroup;
 			children = (
+				4AF49DA2221A58E7004F45EB /* V2EX.entitlements */,
 				5E6DE84821FC1FEF00E2BF78 /* Controller */,
 				5E6DE84421FC086E00E2BF78 /* ZDDBaseNavigationController */,
 				5E6DE81C21FC062400E2BF78 /* ZDDUtil */,
@@ -532,6 +534,14 @@
 					5E6DE7FE21FC00BF00E2BF78 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -800,6 +810,7 @@
 			baseConfigurationReference = 2E70102E457AD26B59A5ECB6 /* Pods-V2EX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = V2EX/V2EX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96NZDADFWS;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
@@ -817,6 +828,7 @@
 			baseConfigurationReference = 58C4A74BA29D5A1BC2D94D8F /* Pods-V2EX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = V2EX/V2EX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 96NZDADFWS;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
