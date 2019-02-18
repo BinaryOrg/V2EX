@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+static NSString *appKey = @"0d750b1f9349775f8ae6350e";
+static NSString *channel = @"App Store";
+static BOOL isProduction = NO;
 @interface ZDDAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
