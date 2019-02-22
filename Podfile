@@ -7,7 +7,7 @@ target 'V2EX' do
 
   # Pods for V2EX
 pod 'YYWebImage'
-pod 'QMUIKit'
+#pod 'QMUIKit'
 pod 'MFNetworkManager'
 pod 'MFHUDManager'
 pod 'MFPictureBrowser'

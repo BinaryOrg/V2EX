@@ -24,6 +24,14 @@
 		37DF0021221812AB008F7CEF /* ZDDCatalogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF0020221812AB008F7CEF /* ZDDCatalogController.m */; };
 		37DF002422181441008F7CEF /* ZDDManHuaCatalogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF002322181441008F7CEF /* ZDDManHuaCatalogModel.m */; };
 		403E52BDAAD3EB536432FD20 /* libPods-V2EX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5926A9D7392BAC123873B3 /* libPods-V2EX.a */; };
+		4A14A5F0221F7D2B0078C8BC /* ZDDTabFourDetail1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A14A5EF221F7D2B0078C8BC /* ZDDTabFourDetail1ViewController.m */; };
+		4A14A5F3221F7DA50078C8BC /* ZDDTabFourDetail2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A14A5F2221F7DA50078C8BC /* ZDDTabFourDetail2ViewController.m */; };
+		4A14A5F6221F7DD00078C8BC /* ZDDTXTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A14A5F5221F7DD00078C8BC /* ZDDTXTableViewCell.m */; };
+		4A14A5F9221F7DE00078C8BC /* ZDDTX2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A14A5F8221F7DE00078C8BC /* ZDDTX2TableViewCell.m */; };
+		4A14A5FC221F7DED0078C8BC /* ZDDTX3TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A14A5FB221F7DED0078C8BC /* ZDDTX3TableViewCell.m */; };
+		4A14A5FF221F7DF80078C8BC /* ZDDTX4TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A14A5FE221F7DF80078C8BC /* ZDDTX4TableViewCell.m */; };
+		4A14A603221F7EC00078C8BC /* ZDDTabFour1TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A14A602221F7EC00078C8BC /* ZDDTabFour1TableViewCell.m */; };
+		4A14A606221F7ECB0078C8BC /* ZDDTabFour2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A14A605221F7ECB0078C8BC /* ZDDTabFour2TableViewCell.m */; };
 		4A39B41021FE9E8C00437B6A /* UIColor+ZDDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A39B40F21FE9E8C00437B6A /* UIColor+ZDDColor.m */; };
 		5E6DE80421FC00BF00E2BF78 /* ZDDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE80321FC00BF00E2BF78 /* ZDDAppDelegate.m */; };
 		5E6DE80C21FC00BF00E2BF78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6DE80B21FC00BF00E2BF78 /* Assets.xcassets */; };
@@ -96,6 +104,22 @@
 		37DF0020221812AB008F7CEF /* ZDDCatalogController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDCatalogController.m; sourceTree = "<group>"; };
 		37DF002222181441008F7CEF /* ZDDManHuaCatalogModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDManHuaCatalogModel.h; sourceTree = "<group>"; };
 		37DF002322181441008F7CEF /* ZDDManHuaCatalogModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDManHuaCatalogModel.m; sourceTree = "<group>"; };
+		4A14A5EE221F7D2B0078C8BC /* ZDDTabFourDetail1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTabFourDetail1ViewController.h; sourceTree = "<group>"; };
+		4A14A5EF221F7D2B0078C8BC /* ZDDTabFourDetail1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTabFourDetail1ViewController.m; sourceTree = "<group>"; };
+		4A14A5F1221F7DA50078C8BC /* ZDDTabFourDetail2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTabFourDetail2ViewController.h; sourceTree = "<group>"; };
+		4A14A5F2221F7DA50078C8BC /* ZDDTabFourDetail2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTabFourDetail2ViewController.m; sourceTree = "<group>"; };
+		4A14A5F4221F7DD00078C8BC /* ZDDTXTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTXTableViewCell.h; sourceTree = "<group>"; };
+		4A14A5F5221F7DD00078C8BC /* ZDDTXTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTXTableViewCell.m; sourceTree = "<group>"; };
+		4A14A5F7221F7DE00078C8BC /* ZDDTX2TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTX2TableViewCell.h; sourceTree = "<group>"; };
+		4A14A5F8221F7DE00078C8BC /* ZDDTX2TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTX2TableViewCell.m; sourceTree = "<group>"; };
+		4A14A5FA221F7DED0078C8BC /* ZDDTX3TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTX3TableViewCell.h; sourceTree = "<group>"; };
+		4A14A5FB221F7DED0078C8BC /* ZDDTX3TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTX3TableViewCell.m; sourceTree = "<group>"; };
+		4A14A5FD221F7DF80078C8BC /* ZDDTX4TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTX4TableViewCell.h; sourceTree = "<group>"; };
+		4A14A5FE221F7DF80078C8BC /* ZDDTX4TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTX4TableViewCell.m; sourceTree = "<group>"; };
+		4A14A601221F7EC00078C8BC /* ZDDTabFour1TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTabFour1TableViewCell.h; sourceTree = "<group>"; };
+		4A14A602221F7EC00078C8BC /* ZDDTabFour1TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTabFour1TableViewCell.m; sourceTree = "<group>"; };
+		4A14A604221F7ECB0078C8BC /* ZDDTabFour2TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDTabFour2TableViewCell.h; sourceTree = "<group>"; };
+		4A14A605221F7ECB0078C8BC /* ZDDTabFour2TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTabFour2TableViewCell.m; sourceTree = "<group>"; };
 		4A39B40E21FE9E8C00437B6A /* UIColor+ZDDColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZDDColor.h"; sourceTree = "<group>"; };
 		4A39B40F21FE9E8C00437B6A /* UIColor+ZDDColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZDDColor.m"; sourceTree = "<group>"; };
 		4AF49DA2221A58E7004F45EB /* V2EX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = V2EX.entitlements; sourceTree = "<group>"; };
@@ -259,6 +283,28 @@
 				37DF00172217E68A008F7CEF /* ZDDPoetryListCellNode.m */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		4A14A5ED221F7D010078C8BC /* detailController */ = {
+			isa = PBXGroup;
+			children = (
+				4A14A5EE221F7D2B0078C8BC /* ZDDTabFourDetail1ViewController.h */,
+				4A14A5EF221F7D2B0078C8BC /* ZDDTabFourDetail1ViewController.m */,
+				4A14A5F1221F7DA50078C8BC /* ZDDTabFourDetail2ViewController.h */,
+				4A14A5F2221F7DA50078C8BC /* ZDDTabFourDetail2ViewController.m */,
+			);
+			path = detailController;
+			sourceTree = "<group>";
+		};
+		4A14A600221F7E110078C8BC /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				4A14A601221F7EC00078C8BC /* ZDDTabFour1TableViewCell.h */,
+				4A14A602221F7EC00078C8BC /* ZDDTabFour1TableViewCell.m */,
+				4A14A604221F7ECB0078C8BC /* ZDDTabFour2TableViewCell.h */,
+				4A14A605221F7ECB0078C8BC /* ZDDTabFour2TableViewCell.m */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		5E6DE7F621FC00BF00E2BF78 = {
@@ -441,6 +487,7 @@
 		5E8462E72218FD1C00C011BB /* ZDDFourViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4A14A5ED221F7D010078C8BC /* detailController */,
 				5E8462F0221907B500C011BB /* model */,
 				5E8462EC2219077900C011BB /* view */,
 				5E8462E82218FD3200C011BB /* controller */,
@@ -451,6 +498,7 @@
 		5E8462E82218FD3200C011BB /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				4A14A600221F7E110078C8BC /* cell */,
 				5E8462E92218FD9C00C011BB /* ZDDTabFourViewController.h */,
 				5E8462EA2218FD9C00C011BB /* ZDDTabFourViewController.m */,
 			);
@@ -468,6 +516,14 @@
 				5E8462F5221907D800C011BB /* ZDDBZ3TableViewCell.m */,
 				5E8462F7221907E200C011BB /* ZDDBZ4TableViewCell.h */,
 				5E8462F8221907E200C011BB /* ZDDBZ4TableViewCell.m */,
+				4A14A5F4221F7DD00078C8BC /* ZDDTXTableViewCell.h */,
+				4A14A5F5221F7DD00078C8BC /* ZDDTXTableViewCell.m */,
+				4A14A5F7221F7DE00078C8BC /* ZDDTX2TableViewCell.h */,
+				4A14A5F8221F7DE00078C8BC /* ZDDTX2TableViewCell.m */,
+				4A14A5FA221F7DED0078C8BC /* ZDDTX3TableViewCell.h */,
+				4A14A5FB221F7DED0078C8BC /* ZDDTX3TableViewCell.m */,
+				4A14A5FD221F7DF80078C8BC /* ZDDTX4TableViewCell.h */,
+				4A14A5FE221F7DF80078C8BC /* ZDDTX4TableViewCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -588,7 +644,6 @@
 				"${PODS_ROOT}/MFHUDManager/Image/notice_type_success.png",
 				"${PODS_ROOT}/MFHUDManager/Image/notice_type_warnning.png",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/QMUIKit/QMUIKit/QMUIResources/QMUIResources.bundle",
 				"${PODS_ROOT}/SuperPlayer/SuperPlayer/Resource/SuperPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -598,7 +653,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/notice_type_success.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/notice_type_warnning.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QMUIResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SuperPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,10 +691,13 @@
 				5E8462CF221870CB00C011BB /* UIImageView+TransitionImage.m in Sources */,
 				5E6DE81B21FC05ED00E2BF78 /* ZDDLaunchManager.m in Sources */,
 				5E8462DE2218DF9400C011BB /* ZDDGXTableViewCell.m in Sources */,
+				4A14A603221F7EC00078C8BC /* ZDDTabFour1TableViewCell.m in Sources */,
 				5E6DE83B21FC06A300E2BF78 /* YYClassInfo.m in Sources */,
+				4A14A5F9221F7DE00078C8BC /* ZDDTX2TableViewCell.m in Sources */,
 				5E8462E22218E7E200C011BB /* ZDDGXModel.m in Sources */,
 				37DF00182217E68A008F7CEF /* ZDDPoetryListCellNode.m in Sources */,
 				5E8462FC2219085D00C011BB /* ZDDBZModel.m in Sources */,
+				4A14A5F0221F7D2B0078C8BC /* ZDDTabFourDetail1ViewController.m in Sources */,
 				5E8462F6221907D800C011BB /* ZDDBZ3TableViewCell.m in Sources */,
 				5E8462DA2218DF6800C011BB /* GODTableCard.m in Sources */,
 				37DF00092217B358008F7CEF /* UIView+ZDD.m in Sources */,
@@ -649,15 +706,19 @@
 				5E6DE85321FC209700E2BF78 /* ZDDTabTwoViewController.m in Sources */,
 				5E8462EB2218FD9C00C011BB /* ZDDTabFourViewController.m in Sources */,
 				37DF002422181441008F7CEF /* ZDDManHuaCatalogModel.m in Sources */,
+				4A14A5FF221F7DF80078C8BC /* ZDDTX4TableViewCell.m in Sources */,
 				3704AB992212C90A00D07862 /* ZDDChangeTypeView.m in Sources */,
 				5E6DE84221FC06F400E2BF78 /* ZDDSDKManager.m in Sources */,
 				5E8462DB2218DF6800C011BB /* GODCard.m in Sources */,
 				5E6DE82A21FC065200E2BF78 /* NSString+Regex.m in Sources */,
 				37DF000F2217C294008F7CEF /* ZDDNavController.m in Sources */,
+				4A14A5F6221F7DD00078C8BC /* ZDDTXTableViewCell.m in Sources */,
 				5E6DE81221FC00BF00E2BF78 /* main.m in Sources */,
 				5E8462F3221907CF00C011BB /* ZDDBZ2TableViewCell.m in Sources */,
 				5E6DE82921FC065200E2BF78 /* NSMutableDictionary+Attributes.m in Sources */,
+				4A14A5F3221F7DA50078C8BC /* ZDDTabFourDetail2ViewController.m in Sources */,
 				5E6DE83C21FC06A300E2BF78 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				4A14A606221F7ECB0078C8BC /* ZDDTabFour2TableViewCell.m in Sources */,
 				5E8462FF2219087D00C011BB /* Topics.m in Sources */,
 				37DF001B2217EF31008F7CEF /* NSMutableDictionary+ZDD.m in Sources */,
 				377F019D221538C700E00378 /* ZDDManHuaController.m in Sources */,
@@ -667,6 +728,7 @@
 				37DF000C2217B760008F7CEF /* ZDDHomeCelNode.m in Sources */,
 				377F01A022153B5900E00378 /* ZDDTool.m in Sources */,
 				4A39B41021FE9E8C00437B6A /* UIColor+ZDDColor.m in Sources */,
+				4A14A5FC221F7DED0078C8BC /* ZDDTX3TableViewCell.m in Sources */,
 				37DF00032217AED4008F7CEF /* ZDDHomeController.m in Sources */,
 				37DF00152217E552008F7CEF /* ZDDPoetryModel.m in Sources */,
 				5E8463052219096800C011BB /* Pictures.m in Sources */,
