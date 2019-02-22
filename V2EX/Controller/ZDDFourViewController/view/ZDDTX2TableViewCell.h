@@ -11,7 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZDDTX2TableViewCell : UITableViewCell
-
+@property (nonatomic ,strong) UILabel *dateLabel;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic ,strong) UILabel *summaryLabel;
+@property (nonatomic, strong) UIImageView *imageView1;
+@property (nonatomic, strong) UIImageView *imageView2;
+@property (nonatomic, strong) UIButton *button1;
+@property (nonatomic, strong) UIButton *button2;
 @end
 
 NS_ASSUME_NONNULL_END

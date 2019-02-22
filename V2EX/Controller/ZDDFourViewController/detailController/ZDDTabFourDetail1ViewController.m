@@ -422,15 +422,12 @@ ESPictureBrowserDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     Topics *model = self.bzList[indexPath.row];
-    if (model.pictures.count == 1) {
+    
+    if (model.pictures.count == 1 || model.pictures.count == 2) {
         return 150 + ((ScreenWidth - 80)/2)*16/9;
-    }else if (model.pictures.count == 2) {
-        return 150 + ((ScreenWidth - 80)/2)*16/9;
-    }else if (model.pictures.count == 2) {
-        return 160 + (((ScreenWidth - 80)/2)*16/9)*2;
-    }else {
-        return 160 + (((ScreenWidth - 80)/2)*16/9)*2;
     }
+    return 160 + (((ScreenWidth - 80)/2)*16/9)*2;
+    
 }
 
 - (NSString *)formatFromTS:(NSInteger)ts {
