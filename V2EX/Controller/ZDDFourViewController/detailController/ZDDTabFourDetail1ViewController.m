@@ -29,7 +29,7 @@ ESPictureBrowserDelegate
 @property (nonatomic ,strong) UITableView *tableView;
 @property (nonatomic ,strong) NSMutableArray<Topics *> *bzList;
 @property (nonatomic, strong) Pagination *pagination;
-@property(nonatomic, assign) NSInteger current;
+@property (nonatomic, assign) NSInteger current;
 @end
 
 @implementation ZDDTabFourDetail1ViewController
