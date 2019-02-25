@@ -47,7 +47,8 @@ fprintf(stderr, "-------\n");                                               \
 #define SAFE_BLOCK(BlockName, ...) ({ !BlockName ? nil : BlockName(__VA_ARGS__); })
 
 
-
+#define LHScreenWidthRatio ((ScreenWidth) / 375.0)
+#define LHAutoLayoutValue(value) ((value) * LHScreenWidthRatio)
 
 #define yiyuanSign @"3e62dcb055264fd3b9d15db3e366d4e7"
 #define yiyuanId @"87106"

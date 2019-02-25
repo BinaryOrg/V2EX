@@ -17,6 +17,8 @@
 #import "ZDDTabFourViewController.h"
 #import "ZDDNavController.h"
 
+#import "ZDDLogController.h"
+
 @implementation ZDDLaunchManager
 + (instancetype)sharedInstance {
     static ZDDLaunchManager *manager = nil;
@@ -54,7 +56,7 @@
                                          threeNavi,
                                          fourNavi
                                          ];
-    window.rootViewController = tabBarController;
+    window.rootViewController = [ZDDLogController new];
     
     window.backgroundColor = [UIColor whiteColor];
     [window makeKeyAndVisible];

@@ -20,13 +20,26 @@
 @property (nonatomic, strong) UIPageViewController *pageController;
 
 
+/** <#class#> */
+@property (nonatomic, strong)  UIButton *btn;
+
 @end
 
 @implementation ZDDTabOneViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"漫画";
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:btn];
+    btn.center = self.view.center;
+    [btn setTitle:@"重新加载" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(loadData) forControlEvents:UIControlEventTouchUpInside];
+    btn.layer.cornerRadius = 5;
+    btn.layer.masksToBounds = YES;
+    btn.layer.borderColor = [UIColor grayColor].CGColor;
+    btn.layer.borderWidth = 0.5;
+    self.btn = btn;
     [self loadData];
 }
 
@@ -42,7 +55,9 @@
             self.dataArrray = [NSArray yy_modelArrayWithClass:ZDDManHuaListModel.class json:result[@"data"][@"book"]];
             
             [self setupUI];
+            self.btn.hidden = YES;
         }else {
+            self.btn.hidden = NO;
             [MFHUDManager showError:@"请求失败"];
         }
     } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
@@ -53,7 +68,6 @@
 }
 - (void)setupUI {
     
-    self.title = @"漫画";
     
     [self.view addSubview:self.changeTypeView];
     [self.changeTypeView mas_makeConstraints:^(MASConstraintMaker *make) {

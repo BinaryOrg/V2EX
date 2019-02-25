@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3704AB992212C90A00D07862 /* ZDDChangeTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3704AB982212C90A00D07862 /* ZDDChangeTypeView.m */; };
+		3736ABE42223DF2B00BE2A7F /* ZDDLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3736ABE32223DF2B00BE2A7F /* ZDDLogController.m */; };
 		377F019A22151FC900E00378 /* ZDDHomeListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F019922151FC900E00378 /* ZDDHomeListController.m */; };
 		377F019D221538C700E00378 /* ZDDManHuaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F019C221538C700E00378 /* ZDDManHuaController.m */; };
 		377F01A022153B5900E00378 /* ZDDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F019F22153B5900E00378 /* ZDDTool.m */; };
@@ -66,6 +67,8 @@
 		3704AB932212C7EA00D07862 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3704AB972212C90A00D07862 /* ZDDChangeTypeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDChangeTypeView.h; sourceTree = "<group>"; };
 		3704AB982212C90A00D07862 /* ZDDChangeTypeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDChangeTypeView.m; sourceTree = "<group>"; };
+		3736ABE22223DF2B00BE2A7F /* ZDDLogController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDLogController.h; sourceTree = "<group>"; };
+		3736ABE32223DF2B00BE2A7F /* ZDDLogController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDLogController.m; sourceTree = "<group>"; };
 		377F019822151FC900E00378 /* ZDDHomeListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDHomeListController.h; sourceTree = "<group>"; };
 		377F019922151FC900E00378 /* ZDDHomeListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDHomeListController.m; sourceTree = "<group>"; };
 		377F019B221538C700E00378 /* ZDDManHuaController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDManHuaController.h; sourceTree = "<group>"; };
@@ -232,6 +235,39 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		3736ABDE2223DEE800BE2A7F /* ZDDLogin */ = {
+			isa = PBXGroup;
+			children = (
+				3736ABDF2223DEE800BE2A7F /* Controller */,
+				3736ABE02223DEE800BE2A7F /* Model */,
+				3736ABE12223DEE800BE2A7F /* View */,
+			);
+			path = ZDDLogin;
+			sourceTree = "<group>";
+		};
+		3736ABDF2223DEE800BE2A7F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3736ABE22223DF2B00BE2A7F /* ZDDLogController.h */,
+				3736ABE32223DF2B00BE2A7F /* ZDDLogController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3736ABE02223DEE800BE2A7F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3736ABE12223DEE800BE2A7F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		37DF00102217E521008F7CEF /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +403,7 @@
 		5E6DE84821FC1FEF00E2BF78 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3736ABDE2223DEE800BE2A7F /* ZDDLogin */,
 				5E8462E72218FD1C00C011BB /* ZDDFourViewController */,
 				5E8462D02218DDB400C011BB /* ZDDThreeViewController */,
 				5E6DE84A21FC200900E2BF78 /* ZDDTwoViewController */,
@@ -640,6 +677,7 @@
 				5E6DE83B21FC06A300E2BF78 /* YYClassInfo.m in Sources */,
 				5E8462E22218E7E200C011BB /* ZDDGXModel.m in Sources */,
 				37DF00182217E68A008F7CEF /* ZDDPoetryListCellNode.m in Sources */,
+				3736ABE42223DF2B00BE2A7F /* ZDDLogController.m in Sources */,
 				5E8462FC2219085D00C011BB /* ZDDBZModel.m in Sources */,
 				5E8462F6221907D800C011BB /* ZDDBZ3TableViewCell.m in Sources */,
 				5E8462DA2218DF6800C011BB /* GODTableCard.m in Sources */,
@@ -815,7 +853,7 @@
 				DEVELOPMENT_TEAM = 96NZDADFWS;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = V2EX/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.binary.V2EX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -833,7 +871,7 @@
 				DEVELOPMENT_TEAM = 96NZDADFWS;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = V2EX/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.binary.V2EX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
