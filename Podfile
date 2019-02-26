@@ -27,5 +27,6 @@ pod 'SuperPlayer'
 pod 'ESPictureBrowser'
 
 pod 'RQShineLabel'
+pod 'mob_smssdk'
 
 end

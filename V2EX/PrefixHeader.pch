@@ -18,6 +18,7 @@
 #import "MFHUDManager.h"
 #import <Masonry.h>
 #import "ZDDTool.h"
+#import "GODUserTool.h"
 
 #import "UIView+ZDD.h"
 #import <UIImageView+YYWebImage.h>

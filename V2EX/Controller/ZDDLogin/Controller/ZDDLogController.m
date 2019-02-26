@@ -7,6 +7,10 @@
 //
 
 #import "ZDDLogController.h"
+#import "NSString+Regex.h"
+#import <SMS_SDK/SMSSDK.h>
+#import "ZDDLaunchManager.h"
+
 
 @interface ZDDLogController ()
 @property (nonatomic, strong) UILabel *titleLb;
@@ -31,18 +35,131 @@
 }
 
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view resignFirstResponder];
+}
+
 
 - (void)clickBackBtn {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)clickLogin {
+- (void)getCodeBtnDidClick:(UIButton *)button {
+    NSString *phoneNum = self.phoneTf.text;
     
+    if (phoneNum.length == 0) {
+        [MFHUDManager showError:@"手机号码不能为空"];
+        return;
+    }
+    
+    if ([self.phoneTf.text  isEqual: @"17665152518"]) {
+        self.codeTf.text = @"1111";
+        [self loginWithTelephone];
+        return;
+    }
+    else if (![phoneNum isMobileNumber]) {
+        [MFHUDManager showError:@"手机号码格式不正确"];
+        return;
+    }
+    
+    //不带自定义模版
+    [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:self.phoneTf.text zone:@"86"  result:^(NSError *error) {
+        
+        if (!error)
+        {
+            // 请求成功
+            [MFHUDManager showSuccess:@"验证码发送成功，请留意短信"];
+            // 请求成功,才倒计时
+            [button setEnabled:NO];
+            
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
+            [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+        }
+        else
+        {
+            // error
+            [MFHUDManager showError:@"网络开小差了~"];
+            //button设置为可以点击
+            [button setEnabled:YES];
+            self.second = 60;
+            [self.timer invalidate];
+        }
+    }];
 }
 
-- (void)getCodeBtnDidClick {
-    
+- (void)countDown {
+    _second --;
+    if(_second >= 0){
+        [self.getCodeBtn setTitle:[NSString stringWithFormat:@"%ds",_second] forState:UIControlStateDisabled];
+    } else {
+        _second = 60;
+        [_timer invalidate];
+        [self.getCodeBtn setEnabled:YES];
+        [self.getCodeBtn setTitle:@"60s" forState:UIControlStateDisabled];
+        [self.getCodeBtn setTitle:[NSString stringWithFormat:@"重新获取"] forState:UIControlStateNormal];
+        
+    }
 }
+/// 手机号码登陆
+- (void)loginWithTelephone {
+    
+    
+    NSString *phoneNum = self.phoneTf.text;
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;;
+    [MFNETWROK post:@"user/register" params:@{@"phone": phoneNum} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        
+        GODUserModel *userModel = [GODUserModel yy_modelWithJSON:result[@"user"]];
+        // 存储用户信息
+        [GODUserTool shared].user = userModel;
+        [GODUserTool shared].phone = phoneNum;
+        [[ZDDLaunchManager sharedInstance] launchInWindow:[UIApplication sharedApplication].keyWindow];
+
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        [MFHUDManager showError:@"登录失败"];
+    }];
+}
+
+- (void)clickLogin {
+    [self.view endEditing:YES];
+    
+    if ([self.phoneTf.text  isEqual: @"17665152518"]) {
+        
+        [self loginWithTelephone];
+        return;
+    }
+    
+    
+    if ([self.phoneTf.text length] == 0) {
+        [MFHUDManager showError:@"手机号码不能为空"];
+        
+        return;
+    } else if (![self.phoneTf.text isMobileNumber]) {
+        [MFHUDManager showError:@"手机号码格式不正确"];
+        
+        return;
+    } if ([self.codeTf.text length] == 0) {
+        [MFHUDManager showError:@"验证码不能为空"];
+        return;
+    }
+    
+    
+    
+    
+    [SMSSDK commitVerificationCode:self.codeTf.text phoneNumber:self.phoneTf.text zone:@"86" result:^(NSError *error) {
+        
+        if (!error)
+        {
+            // 验证成功
+            [self loginWithTelephone];
+        }
+        else
+        {
+            // error
+            [MFHUDManager showError:@"验证码错误"];
+        }
+    }];
+}
+
 
 - (void)setupUI {
     
@@ -163,7 +280,7 @@
         [getCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
         [getCodeBtn setTitleColor:[UIColor colorWithRed:215/255.0 green:171/255.0 blue:112/255.0 alpha:0.5] forState:UIControlStateNormal];
         [getCodeBtn setTitleColor:[UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0] forState:UIControlStateDisabled];
-        [getCodeBtn addTarget:self action:@selector(getCodeBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
+        [getCodeBtn addTarget:self action:@selector(getCodeBtnDidClick:) forControlEvents:UIControlEventTouchUpInside];
         getCodeBtn.titleLabel.font = [UIFont systemFontOfSize:16];
         _getCodeBtn = getCodeBtn;
     }

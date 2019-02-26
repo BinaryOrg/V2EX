@@ -20,6 +20,10 @@
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
 	<string>1.0.2</string>
+	<key>MOBAppKey</key>
+	<string>2a39584b4c2b0</string>
+	<key>MOBAppSecret</key>
+	<string>1090a2549cd3f14e851c0f06cf68f2b8</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
