@@ -36,7 +36,6 @@
 		4A39B41021FE9E8C00437B6A /* UIColor+ZDDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A39B40F21FE9E8C00437B6A /* UIColor+ZDDColor.m */; };
 		5E6DE80421FC00BF00E2BF78 /* ZDDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE80321FC00BF00E2BF78 /* ZDDAppDelegate.m */; };
 		5E6DE80C21FC00BF00E2BF78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6DE80B21FC00BF00E2BF78 /* Assets.xcassets */; };
-		5E6DE80F21FC00BF00E2BF78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E6DE80D21FC00BF00E2BF78 /* LaunchScreen.storyboard */; };
 		5E6DE81221FC00BF00E2BF78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE81121FC00BF00E2BF78 /* main.m */; };
 		5E6DE81B21FC05ED00E2BF78 /* ZDDLaunchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE81A21FC05ED00E2BF78 /* ZDDLaunchManager.m */; };
 		5E6DE82921FC065200E2BF78 /* NSMutableDictionary+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE82021FC065100E2BF78 /* NSMutableDictionary+Attributes.m */; };
@@ -131,7 +130,6 @@
 		5E6DE80221FC00BF00E2BF78 /* ZDDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDAppDelegate.h; sourceTree = "<group>"; };
 		5E6DE80321FC00BF00E2BF78 /* ZDDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDAppDelegate.m; sourceTree = "<group>"; };
 		5E6DE80B21FC00BF00E2BF78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5E6DE80E21FC00BF00E2BF78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E6DE81021FC00BF00E2BF78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E6DE81121FC00BF00E2BF78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5E6DE81921FC05ED00E2BF78 /* ZDDLaunchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDLaunchManager.h; sourceTree = "<group>"; };
@@ -373,7 +371,6 @@
 				5E6DE80221FC00BF00E2BF78 /* ZDDAppDelegate.h */,
 				5E6DE80321FC00BF00E2BF78 /* ZDDAppDelegate.m */,
 				5E6DE80B21FC00BF00E2BF78 /* Assets.xcassets */,
-				5E6DE80D21FC00BF00E2BF78 /* LaunchScreen.storyboard */,
 				5E6DE81021FC00BF00E2BF78 /* Info.plist */,
 				5E6DE81121FC00BF00E2BF78 /* main.m */,
 				3704AB932212C7EA00D07862 /* PrefixHeader.pch */,
@@ -661,7 +658,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E6DE80F21FC00BF00E2BF78 /* LaunchScreen.storyboard in Resources */,
 				5E6DE80C21FC00BF00E2BF78 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -784,17 +780,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		5E6DE80D21FC00BF00E2BF78 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5E6DE80E21FC00BF00E2BF78 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5E6DE81321FC00BF00E2BF78 /* Debug */ = {

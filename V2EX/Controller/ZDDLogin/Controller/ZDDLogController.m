@@ -50,7 +50,7 @@
     [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
         make.width.height.mas_equalTo(120);
-        make.top.mas_equalTo(LHAutoLayoutValue(160));
+        make.top.mas_equalTo(LHAutoLayoutValue(130));
     }];
     
     [self.view addSubview:self.titleLb];
@@ -64,7 +64,7 @@
         make.left.mas_equalTo(40);
         make.right.mas_equalTo(-40);
         make.height.mas_equalTo(40);
-        make.top.mas_equalTo(self.imgView.mas_bottom).mas_equalTo(50);
+        make.top.mas_equalTo(self.imgView.mas_bottom).mas_equalTo(100);
     }];
     
     
@@ -79,9 +79,8 @@
     [self.view addSubview:self.getCodeBtn];
     [self.getCodeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(self.codeTf);
-        make.width.mas_equalTo(150);
         make.height.mas_equalTo(50);
-        make.right.mas_equalTo(self.codeTf.mas_right).mas_equalTo(-2);
+        make.right.mas_equalTo(self.codeTf.mas_right).mas_equalTo(0);
     }];
     
     [self.view addSubview:self.loginButton];
@@ -175,9 +174,7 @@
     if (!_imgView) {
         _imgView = [[UIImageView alloc] init];
         _imgView.contentMode = UIViewContentModeScaleAspectFill;
-        _imgView.layer.masksToBounds = YES;
-        _imgView.layer.cornerRadius = 60;
-        _imgView.backgroundColor = [UIColor yellowColor];
+        _imgView.image = [UIImage imageNamed:@"icon_icon"];
     }
     return _imgView;
 }
