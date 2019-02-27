@@ -192,17 +192,20 @@ UINavigationControllerDelegate>
 - (void)reloadSubView {
     GODUserModel *user = [GODUserTool shared].user;
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASE_AVATAR_URL, user.avatar]];
-    [self.iconIV yy_setImageWithURL:url placeholder:[UIImage imageNamed:@"aaa_9"]];
-    self.nameTV.text = user.username.length ? user.username : @"Maker";
+    [self.iconIV yy_setImageWithURL:url placeholder:[UIImage imageNamed:@"tab_buddy_press"]];
+    self.nameTV.text = user.username.length ? user.username : @"尚未登录";
     if (user.id.length) {
         [_logoutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
         [_logoutBtn setTitleColor:GODColor(137, 137, 137) forState:UIControlStateNormal];
         _logoutBtn.backgroundColor = [UIColor whiteColor];
-
+        
+        self.nameTV.userInteractionEnabled = YES;
     }else {
         [_logoutBtn setTitle:@"登录" forState:UIControlStateNormal];
         [_logoutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _logoutBtn.backgroundColor = [UIColor blueColor];
+        
+        self.nameTV.userInteractionEnabled = NO;
     }
 }
 
