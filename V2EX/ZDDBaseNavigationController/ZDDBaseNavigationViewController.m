@@ -32,8 +32,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIImageView *iv = [[UIImageView alloc] init];
-    iv.frame = CGRectMake(0, 0, 30, 30);
-    iv.image = [UIImage imageNamed:@"tab_buddy_press"];
+    iv.frame = CGRectMake(5, 0, 23, 23);
+    iv.image = [UIImage imageNamed:@"changeUser"];
     iv.userInteractionEnabled = YES;
     [iv addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickUserView)]];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:iv];
