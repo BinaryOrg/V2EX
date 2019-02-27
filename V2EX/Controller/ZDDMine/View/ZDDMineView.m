@@ -192,7 +192,7 @@ UINavigationControllerDelegate>
 - (void)reloadSubView {
     GODUserModel *user = [GODUserTool shared].user;
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASE_AVATAR_URL, user.avatar]];
-    [self.iconIV yy_setImageWithURL:url placeholder:[UIImage imageNamed:@"aaa_9"]];
+    [self.iconIV yy_setImageWithURL:url placeholder:[UIImage imageNamed:@"changeUser"]];
     self.nameTV.text = user.username.length ? user.username : @"Maker";
     if (user.id.length) {
         [_logoutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
