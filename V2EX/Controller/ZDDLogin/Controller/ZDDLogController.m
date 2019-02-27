@@ -30,13 +30,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.view.backgroundColor = [UIColor whiteColor];
     [self setupUI];
 }
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.view resignFirstResponder];
+    [self.phoneTf resignFirstResponder];
+    [self.codeTf resignFirstResponder];
+
 }
 
 
@@ -223,8 +225,19 @@
         make.top.mas_equalTo(self.codeTf.mas_bottom).mas_equalTo(2);
     }];
     
+    
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backButton setImage:[UIImage imageNamed:@"nav_back_black"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(leftBarButtonItemDidClick) forControlEvents:UIControlEventTouchUpInside];
+    backButton.frame = CGRectMake(10, StatusBarHeight, 44, 44);
+    [self.view addSubview:backButton];
 }
-
+- (void)leftBarButtonItemDidClick {
+    [self.timer invalidate];
+    self.timer = nil;
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 - (UITextField *)phoneTf {
     if (!_phoneTf) {

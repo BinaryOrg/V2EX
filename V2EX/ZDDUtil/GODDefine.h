@@ -53,5 +53,8 @@ fprintf(stderr, "-------\n");                                               \
 #define yiyuanSign @"3e62dcb055264fd3b9d15db3e366d4e7"
 #define yiyuanId @"87106"
 
+#define BASE_AVATAR_URL   @"https://api.godzzzzz.club/"
+#define BASE_URL          @"https://api.godzzzzz.club/api/"
+
 
 #endif /* GODDefine_h */

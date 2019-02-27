@@ -8,15 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		3704AB992212C90A00D07862 /* ZDDChangeTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3704AB982212C90A00D07862 /* ZDDChangeTypeView.m */; };
+		371C3FEE2226256F004CAD56 /* ZDDMineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 371C3FED2226256F004CAD56 /* ZDDMineView.m */; };
+		371C3FF322265DC8004CAD56 /* UIWindow+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 371C3FF222265DC8004CAD56 /* UIWindow+Tools.m */; };
 		3736ABE42223DF2B00BE2A7F /* ZDDLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3736ABE32223DF2B00BE2A7F /* ZDDLogController.m */; };
 		377F019A22151FC900E00378 /* ZDDHomeListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F019922151FC900E00378 /* ZDDHomeListController.m */; };
 		377F019D221538C700E00378 /* ZDDManHuaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F019C221538C700E00378 /* ZDDManHuaController.m */; };
 		377F01A022153B5900E00378 /* ZDDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F019F22153B5900E00378 /* ZDDTool.m */; };
 		377F01A62215461200E00378 /* ShowAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F01A52215461200E00378 /* ShowAPIRequest.m */; };
-		37C7DA282224EC3B00795D1C /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7DA272224EC3B00795D1C /* NSString+Regex.m */; };
 		37C7DA2B2224EE5C00795D1C /* GODUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7DA2A2224EE5C00795D1C /* GODUserModel.m */; };
 		37C7DA2E2224EE7300795D1C /* GODUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7DA2C2224EE7300795D1C /* GODUserTool.m */; };
-		37CAF60F22196185003B74FC /* ZDDPoetryDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CAF60E22196185003B74FC /* ZDDPoetryDetailController.m */; };
+		37C7DA312225367700795D1C /* ZDDContentDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7DA302225367700795D1C /* ZDDContentDetailController.m */; };
+		37C7DA34222538E600795D1C /* ZDDCommentCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7DA33222538E600795D1C /* ZDDCommentCellNode.m */; };
+		37C7DA362225441900795D1C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C7DA352225441900795D1C /* Launch Screen.storyboard */; };
+		37C7DA392225475600795D1C /* ZDDInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7DA372225475600795D1C /* ZDDInputView.m */; };
+		37C7DA3C22254A6300795D1C /* ZDDCommentCountNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7DA3B22254A6300795D1C /* ZDDCommentCountNode.m */; };
 		37DF00032217AED4008F7CEF /* ZDDHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF00022217AED4008F7CEF /* ZDDHomeController.m */; };
 		37DF00092217B358008F7CEF /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF00082217B358008F7CEF /* UIView+ZDD.m */; };
 		37DF000C2217B760008F7CEF /* ZDDHomeCelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF000B2217B760008F7CEF /* ZDDHomeCelNode.m */; };
@@ -77,6 +82,10 @@
 		3704AB932212C7EA00D07862 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3704AB972212C90A00D07862 /* ZDDChangeTypeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDChangeTypeView.h; sourceTree = "<group>"; };
 		3704AB982212C90A00D07862 /* ZDDChangeTypeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDChangeTypeView.m; sourceTree = "<group>"; };
+		371C3FEC2226256F004CAD56 /* ZDDMineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDMineView.h; sourceTree = "<group>"; };
+		371C3FED2226256F004CAD56 /* ZDDMineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDMineView.m; sourceTree = "<group>"; };
+		371C3FF122265DC8004CAD56 /* UIWindow+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Tools.h"; sourceTree = "<group>"; };
+		371C3FF222265DC8004CAD56 /* UIWindow+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Tools.m"; sourceTree = "<group>"; };
 		3736ABE22223DF2B00BE2A7F /* ZDDLogController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDLogController.h; sourceTree = "<group>"; };
 		3736ABE32223DF2B00BE2A7F /* ZDDLogController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDLogController.m; sourceTree = "<group>"; };
 		377F019822151FC900E00378 /* ZDDHomeListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDHomeListController.h; sourceTree = "<group>"; };
@@ -87,14 +96,19 @@
 		377F019F22153B5900E00378 /* ZDDTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTool.m; sourceTree = "<group>"; };
 		377F01A42215461200E00378 /* ShowAPIRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowAPIRequest.h; sourceTree = "<group>"; };
 		377F01A52215461200E00378 /* ShowAPIRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowAPIRequest.m; sourceTree = "<group>"; };
-		37C7DA262224EC3B00795D1C /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Regex.h"; path = "../../../NSString+Regex.h"; sourceTree = "<group>"; };
-		37C7DA272224EC3B00795D1C /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Regex.m"; path = "../../../NSString+Regex.m"; sourceTree = "<group>"; };
 		37C7DA292224EE5B00795D1C /* GODUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODUserModel.h; sourceTree = "<group>"; };
 		37C7DA2A2224EE5C00795D1C /* GODUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODUserModel.m; sourceTree = "<group>"; };
 		37C7DA2C2224EE7300795D1C /* GODUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODUserTool.m; sourceTree = "<group>"; };
 		37C7DA2D2224EE7300795D1C /* GODUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODUserTool.h; sourceTree = "<group>"; };
-		37CAF60D22196185003B74FC /* ZDDPoetryDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDPoetryDetailController.h; sourceTree = "<group>"; };
-		37CAF60E22196185003B74FC /* ZDDPoetryDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDPoetryDetailController.m; sourceTree = "<group>"; };
+		37C7DA2F2225367700795D1C /* ZDDContentDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDContentDetailController.h; sourceTree = "<group>"; };
+		37C7DA302225367700795D1C /* ZDDContentDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDContentDetailController.m; sourceTree = "<group>"; };
+		37C7DA32222538E600795D1C /* ZDDCommentCellNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDCommentCellNode.h; sourceTree = "<group>"; };
+		37C7DA33222538E600795D1C /* ZDDCommentCellNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentCellNode.m; sourceTree = "<group>"; };
+		37C7DA352225441900795D1C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		37C7DA372225475600795D1C /* ZDDInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDInputView.m; sourceTree = "<group>"; };
+		37C7DA382225475600795D1C /* ZDDInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDInputView.h; sourceTree = "<group>"; };
+		37C7DA3A22254A6300795D1C /* ZDDCommentCountNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDCommentCountNode.h; sourceTree = "<group>"; };
+		37C7DA3B22254A6300795D1C /* ZDDCommentCountNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentCountNode.m; sourceTree = "<group>"; };
 		37DF00012217AED4008F7CEF /* ZDDHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDHomeController.h; sourceTree = "<group>"; };
 		37DF00022217AED4008F7CEF /* ZDDHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDHomeController.m; sourceTree = "<group>"; };
 		37DF00072217B358008F7CEF /* UIView+ZDD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZDD.h"; sourceTree = "<group>"; };
@@ -266,6 +280,23 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		371C3FEA22262522004CAD56 /* ZDDMine */ = {
+			isa = PBXGroup;
+			children = (
+				371C3FEB22262522004CAD56 /* View */,
+			);
+			path = ZDDMine;
+			sourceTree = "<group>";
+		};
+		371C3FEB22262522004CAD56 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				371C3FEC2226256F004CAD56 /* ZDDMineView.h */,
+				371C3FED2226256F004CAD56 /* ZDDMineView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3736ABDE2223DEE800BE2A7F /* ZDDLogin */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,8 +348,8 @@
 			children = (
 				5E6DE85121FC209700E2BF78 /* ZDDTabTwoViewController.h */,
 				5E6DE85221FC209700E2BF78 /* ZDDTabTwoViewController.m */,
-				37CAF60D22196185003B74FC /* ZDDPoetryDetailController.h */,
-				37CAF60E22196185003B74FC /* ZDDPoetryDetailController.m */,
+				37C7DA2F2225367700795D1C /* ZDDContentDetailController.h */,
+				37C7DA302225367700795D1C /* ZDDContentDetailController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -326,8 +357,14 @@
 		37DF00122217E522008F7CEF /* view */ = {
 			isa = PBXGroup;
 			children = (
+				37C7DA382225475600795D1C /* ZDDInputView.h */,
+				37C7DA372225475600795D1C /* ZDDInputView.m */,
 				37DF00162217E68A008F7CEF /* ZDDPoetryListCellNode.h */,
 				37DF00172217E68A008F7CEF /* ZDDPoetryListCellNode.m */,
+				37C7DA32222538E600795D1C /* ZDDCommentCellNode.h */,
+				37C7DA33222538E600795D1C /* ZDDCommentCellNode.m */,
+				37C7DA3A22254A6300795D1C /* ZDDCommentCountNode.h */,
+				37C7DA3B22254A6300795D1C /* ZDDCommentCountNode.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -386,6 +423,7 @@
 				5E6DE80B21FC00BF00E2BF78 /* Assets.xcassets */,
 				5E6DE81021FC00BF00E2BF78 /* Info.plist */,
 				5E6DE81121FC00BF00E2BF78 /* main.m */,
+				37C7DA352225441900795D1C /* Launch Screen.storyboard */,
 				3704AB932212C7EA00D07862 /* PrefixHeader.pch */,
 			);
 			path = V2EX;
@@ -403,6 +441,8 @@
 		5E6DE81C21FC062400E2BF78 /* ZDDUtil */ = {
 			isa = PBXGroup;
 			children = (
+				371C3FF122265DC8004CAD56 /* UIWindow+Tools.h */,
+				371C3FF222265DC8004CAD56 /* UIWindow+Tools.m */,
 				5E8462E32218E94F00C011BB /* YYModel.h */,
 				5E8462CE221870CB00C011BB /* UIImageView+TransitionImage.h */,
 				5E8462CD221870CA00C011BB /* UIImageView+TransitionImage.m */,
@@ -429,8 +469,6 @@
 				5E6DE82121FC065100E2BF78 /* NSString+Regex.m */,
 				4A39B40E21FE9E8C00437B6A /* UIColor+ZDDColor.h */,
 				4A39B40F21FE9E8C00437B6A /* UIColor+ZDDColor.m */,
-				37C7DA262224EC3B00795D1C /* NSString+Regex.h */,
-				37C7DA272224EC3B00795D1C /* NSString+Regex.m */,
 				377F019E22153B5900E00378 /* ZDDTool.h */,
 				377F019F22153B5900E00378 /* ZDDTool.m */,
 			);
@@ -461,6 +499,7 @@
 		5E6DE84821FC1FEF00E2BF78 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				371C3FEA22262522004CAD56 /* ZDDMine */,
 				3736ABDE2223DEE800BE2A7F /* ZDDLogin */,
 				5E8462E72218FD1C00C011BB /* ZDDFourViewController */,
 				5E8462D02218DDB400C011BB /* ZDDThreeViewController */,
@@ -673,6 +712,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37C7DA362225441900795D1C /* Launch Screen.storyboard in Resources */,
 				5E6DE80C21FC00BF00E2BF78 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -692,6 +732,7 @@
 				"${PODS_ROOT}/MFHUDManager/Image/notice_type_success.png",
 				"${PODS_ROOT}/MFHUDManager/Image/notice_type_warnning.png",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/QMUIKit/QMUIKit/QMUIResources/QMUIResources.bundle",
 				"${PODS_ROOT}/SuperPlayer/SuperPlayer/Resource/SuperPlayer.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -701,6 +742,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/notice_type_success.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/notice_type_warnning.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/QMUIResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SuperPlayer.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,6 +780,7 @@
 				5E8462F9221907E200C011BB /* ZDDBZ4TableViewCell.m in Sources */,
 				5E8462CF221870CB00C011BB /* UIImageView+TransitionImage.m in Sources */,
 				5E6DE81B21FC05ED00E2BF78 /* ZDDLaunchManager.m in Sources */,
+				371C3FF322265DC8004CAD56 /* UIWindow+Tools.m in Sources */,
 				5E8462DE2218DF9400C011BB /* ZDDGXTableViewCell.m in Sources */,
 				4A14A603221F7EC00078C8BC /* ZDDTabFour1TableViewCell.m in Sources */,
 				5E6DE83B21FC06A300E2BF78 /* YYClassInfo.m in Sources */,
@@ -760,11 +803,13 @@
 				3704AB992212C90A00D07862 /* ZDDChangeTypeView.m in Sources */,
 				5E6DE84221FC06F400E2BF78 /* ZDDSDKManager.m in Sources */,
 				5E8462DB2218DF6800C011BB /* GODCard.m in Sources */,
-				37C7DA282224EC3B00795D1C /* NSString+Regex.m in Sources */,
 				5E6DE82A21FC065200E2BF78 /* NSString+Regex.m in Sources */,
 				37DF000F2217C294008F7CEF /* ZDDNavController.m in Sources */,
+				37C7DA312225367700795D1C /* ZDDContentDetailController.m in Sources */,
+				37C7DA392225475600795D1C /* ZDDInputView.m in Sources */,
 				4A14A5F6221F7DD00078C8BC /* ZDDTXTableViewCell.m in Sources */,
 				5E6DE81221FC00BF00E2BF78 /* main.m in Sources */,
+				37C7DA3C22254A6300795D1C /* ZDDCommentCountNode.m in Sources */,
 				5E8462F3221907CF00C011BB /* ZDDBZ2TableViewCell.m in Sources */,
 				5E6DE82921FC065200E2BF78 /* NSMutableDictionary+Attributes.m in Sources */,
 				4A14A5F3221F7DA50078C8BC /* ZDDTabFourDetail2ViewController.m in Sources */,
@@ -777,6 +822,7 @@
 				5E6DE84721FC089200E2BF78 /* ZDDBaseNavigationViewController.m in Sources */,
 				37DF001E221807EE008F7CEF /* ZDDManHuaListModel.m in Sources */,
 				37DF0021221812AB008F7CEF /* ZDDCatalogController.m in Sources */,
+				371C3FEE2226256F004CAD56 /* ZDDMineView.m in Sources */,
 				37DF000C2217B760008F7CEF /* ZDDHomeCelNode.m in Sources */,
 				377F01A022153B5900E00378 /* ZDDTool.m in Sources */,
 				4A39B41021FE9E8C00437B6A /* UIColor+ZDDColor.m in Sources */,
@@ -785,6 +831,7 @@
 				37DF00152217E552008F7CEF /* ZDDPoetryModel.m in Sources */,
 				5E8463052219096800C011BB /* Pictures.m in Sources */,
 				5E6DE82C21FC065200E2BF78 /* NSMutableAttributedString+Chain.m in Sources */,
+				37C7DA34222538E600795D1C /* ZDDCommentCellNode.m in Sources */,
 				377F01A62215461200E00378 /* ShowAPIRequest.m in Sources */,
 				5E8462EF221907B100C011BB /* ZDDBZTableViewCell.m in Sources */,
 				5E6DE80421FC00BF00E2BF78 /* ZDDAppDelegate.m in Sources */,
@@ -793,7 +840,6 @@
 				5E6DE85021FC208800E2BF78 /* ZDDTabOneViewController.m in Sources */,
 				5E8462E62218F26100C011BB /* ZDDDisplayVideoViewController.m in Sources */,
 				5E6DE83A21FC06A300E2BF78 /* GODNotification.m in Sources */,
-				37CAF60F22196185003B74FC /* ZDDPoetryDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -919,7 +965,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = V2EX/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.binary.V2EX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -938,7 +984,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = V2EX/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.binary.V2EX;
 				PRODUCT_NAME = "$(TARGET_NAME)";

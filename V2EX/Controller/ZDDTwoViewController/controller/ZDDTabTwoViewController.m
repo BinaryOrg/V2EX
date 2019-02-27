@@ -8,8 +8,9 @@
 
 #import "ZDDTabTwoViewController.h"
 #import "ZDDPoetryListCellNode.h"
-#import "ZDDPoetryDetailController.h"
+#import "ZDDContentDetailController.h"
 #import <MJRefresh.h>
+#import "ZDDLogController.h"
 
 
 
@@ -44,6 +45,7 @@
     self.tableNode.view.mj_footer = [MJRefreshBackFooter footerWithRefreshingTarget:self refreshingAction:@selector(tableViewDidTriggerFooterRefresh)];
     
     [self tableViewDidTriggerHeaderRefresh];
+    
 }
 
 
@@ -112,18 +114,19 @@
 
 - (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableNode deselectRowAtIndexPath:indexPath animated:YES];
-    ZDDPoetryDetailController *vc = [[ZDDPoetryDetailController alloc] init];
-    
+
     ZDDPoetryModel *model = self.dataArray[indexPath.row];
-    NSMutableString *content = [NSMutableString stringWithString:[model.content stringByReplacingOccurrencesOfString:@"|" withString:@"\n"]];
-    [content stringByReplacingOccurrencesOfString:@"。" withString:@""];
+
+    if (![GODUserTool isLogin]) {
+        ZDDLogController *vc = [ZDDLogController new];
+        
+        [self.navigationController pushViewController:vc animated:YES];
+    }else {
+        ZDDContentDetailController *vc = [ZDDContentDetailController new];
+        vc.topModel = model;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
     
-    vc.name = model.title;
-    vc.title = model.title;
-    vc.person = model.authors;
-    vc.content = content;
-    
-    [self.navigationController pushViewController:vc animated:YES];
     
 }
 

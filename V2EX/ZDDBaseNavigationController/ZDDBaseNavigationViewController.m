@@ -8,6 +8,7 @@
 
 #import "ZDDBaseNavigationViewController.h"
 #import "UIColor+ZDDColor.h"
+#import "ZDDMineView.h"
 @interface ZDDBaseNavigationViewController ()
 
 @end
@@ -29,7 +30,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIImageView *iv = [[UIImageView alloc] init];
+    iv.frame = CGRectMake(0, 0, 30, 30);
+    iv.image = [UIImage imageNamed:@"tab_buddy_press"];
+    iv.userInteractionEnabled = YES;
+    [iv addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickUserView)]];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:iv];
+    
 }
+- (void)clickUserView {
+    
+    [[ZDDMineView shareInstance] show];
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

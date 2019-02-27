@@ -32,8 +32,12 @@
     self.title = @"漫画";
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:btn];
-    btn.center = self.view.center;
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(0);
+        make.width.mas_equalTo(100);
+    }];
     [btn setTitle:@"重新加载" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(loadData) forControlEvents:UIControlEventTouchUpInside];
     btn.layer.cornerRadius = 5;
     btn.layer.masksToBounds = YES;
