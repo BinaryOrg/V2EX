@@ -41,10 +41,11 @@ SuperPlayerDelegate
 
 - (void)request {
     [MFHUDManager showLoading:@"解析中..."];
-//    MFNETWROK.requestSerialization = MFHTTPRequestSerialization;
-    NSLog(@"%@", self.model.url);
-    [MFNETWROK get:[NSString stringWithFormat:@"https://api.godzzzzz.club/api/v2ex/getVideoMp4Url?url=%@", self.model.url] params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    NSString *url = [NSString stringWithFormat:@"https://api.godzzzzz.club/api/v2ex/getVideoMp4Url?originUrl=%@", self.model.url];
+    NSLog(@"%@", url);
+    [MFNETWROK get:url params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
+        NSLog(@"%@", result);
         dispatch_async(dispatch_get_main_queue(), ^{
             [self playWithUrl:result[@"url"]];
         });
