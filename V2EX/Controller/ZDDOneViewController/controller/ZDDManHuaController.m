@@ -34,7 +34,7 @@
     [self.iv mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(NavBarHeight);
         make.left.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(SafeAreaBottomHeight);
+        make.bottom.mas_equalTo(-SafeAreaBottomHeight);
     }];
     self.iv.contentMode = UIViewContentModeScaleAspectFit;
     
