@@ -9,6 +9,5 @@
 #ifndef ZDDSDKConfigKey_h
 #define ZDDSDKConfigKey_h
 
-#define BASE_URL          @"https://api.godzzzzz.club/api/"
 
 #endif /* ZDDSDKConfigKey_h */

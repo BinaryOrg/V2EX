@@ -53,7 +53,7 @@
     NSDictionary *paragmras = @{
                                 };
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK post:@"http://kanmanapi-main.321mh.com/v1/book/getBookByType?platform=19&platformname=iphone&booktype=132&productname=aym&pagesize=20&page=0" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK get:@"getBookByType" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
         if (statusCode == 200) {
             self.dataArrray = [NSArray yy_modelArrayWithClass:ZDDManHuaListModel.class json:result[@"data"][@"book"]];
