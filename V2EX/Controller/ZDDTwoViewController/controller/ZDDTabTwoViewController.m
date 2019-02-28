@@ -70,12 +70,8 @@
     }
     
     [MFHUDManager showLoading:@"请求中..."];
-    NSDictionary *paragmras = @{
-                                @"count" : @(20),
-                                @"page" : @(index)
-                                };
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK post:@"https://api.apiopen.top/getTangPoetry" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK get:[NSString stringWithFormat:@"getTangPoetry?page=%ld&count=20", index] params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
         [self.tableNode.view.mj_header endRefreshing];
 

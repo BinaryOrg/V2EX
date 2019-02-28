@@ -52,9 +52,9 @@
     [MFHUDManager showLoading:@"请求中..."];
     NSDictionary *paragmras = @{
                                 };
-    NSString *url = [NSString stringWithFormat:@"http://ios-getcomicinfo.321mh.com/app_api/v5/getcomicinfo_body/?platformname=iphone&comic_id=%ld&productname=aym", (long)self.comic_id];
+    NSString *url = [NSString stringWithFormat:@"getComicInfoBody?id=%ld", (long)self.comic_id];
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK post:url params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK get:url params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
         [self.tableView.mj_header endRefreshing];
         if (statusCode == 200) {
