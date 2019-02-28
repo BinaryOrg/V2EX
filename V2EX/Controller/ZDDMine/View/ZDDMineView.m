@@ -334,7 +334,7 @@ UINavigationControllerDelegate>
     if (!_whiteBgv) {
         _whiteBgv = [UIView new];
         _whiteBgv.backgroundColor = [UIColor whiteColor];
-        _whiteBgv.layer.shadowColor = [UIColor blackColor].CGColor;//shadowColor阴影颜色
+        _whiteBgv.layer.shadowColor = [UIColor customGrayColor].CGColor;//shadowColor阴影颜色
         _whiteBgv.layer.shadowOffset = CGSizeMake(4,4);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用
     }
     return _whiteBgv;
