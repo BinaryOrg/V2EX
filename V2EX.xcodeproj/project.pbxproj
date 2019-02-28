@@ -15,6 +15,7 @@
 		377F019D221538C700E00378 /* ZDDManHuaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F019C221538C700E00378 /* ZDDManHuaController.m */; };
 		377F01A022153B5900E00378 /* ZDDTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F019F22153B5900E00378 /* ZDDTool.m */; };
 		377F01A62215461200E00378 /* ShowAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F01A52215461200E00378 /* ShowAPIRequest.m */; };
+		37AAAA262227C389005C5FFE /* ZDDPoertryCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37AAAA252227C389005C5FFE /* ZDDPoertryCommentModel.m */; };
 		37C7DA2B2224EE5C00795D1C /* GODUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7DA2A2224EE5C00795D1C /* GODUserModel.m */; };
 		37C7DA2E2224EE7300795D1C /* GODUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7DA2C2224EE7300795D1C /* GODUserTool.m */; };
 		37C7DA312225367700795D1C /* ZDDContentDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7DA302225367700795D1C /* ZDDContentDetailController.m */; };
@@ -96,6 +97,8 @@
 		377F019F22153B5900E00378 /* ZDDTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTool.m; sourceTree = "<group>"; };
 		377F01A42215461200E00378 /* ShowAPIRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowAPIRequest.h; sourceTree = "<group>"; };
 		377F01A52215461200E00378 /* ShowAPIRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowAPIRequest.m; sourceTree = "<group>"; };
+		37AAAA242227C389005C5FFE /* ZDDPoertryCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDPoertryCommentModel.h; sourceTree = "<group>"; };
+		37AAAA252227C389005C5FFE /* ZDDPoertryCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDPoertryCommentModel.m; sourceTree = "<group>"; };
 		37C7DA292224EE5B00795D1C /* GODUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GODUserModel.h; sourceTree = "<group>"; };
 		37C7DA2A2224EE5C00795D1C /* GODUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODUserModel.m; sourceTree = "<group>"; };
 		37C7DA2C2224EE7300795D1C /* GODUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GODUserTool.m; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 			children = (
 				37DF00132217E552008F7CEF /* ZDDPoetryModel.h */,
 				37DF00142217E552008F7CEF /* ZDDPoetryModel.m */,
+				37AAAA242227C389005C5FFE /* ZDDPoertryCommentModel.h */,
+				37AAAA252227C389005C5FFE /* ZDDPoertryCommentModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -805,6 +810,7 @@
 				5E8462DB2218DF6800C011BB /* GODCard.m in Sources */,
 				5E6DE82A21FC065200E2BF78 /* NSString+Regex.m in Sources */,
 				37DF000F2217C294008F7CEF /* ZDDNavController.m in Sources */,
+				37AAAA262227C389005C5FFE /* ZDDPoertryCommentModel.m in Sources */,
 				37C7DA312225367700795D1C /* ZDDContentDetailController.m in Sources */,
 				37C7DA392225475600795D1C /* ZDDInputView.m in Sources */,
 				4A14A5F6221F7DD00078C8BC /* ZDDTXTableViewCell.m in Sources */,

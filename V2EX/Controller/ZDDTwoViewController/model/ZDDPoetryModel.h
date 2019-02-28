@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) NSString *authors;
-
+@property (nonatomic, strong) NSString *id;
 
 @end
 

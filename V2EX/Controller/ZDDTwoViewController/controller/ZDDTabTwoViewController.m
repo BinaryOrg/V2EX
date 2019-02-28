@@ -75,15 +75,11 @@
         [MFHUDManager dismiss];
         [self.tableNode.view.mj_header endRefreshing];
 
-        if ([result[@"code"] integerValue] == 200) {
-            if (index == 1) {
-                [self.dataArray removeAllObjects];
-            }
-            [self.dataArray addObjectsFromArray:[NSArray yy_modelArrayWithClass:ZDDPoetryModel.class json:result[@"result"]]];
-            [self.tableNode reloadData];
-        }else {
-            [MFHUDManager showError:@"请求失败"];
+        if (index == 1) {
+            [self.dataArray removeAllObjects];
         }
+        [self.dataArray addObjectsFromArray:[NSArray yy_modelArrayWithClass:ZDDPoetryModel.class json:result]];
+        [self.tableNode reloadData];
     } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
         [self.tableNode.view.mj_header endRefreshing];
 

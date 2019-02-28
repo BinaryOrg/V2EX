@@ -14,6 +14,7 @@
 
 @interface ZDDContentDetailController ()<ASTableDelegate, ASTableDataSource>
 
+@property (nonatomic, strong) NSArray *dataArrray;
 @property (nonatomic, strong) ASTableNode *tableNode;
 @property (nonatomic, strong) ZDDInputView *inputView;
 @property (nonatomic, assign) BOOL isForgiveFirstResponse;
@@ -40,15 +41,47 @@
 
 - (void)loadData {
     
+    [MFHUDManager showLoading:@"请求中..."];
+    NSDictionary *paragmras = @{
+                                @"pid" : self.topModel.id.length ? self.topModel.id : @""
+                                };
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
+    [MFNETWROK get:@"getComments" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        [MFHUDManager dismiss];
+        if (statusCode == 200) {
+            self.dataArrray = [NSArray yy_modelArrayWithClass:ZDDPoertryCommentModel.class json:result];
+            [self.tableNode reloadData];
+        }else {
+            [MFHUDManager showError:@"请求失败"];
+        }
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        
+        [MFHUDManager dismiss];
+        [MFHUDManager showError:@"请求失败"];
+    }];
     
-    [self.tableNode reloadData];
     
     
 }
 #pragma mark - 发送评论
 - (void)sendComment {
     
+    [MFHUDManager showLoading:@"评论..."];
+    NSDictionary *paragmras = @{
+                                @"id" : self.topModel.id.length ? self.topModel.id : @"",
+                                @"uid" : [GODUserTool shared].user.id,
+                                @"content" : self.inputView.textView.text
+                                };
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
+    [MFNETWROK post:@"comment" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        [MFHUDManager dismiss];
+        [self loadData];
 
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        
+        [MFHUDManager dismiss];
+        [MFHUDManager showError:@"评论失败"];
+    }];
     self.inputView.textView.text = @"";
     [self.inputView.textView resignFirstResponder];
     
@@ -103,7 +136,7 @@
     if (section == 0) {
         return self.topModel ? 2 : 0;
     }
-    return 20;
+    return self.dataArrray.count;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -117,11 +150,11 @@
                 ZDDPoetryListCellNode *node = [[ZDDPoetryListCellNode alloc] initWithModel:self.topModel];
                 return node;
             }else {
-                ZDDCommentCountNode *node = [[ZDDCommentCountNode alloc] initWithCount:2000];
+                ZDDCommentCountNode *node = [[ZDDCommentCountNode alloc] initWithCount:self.dataArrray.count];
                 return node;
             }
         }else {
-            ZDDCommentCellNode *node = [[ZDDCommentCellNode alloc] init];
+            ZDDCommentCellNode *node = [[ZDDCommentCellNode alloc] initWithModel:self.dataArrray[indexPath.row]];
             
             return node;
         }

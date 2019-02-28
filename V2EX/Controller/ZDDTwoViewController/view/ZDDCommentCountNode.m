@@ -25,7 +25,7 @@
         [self addContNode];
         [self addLineNode];
         
-        self.countNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"评论 （%ld）", count] attributes:^(NSMutableDictionary *make) {
+        self.countNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"评论（ %ld ）", count] attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont systemFontOfSize:18]);
         }];
     }

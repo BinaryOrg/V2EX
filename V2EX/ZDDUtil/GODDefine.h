@@ -54,6 +54,7 @@ fprintf(stderr, "-------\n");                                               \
 #define yiyuanId @"87106"
 
 #define BASE_AVATAR_URL   @"https://api.godzzzzz.club/"
+#define BASE_URL_last          @"https://api.godzzzzz.club/api/"
 #define BASE_URL          @"https://api.godzzzzz.club/api/v2ex/"
 
 

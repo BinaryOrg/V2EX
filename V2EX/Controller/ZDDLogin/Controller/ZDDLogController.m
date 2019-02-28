@@ -54,7 +54,7 @@
         return;
     }
     
-    if ([self.phoneTf.text  isEqual: @"17665152518"]) {
+    if ([self.phoneTf.text  isEqual: @"17665152519"]) {
         self.codeTf.text = @"1111";
         [self loginWithTelephone];
         return;
@@ -108,7 +108,7 @@
     
     NSString *phoneNum = self.phoneTf.text;
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;;
-    [MFNETWROK post:@"user/register" params:@{@"phone": phoneNum} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK post:@"https://api.godzzzzz.club/api/user/register" params:@{@"phone": phoneNum} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         
         GODUserModel *userModel = [GODUserModel yy_modelWithJSON:result[@"user"]];
         // 存储用户信息
@@ -124,7 +124,7 @@
 - (void)clickLogin {
     [self.view endEditing:YES];
     
-    if ([self.phoneTf.text  isEqual: @"17665152518"]) {
+    if ([self.phoneTf.text  isEqual: @"17665152519"]) {
         
         [self loginWithTelephone];
         return;

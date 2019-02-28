@@ -179,7 +179,7 @@ UINavigationControllerDelegate>
 - (void)saveUserInfo {
     
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK post:@"user/username" params:@{
+    [MFNETWROK post:@"https://api.godzzzzz.club/api/user/username" params:@{
                                               @"phone":[GODUserTool shared].phone,
                                               @"username": self.nameTV.text
                                               } success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
@@ -220,7 +220,7 @@ UINavigationControllerDelegate>
         //上传
         [self show];
         NSString *phone = [GODUserTool shared].phone;
-        [MFNETWROK upload:[NSString stringWithFormat:@"user/avatar?phone=%@", phone] params:nil name:@"avatar" images:@[image] imageScale:0.8 imageType:MFImageTypePNG progress:^(NSProgress *progress) {
+        [MFNETWROK upload:[NSString stringWithFormat:@"https://api.godzzzzz.club/api/user/avatar?phone=%@", phone] params:nil name:@"avatar" images:@[image] imageScale:0.8 imageType:MFImageTypePNG progress:^(NSProgress *progress) {
             
         } success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
             if (![result[@"code"] integerValue]) {

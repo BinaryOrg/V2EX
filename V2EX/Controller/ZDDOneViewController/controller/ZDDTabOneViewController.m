@@ -20,7 +20,7 @@
 @property (nonatomic, strong) UIPageViewController *pageController;
 
 
-/** <#class#> */
+
 @property (nonatomic, strong)  UIButton *btn;
 
 @end

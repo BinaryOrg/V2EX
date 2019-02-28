@@ -22,8 +22,8 @@
 @implementation ZDDCommentCellNode
 
 
-- (instancetype)init {
-    
+- (instancetype)initWithModel:(ZDDPoertryCommentModel *)model {
+
     if (self = [super init]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -33,11 +33,14 @@
         [self addLinetNode];
         
         self.iconNode.defaultImage = [UIImage imageNamed:@"aaa_9"];
-        self.nameNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:@"Maker" attributes:^(NSMutableDictionary *make) {
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASE_AVATAR_URL, model.user.avatar]];
+        self.iconNode.URL = url;
+        
+        self.nameNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:model.user.username attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont systemFontOfSize:15]);
         }];
         
-        self.contentNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:@"好诗，文章本天成，妙手偶得之啊" attributes:^(NSMutableDictionary *make) {
+        self.contentNode.attributedText = [NSMutableAttributedString lh_makeAttributedString:model.comment attributes:^(NSMutableDictionary *make) {
             make.lh_font([UIFont systemFontOfSize:15]);
         }];
     }
