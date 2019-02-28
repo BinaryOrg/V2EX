@@ -78,7 +78,7 @@ ESPictureBrowserDelegate
         }
         return;
     }
-    [MFNETWROK get:[NSString stringWithFormat:@"http://notch.qdaily.com/api/v2/wallpaper_topics?last_key=%@&platform=ios", @(key)] params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK get:[NSString stringWithFormat:@"https://api.godzzzzz.club/api/v2ex/getWallpaper?id=%@", @(key)] params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         NSLog(@"-----loadmore: %@", result[@"meta"][@"pagination"]);
         NSMutableArray *list = [NSMutableArray array];
         for (NSDictionary *dic in result[@"topics"]) {
@@ -106,7 +106,7 @@ ESPictureBrowserDelegate
 }
 
 - (void)mf_refreshData {
-    [MFNETWROK get:@"http://notch.qdaily.com/api/v2/wallpaper_topics?last_key=0&platform=ios" params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK get:@"https://api.godzzzzz.club/api/v2ex/getWallpaper?id=0" params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         NSLog(@"-----refresh: %@", result[@"meta"][@"pagination"]);
         [self.tableView.mj_footer resetNoMoreData];
         NSMutableArray *list = [NSMutableArray array];
@@ -143,7 +143,7 @@ ESPictureBrowserDelegate
 
 - (void)sendFirstRequest {
     [MFHUDManager showLoading:@"加载中..."];
-    [MFNETWROK get:@"http://notch.qdaily.com/api/v2/wallpaper_topics?last_key=0&platform=ios" params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK get:@"https://api.godzzzzz.club/api/v2ex/getWallpaper?id=0" params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
         NSLog(@"-----first: %@", result[@"meta"][@"pagination"]);
         NSMutableArray *list = [NSMutableArray array];

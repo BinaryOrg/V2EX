@@ -46,7 +46,7 @@ UITableViewDataSource
 
 - (void)sendFirstRequest {
     [MFHUDManager showLoading:@"加载中..."];
-    [MFNETWROK get:@"http://notch.qdaily.com/api/v2/explorations?platform=ios" params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK get:@"https://api.godzzzzz.club/api/v2ex/getQdaily" params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
         self.dic = result;
         dispatch_async(dispatch_get_main_queue(), ^{

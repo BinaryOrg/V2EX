@@ -41,17 +41,16 @@ SuperPlayerDelegate
 
 - (void)request {
     [MFHUDManager showLoading:@"解析中..."];
-    MFNETWROK.requestSerialization = MFHTTPRequestSerialization;
-    [MFNETWROK post:@"http://gaoxiaoshipin.vipappsina.com/index.php/NewApi38/getVideoMp4Url" params:@{
-        @"url": self.model.url
-        } success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
-            [MFHUDManager dismiss];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self playWithUrl:result[@"url"]];
-            });
-        } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-            [MFHUDManager showWarning:@"视频解析出错！"];
-        }];
+//    MFNETWROK.requestSerialization = MFHTTPRequestSerialization;
+    NSLog(@"%@", self.model.url);
+    [MFNETWROK get:[NSString stringWithFormat:@"https://api.godzzzzz.club/api/v2ex/getVideoMp4Url?url=%@", self.model.url] params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        [MFHUDManager dismiss];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self playWithUrl:result[@"url"]];
+        });
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        [MFHUDManager showWarning:@"视频解析出错！"];
+    }];
 }
 
 - (void)playWithUrl:(NSString *)url {

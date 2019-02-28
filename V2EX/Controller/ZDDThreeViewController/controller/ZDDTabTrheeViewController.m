@@ -71,7 +71,7 @@ MFNetworkManagerDelegate
         }
         return;
     }
-    [MFNETWROK get:[NSString stringWithFormat:@"http://gaoxiaoshipin.vipappsina.com/index.php/NewApi38/index/lastId/%@/random_more/0/sw/0", @(gxId)] params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK get:[NSString stringWithFormat:@"https://api.godzzzzz.club/api/v2ex/getGXSP?id=%@", @(gxId)] params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         NSLog(@"success");
         NSLog(@"%@", result);
         NSMutableArray *list = [NSMutableArray array];
@@ -95,7 +95,7 @@ MFNetworkManagerDelegate
 }
 
 - (void)mf_refreshData {
-    [MFNETWROK get:@"http://gaoxiaoshipin.vipappsina.com/index.php/NewApi38/index/markId/0/random/0/sw/0" params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK get:@"https://api.godzzzzz.club/api/v2ex/getGXSP?id=0" params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         NSLog(@"success");
         NSMutableArray *list = [NSMutableArray array];
         for (NSDictionary *dic in result[@"rows"]) {
@@ -130,7 +130,7 @@ MFNetworkManagerDelegate
 
 - (void)sendFirstRequest {
     [MFHUDManager showLoading:@"加载中..."];
-    [MFNETWROK get:@"http://gaoxiaoshipin.vipappsina.com/index.php/NewApi38/index/markId/0/random/0/sw/0" params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK get:@"https://api.godzzzzz.club/api/v2ex/getGXSP?id=0" params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
         NSMutableArray *list = [NSMutableArray array];
         for (NSDictionary *dic in result[@"rows"]) {
