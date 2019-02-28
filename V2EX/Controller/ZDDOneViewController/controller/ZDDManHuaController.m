@@ -51,7 +51,6 @@
                 }
             });
         }else if (error) {
-            NSLog(@"%@",error.userInfo);
             strongSelf.operation = nil;
         }
     }];

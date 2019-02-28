@@ -62,14 +62,14 @@ UINavigationControllerDelegate>
     
 }
 
-//消失
-- (void)dismiss {
-
-    [UIView animateWithDuration:0.25f animations:^{
-        self.whiteBgv.frame = CGRectMake(-whiteBgvW, 0, whiteBgvW, ScreenHeight);
-        self.whiteBgv.layer.shadowOpacity = 0.0;//阴影透明度，默认0
-    }];
-}
+////消失
+//- (void)dismiss {
+//
+//    [UIView animateWithDuration:0.25f animations:^{
+//        self.whiteBgv.frame = CGRectMake(-whiteBgvW, 0, whiteBgvW, ScreenHeight);
+//        self.whiteBgv.layer.shadowOpacity = 0.0;//阴影透明度，默认0
+//    }];
+//}
 
 - (void)remove {
     if ([GODUserTool isLogin]) {
@@ -167,7 +167,7 @@ UINavigationControllerDelegate>
     if (![GODUserTool isLogin]) {
         return;
     }
-    [self dismiss];
+    [self remove];
     UIImagePickerController * picker = [[UIImagePickerController alloc] init];
     picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     picker.delegate = self;
