@@ -11,6 +11,7 @@
 #import "UIWindow+Tools.h"
 #import "ZDDLogController.h"
 #import <QMUIKit.h>
+#import "UIColor+ZDDColor.h"
 
 #define whiteBgvW  ScreenWidth - 80
 
@@ -163,6 +164,9 @@ UINavigationControllerDelegate>
 
 //点击头像
 - (void)changeIcon {
+    if (![GODUserTool isLogin]) {
+        return;
+    }
     [self dismiss];
     UIImagePickerController * picker = [[UIImagePickerController alloc] init];
     picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
@@ -203,7 +207,7 @@ UINavigationControllerDelegate>
     }else {
         [_logoutBtn setTitle:@"登录" forState:UIControlStateNormal];
         [_logoutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _logoutBtn.backgroundColor = [UIColor blueColor];
+        _logoutBtn.backgroundColor = [UIColor customBlueColor];
         
         self.nameTV.userInteractionEnabled = NO;
     }
