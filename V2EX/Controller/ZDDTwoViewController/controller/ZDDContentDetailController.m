@@ -68,12 +68,14 @@
     
     [MFHUDManager showLoading:@"评论..."];
     NSDictionary *paragmras = @{
-                                @"id" : self.topModel.id.length ? self.topModel.id : @"",
+                                @"pid" : self.topModel.id.length ? self.topModel.id : @"",
                                 @"uid" : [GODUserTool shared].user.id,
                                 @"content" : self.inputView.textView.text
                                 };
+    NSLog(@"%@", paragmras);
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
     [MFNETWROK post:@"comment" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        NSLog(@"%@", result);
         [MFHUDManager dismiss];
         [self loadData];
 
