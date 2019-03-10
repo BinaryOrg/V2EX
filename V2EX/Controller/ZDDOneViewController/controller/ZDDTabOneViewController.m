@@ -7,21 +7,24 @@
 //
 
 #import "ZDDTabOneViewController.h"
-#import "ZDDChangeTypeView.h"
-#import "ZDDHomeController.h"
+#import <GLYPageView.h>
+#import "ZDDCenterController.h"
+#import "ZDDTabTwoViewController.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
 
-@interface ZDDTabOneViewController ()<ZDDChangeTypeViewDelegate, UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+#import "WHWeatherView.h"
+#import "WHWeatherHeader.h"
 
-@property (nonatomic, strong) ZDDChangeTypeView *changeTypeView;
-@property (nonatomic, strong) NSArray *dataArrray;
-@property (nonatomic, strong) NSArray *titleArray;
+@interface ZDDTabOneViewController ()<GLYPageViewDelegate, UIScrollViewDelegate>
 
-@property (nonatomic, strong) NSArray <ZDDHomeController *>*controllerArray;
-@property (nonatomic, strong) UIPageViewController *pageController;
+@property (nonatomic, strong) GLYPageView *pageView;
 
+@property (nonatomic, strong) UIScrollView *scrollView;
 
+@property (nonatomic, strong) ZDDTabTwoViewController *firstVC;
+@property (nonatomic, strong) ZDDCenterController *secondVC;
 
-@property (nonatomic, strong)  UIButton *btn;
+@property (nonatomic, strong) WHWeatherView *weatherView;
 
 @end
 
@@ -29,139 +32,101 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"漫画";
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.view addSubview:btn];
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(0);
-        make.width.mas_equalTo(100);
-    }];
-    [btn setTitle:@"重新加载" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(loadData) forControlEvents:UIControlEventTouchUpInside];
-    btn.layer.cornerRadius = 5;
-    btn.layer.masksToBounds = YES;
-    btn.layer.borderColor = [UIColor grayColor].CGColor;
-    btn.layer.borderWidth = 0.5;
-    self.btn = btn;
-    [self loadData];
+    
+    [self setupUI];
 }
 
-- (void)loadData {
-    
-    [MFHUDManager showLoading:@"请求中..."];
-    NSDictionary *paragmras = @{
-                                };
-    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK get:@"getBookByType" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
-        [MFHUDManager dismiss];
-        if (statusCode == 200) {
-            self.dataArrray = [NSArray yy_modelArrayWithClass:ZDDManHuaListModel.class json:result[@"data"][@"book"]];
-            
-            [self setupUI];
-            self.btn.hidden = YES;
-        }else {
-            self.btn.hidden = NO;
-            [MFHUDManager showError:@"请求失败"];
-        }
-    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-        
-        [MFHUDManager dismiss];
-        [MFHUDManager showError:@"请求失败"];
-    }];
-}
+
 - (void)setupUI {
     
+    self.weatherView.weatherBackImageView.frame = self.view.bounds;
+    [self.view addSubview:self.weatherView.weatherBackImageView];
     
-    [self.view addSubview:self.changeTypeView];
-    [self.changeTypeView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_equalTo(0);
-        make.top.mas_equalTo(NavBarHeight);
-        make.height.mas_equalTo(50);
-    }];
-
-    [self addChildViewController:self.pageController];
-    [self.view addSubview:self.pageController.view];
-    [self.pageController.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_equalTo(0);
-        make.top.mas_equalTo(self.changeTypeView.mas_bottom);
-        make.bottom.mas_equalTo(-SafeTabBarHeight);
-    }];
+    self.fd_prefersNavigationBarHidden = YES;
     
-    [self.pageController setViewControllers:@[self.controllerArray.firstObject] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [self.view addSubview:self.pageView];
+    [self.view addSubview:self.scrollView];
+    
+    [self.scrollView addSubview:self.firstVC.view];
+    self.firstVC.view.frame = CGRectMake(0, 0, ScreenWidth, self.scrollView.height);
+    
+    [self.scrollView addSubview:self.secondVC.view];
+    self.secondVC.view.frame = CGRectMake(ScreenWidth, 0, ScreenWidth, self.scrollView.height);
+    
+    
+    self.weatherView.frame = self.view.bounds;
+    [self.view addSubview:self.weatherView];
+    
+    self.weatherView.userInteractionEnabled = NO;
+    
+    
+    for (UITabBarItem * i in self.tabBarController.tabBar.items) {
+        i.imageInsets = UIEdgeInsetsMake(10, 0, 0, 0);
+    }
+    
+}
+
+- (void)pageViewSelectdIndex:(NSInteger)index {
+    
+    [self.scrollView setContentOffset:CGPointMake(ScreenWidth * index, 0) animated:YES];
+    [self.weatherView showWeatherAnimationWithType:arc4random()%6];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+    [self.pageView externalScrollView:scrollView totalPage:2 startOffsetX:0];
     
 }
 
 
-
-#pragma mark - UIPageViewControllerDataSource / UIPageViewControllerDelegate
-- (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
-    NSInteger index = [self.controllerArray indexOfObject:pageViewController.viewControllers.firstObject];
-    [self.changeTypeView setSelectedTag:index];
-}
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    NSInteger index = [self.controllerArray indexOfObject:viewController];
-    if (index < self.controllerArray.count-1 && self.controllerArray.count) {
-        return [self.controllerArray objectAtIndex:index+1];
+- (UIScrollView *)scrollView {
+    if (!_scrollView) {
+        _scrollView = [UIScrollView new];
+        _scrollView.frame = CGRectMake(0, StatusBarHeight + 44, ScreenWidth, ScreenHeight - SafeTabBarHeight - StatusBarHeight - 44);
+        _scrollView.contentSize = CGSizeMake(ScreenWidth * 3, ScreenHeight - SafeTabBarHeight - StatusBarHeight - 44);
+        _scrollView.pagingEnabled = YES;
+        _scrollView.delegate = self;
     }
-    return nil;
+    return _scrollView;
 }
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(nonnull UIViewController *)viewController {
-    NSInteger index = [self.controllerArray indexOfObject:viewController];
-    if (index>0 && self.controllerArray.count) {
-        return [self.controllerArray objectAtIndex:index-1];
+
+- (GLYPageView *)pageView {
+    if (!_pageView) {
+        _pageView = [[GLYPageView alloc] initWithFrame:CGRectMake(0.f, StatusBarHeight, ScreenWidth, 44.f) titlesArray:@[@"诗",@"画",@"图"]];
+        _pageView.delegate = self;
+        _pageView.titleFont = [UIFont fontWithName:@"KohinoorDevanagari-Semibold" size:18];
+        _pageView.selectTitleColor = [UIColor blackColor];
+        _pageView.scrollViewBackgroundColor = [UIColor clearColor];
+        _pageView.titleColor = color(137, 137, 137, 1);
+        _pageView.backgroundColor = [UIColor clearColor];
+        [_pageView initalUI];
     }
-    return nil;
+    return _pageView;
 }
 
-- (void)clickButtonAtIndex:(NSInteger)index {
-    NSInteger currentIndex = [self.controllerArray indexOfObject:self.pageController.viewControllers.firstObject];
-    [self.pageController setViewControllers:@[[self.controllerArray objectAtIndex:index]] direction:index>currentIndex?UIPageViewControllerNavigationDirectionForward:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
-}
-
-- (ZDDChangeTypeView *)changeTypeView {
-    if (!_changeTypeView) {
-        _changeTypeView = [[ZDDChangeTypeView alloc] initWithTitles:self.titleArray];
-        _changeTypeView.delegate = self;
+- (ZDDTabTwoViewController *)firstVC {
+    if (!_firstVC) {
+        _firstVC = [ZDDTabTwoViewController new];
+        [self addChildViewController:_firstVC];
     }
-    return _changeTypeView;
+    return _firstVC;
 }
 
-- (NSArray *)titleArray {
-    if (!_titleArray) {
-        NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:self.dataArrray.count];
-        for (NSInteger i = 0; i < self.dataArrray.count; i ++) {
-            ZDDManHuaListModel *model = self.dataArrray[i];
-            [tempArr addObject:model.title];
-        }
-        _titleArray = tempArr.copy;
+- (ZDDCenterController *)secondVC {
+    if (!_secondVC) {
+        _secondVC = [ZDDCenterController new];
+        [self addChildViewController:_secondVC];
     }
-    return _titleArray;
+    return _secondVC;
 }
 
 
-- (UIPageViewController *)pageController {
-    if (!_pageController) {
-        _pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-        _pageController.delegate = self;
-        _pageController.dataSource = self;
-    }
-    return _pageController;
-}
 
-- (NSArray<ZDDHomeController *> *)controllerArray {
-    if (!_controllerArray) {
-        NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:self.dataArrray.count];
-        for (NSInteger i = 0; i < self.dataArrray.count; i ++) {
-            ZDDManHuaListModel *model = self.dataArrray[i];
-            ZDDHomeController *vc = [[ZDDHomeController alloc] init];
-            vc.title = model.title;
-            vc.dataArray = model.comic_info;
-            [tempArr addObject:vc];
-        }
-        _controllerArray = tempArr.copy;
+- (WHWeatherView *)weatherView {
+    if (!_weatherView) {
+        _weatherView = [[WHWeatherView alloc] init];
     }
-    return _controllerArray;
+    return _weatherView;
 }
 
 @end

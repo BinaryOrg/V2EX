@@ -28,6 +28,6 @@ pod 'ESPictureBrowser'
 
 pod 'RQShineLabel'
 pod 'mob_smssdk'
-
+pod 'GLYPageView', '~> 0.0.1'
 
 end

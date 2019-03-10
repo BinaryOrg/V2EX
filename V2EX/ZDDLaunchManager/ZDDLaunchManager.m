@@ -16,6 +16,7 @@
 #import "ZDDTabTrheeViewController.h"
 #import "ZDDTabFourViewController.h"
 #import "ZDDNavController.h"
+#import "LHMinController.h"
 
 @implementation ZDDLaunchManager
 + (instancetype)sharedInstance {
@@ -35,25 +36,33 @@
     [[UITabBar appearance] setTintColor:[UIColor customBlueColor]];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     
-    ZDDTabOneViewController *one = [[ZDDTabOneViewController alloc] initWithImageName:@"tab_now_nor" selectedImageName:@"tab_now_press" title:@"漫画"];
-    ZDDTabTwoViewController *two = [[ZDDTabTwoViewController alloc] initWithImageName:@"tab_see_nor" selectedImageName:@"tab_see_press" title:@"诗词"];
+    ZDDTabOneViewController *one = [[ZDDTabOneViewController alloc] initWithImageName:@"tab_now_book_unSelected" selectedImageName:@"tab_now_book_selected" title:@""];
+//    ZDDTabTwoViewController *two = [[ZDDTabTwoViewController alloc] initWithImageName:@"tab_see_nor" selectedImageName:@"tab_see_press" title:@""];
     
-    ZDDTabTrheeViewController *three = [[ZDDTabTrheeViewController alloc] initWithImageName:@"tab_qworld_nor" selectedImageName:@"tab_qworld_press" title:@"搞笑"];
+//    ZDDTabTrheeViewController *three = [[ZDDTabTrheeViewController alloc] initWithImageName:@"tab_qworld_nor" selectedImageName:@"tab_qworld_press" title:@""];
+
+    LHMinController *three = [[LHMinController alloc] initWithImageName:@"tab_qworld_nor" selectedImageName:@"tab_qworld_press" title:@""];
     
-    ZDDTabFourViewController *four = [[ZDDTabFourViewController alloc] initWithImageName:@"tab_recent_nor" selectedImageName:@"tab_recent_press" title:@"壁纸"];
+    
+    
+    ZDDTabFourViewController *four = [[ZDDTabFourViewController alloc] initWithImageName:@"tab_tu_selected" selectedImageName:@"tab_tu_unSelected" title:@""];
     
     ZDDNavController *oneNavi = [[ZDDNavController alloc] initWithRootViewController:one];
-    ZDDNavController *twoNavi = [[ZDDNavController alloc] initWithRootViewController:two];
+//    ZDDNavController *twoNavi = [[ZDDNavController alloc] initWithRootViewController:two];
     ZDDNavController *threeNavi = [[ZDDNavController alloc] initWithRootViewController:three];
     ZDDNavController *fourNavi = [[ZDDNavController alloc] initWithRootViewController:four];
-//    
+   
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = @[
                                          oneNavi,
-                                         twoNavi,
+                                         fourNavi,
+//                                         twoNavi,
                                          threeNavi,
-                                         fourNavi
+//                                         fourNavi
                                          ];
+    
+
+    
     window.rootViewController = tabBarController;
     
     window.backgroundColor = [UIColor whiteColor];

@@ -8,7 +8,6 @@
 
 #import "ZDDBaseNavigationViewController.h"
 #import "UIColor+ZDDColor.h"
-#import "ZDDMineView.h"
 @interface ZDDBaseNavigationViewController ()
 
 @end
@@ -31,19 +30,19 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIImageView *iv = [[UIImageView alloc] init];
-    iv.frame = CGRectMake(5, 0, 23, 23);
-    iv.image = [UIImage imageNamed:@"changeUser"];
-    iv.userInteractionEnabled = YES;
-    [iv addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickUserView)]];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:iv];
+//    UIImageView *iv = [[UIImageView alloc] init];
+//    iv.frame = CGRectMake(5, 0, 23, 23);
+//    iv.image = [UIImage imageNamed:@"changeUser"];
+//    iv.userInteractionEnabled = YES;
+//    [iv addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickUserView)]];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:iv];
     
 }
-- (void)clickUserView {
-    
-    [[ZDDMineView shareInstance] show];
-    
-}
+//- (void)clickUserView {
+//    
+//    [[ZDDMineView shareInstance] show];
+//    
+//}
 
 
 - (void)didReceiveMemoryWarning {

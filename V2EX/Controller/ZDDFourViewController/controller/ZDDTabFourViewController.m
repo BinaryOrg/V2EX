@@ -61,7 +61,7 @@ UITableViewDataSource
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"嘎嘎";
+    self.navigationItem.title = @"壁纸";
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self sendFirstRequest];

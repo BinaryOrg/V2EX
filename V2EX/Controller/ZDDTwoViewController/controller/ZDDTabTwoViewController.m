@@ -27,7 +27,8 @@
     [super viewDidLoad];
 
     [self setupUI];
-    
+    self.view.backgroundColor = [UIColor clearColor];
+
 }
 
 - (void)setupUI {
@@ -37,8 +38,8 @@
     [self.view addSubview:self.tableNode.view];
     [self.tableNode.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
-        make.top.mas_equalTo(NavBarHeight);
-        make.bottom.mas_equalTo(-SafeTabBarHeight);
+        make.top.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
     }];
     
     self.tableNode.view.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(tableViewDidTriggerHeaderRefresh)];
@@ -127,7 +128,7 @@
     if (!_tableNode) {
         _tableNode = [[ASTableNode alloc] initWithStyle:UITableViewStylePlain];
         _tableNode.view.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableNode.backgroundColor = [UIColor whiteColor];
+        _tableNode.backgroundColor = [UIColor clearColor];
         _tableNode.view.estimatedRowHeight = 0;
         _tableNode.leadingScreensForBatching = 1.0;
         _tableNode.delegate = self;
