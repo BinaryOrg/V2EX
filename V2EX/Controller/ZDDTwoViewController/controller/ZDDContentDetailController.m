@@ -18,7 +18,7 @@
 @property (nonatomic, strong) ASTableNode *tableNode;
 @property (nonatomic, strong) ZDDInputView *inputView;
 @property (nonatomic, assign) BOOL isForgiveFirstResponse;
-
+@property (nonatomic, strong) UIButton *collectBtn;
 @end
 
 @implementation ZDDContentDetailController
@@ -27,15 +27,50 @@
     [super viewDidLoad];
     
     self.title = @"评论列表";
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(kbWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(kbWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    self.collectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.collectBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+    [self.collectBtn setTitleColor:[UIColor colorWithHexString:@"666666"] forState:UIControlStateNormal];
+    [self.collectBtn setTitle:@"收藏" forState:UIControlStateNormal];
+    [self.collectBtn addTarget:self action:@selector(touchCollect:) forControlEvents:UIControlEventTouchUpInside];
+    [self.collectBtn sizeToFit];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.collectBtn];
+    
+    
     [self addTableNode];
     [self addInputView];
 }
 
+- (void)touchCollect:(UIButton *)btn {
+    
+    self.topModel.isCollected = !self.topModel.isCollected;
+    [self reloadCollectWithMode:self.topModel];
+    
+}
+
+- (void)reloadCollectWithMode:(ZDDPoetryModel *)model {
+    
+  
+    if (model.isCollected) {
+        [self.collectBtn setTitle:@"已收藏" forState:UIControlStateNormal];
+        [self.collectBtn setTitleColor:color(137, 137, 137, 1) forState:UIControlStateNormal];
+    }else {
+        [self.collectBtn setTitleColor:[UIColor colorWithRed:215/255.0 green:171/255.0 blue:112/255.0 alpha:1.0] forState:UIControlStateNormal];
+        [self.collectBtn setTitle:@"收藏" forState:UIControlStateNormal];
+    }
+    [self.collectBtn sizeToFit];
+    
+}
 
 - (void)setTopModel:(ZDDPoetryModel *)topModel {
     _topModel = topModel;
+    
+    
+    
     [self loadData];
 }
 
@@ -167,7 +202,6 @@
 - (void)addTableNode {
     _tableNode = [[ASTableNode alloc] initWithStyle:UITableViewStylePlain];
     _tableNode.view.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableNode.backgroundColor = [UIColor whiteColor];
     _tableNode.view.estimatedRowHeight = 0;
     _tableNode.leadingScreensForBatching = 1.0;
     _tableNode.delegate = self;
