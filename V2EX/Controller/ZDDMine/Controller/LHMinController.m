@@ -26,11 +26,13 @@ UINavigationControllerDelegate>
 @property (nonatomic, strong) UIButton *clearBtn;
 @property (nonatomic, strong) UIButton *reportBtn;
 @property (nonatomic, strong) UIButton *connectBtn;
+@property (nonatomic, strong) UIButton *fuckBtn;
+
 @property (nonatomic, strong) UIButton *logoutBtn;
 @property (nonatomic, strong) UIView *lineView1;
 @property (nonatomic, strong) UIView *lineView2;
 @property (nonatomic, strong) UIView *lineView3;
-
+@property (nonatomic, strong) UIView *lineView4;
 @end
 
 @implementation LHMinController
@@ -63,16 +65,7 @@ UINavigationControllerDelegate>
             return;
         }
         
-        MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-        [MFNETWROK post:@"user/username" params:@{
-                                                  @"phone":[GODUserTool shared].phone,
-                                                  @"username": userName
-                                                  } success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
-                                                      [MFHUDManager showSuccess:@"谢谢您的宝贵建议"];
-                                                      
-                                                  } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-                                                      [MFHUDManager showSuccess:@"谢谢您的宝贵建议"];
-                                                  }];
+        [MFHUDManager showSuccess:@"谢谢您的宝贵建议"];
     }];
     
     QMUIAlertAction *action2 = [QMUIAlertAction actionWithTitle:@"取消" style:QMUIAlertActionStyleCancel handler:nil];
@@ -229,12 +222,28 @@ UINavigationControllerDelegate>
         make.top.mas_equalTo(self.iconIV.mas_bottom).mas_equalTo(15);
     }];
     
+    
+    [self.whiteBgv addSubview:self.fuckBtn];
+    [self.fuckBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.top.mas_equalTo(self.nameTV.mas_bottom).mas_equalTo(LHAutoLayoutValue(90));
+
+    }];
+    
+    [self.whiteBgv addSubview:self.lineView4];
+    [self.lineView4 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(20);
+        make.right.mas_equalTo(-20);
+        make.top.mas_equalTo(self.fuckBtn.mas_bottom).mas_equalTo(8);
+        make.height.mas_equalTo(1);
+    }];
+//
     [self.whiteBgv addSubview:self.reportBtn];
     [self.reportBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(20);
-        make.top.mas_equalTo(self.nameTV.mas_bottom).mas_equalTo(LHAutoLayoutValue(90));
+        make.top.mas_equalTo(self.lineView4.mas_bottom).mas_equalTo(8);
     }];
-    
+
     [self.whiteBgv addSubview:self.lineView1];
     [self.lineView1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(20);
@@ -242,13 +251,13 @@ UINavigationControllerDelegate>
         make.top.mas_equalTo(self.reportBtn.mas_bottom).mas_equalTo(8);
         make.height.mas_equalTo(1);
     }];
-    
+
     [self.whiteBgv addSubview:self.clearBtn];
     [self.clearBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(20);
         make.top.mas_equalTo(self.lineView1.mas_bottom).mas_equalTo(8);
     }];
-    
+
     [self.whiteBgv addSubview:self.lineView2];
     [self.lineView2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(20);
@@ -256,13 +265,13 @@ UINavigationControllerDelegate>
         make.top.mas_equalTo(self.clearBtn.mas_bottom).mas_equalTo(8);
         make.height.mas_equalTo(1);
     }];
-    
+
     [self.whiteBgv addSubview:self.connectBtn];
     [self.connectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(20);
         make.top.mas_equalTo(self.lineView2.mas_bottom).mas_equalTo(8);
     }];
-    
+
     [self.whiteBgv addSubview:self.lineView3];
     [self.lineView3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(20);
@@ -270,7 +279,7 @@ UINavigationControllerDelegate>
         make.top.mas_equalTo(self.connectBtn.mas_bottom).mas_equalTo(8);
         make.height.mas_equalTo(1);
     }];
-    
+
     [self.whiteBgv addSubview:self.logoutBtn];
     [self.logoutBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
@@ -278,7 +287,7 @@ UINavigationControllerDelegate>
         make.height.mas_equalTo(40);
         make.top.mas_equalTo(self.lineView3.mas_bottom).mas_equalTo(50);
     }];
-    
+
     
 }
 
@@ -311,6 +320,18 @@ UINavigationControllerDelegate>
         _nameTV.font = [UIFont systemFontOfSize:16];
     }
     return _nameTV;
+}
+
+-(UIButton *)fuckBtn {
+    if (!_fuckBtn) {
+        _fuckBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_fuckBtn setTitle:@"我的收藏" forState:UIControlStateNormal];
+        [_fuckBtn setTitleColor:GODColor(215, 171, 112) forState:UIControlStateNormal];
+        _fuckBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        [_fuckBtn setShowsTouchWhenHighlighted:NO];
+        [_fuckBtn addTarget:self action:@selector(reportToUs) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _fuckBtn;
 }
 
 -(UIButton *)reportBtn {
@@ -363,6 +384,13 @@ UINavigationControllerDelegate>
         [_logoutBtn addTarget:self action:@selector(loginOrLogut) forControlEvents:UIControlEventTouchUpInside];
     }
     return _logoutBtn;
+}
+- (UIView *)lineView4 {
+    if (!_lineView4) {
+        _lineView4 = [UIView new];
+        _lineView4.backgroundColor = GODColor(237,237, 237);
+    }
+    return _lineView4;
 }
 
 - (UIView *)lineView1 {
