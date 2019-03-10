@@ -81,7 +81,7 @@
 
     ASStackLayoutSpec *contentLay = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionVertical spacing:15.0f justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsCenter children:@[horLay, self.contentLb]];
     
-    ASInsetLayoutSpec *insertLay = [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(20.0f, 0, 40, -10) child:contentLay];
+    ASInsetLayoutSpec *insertLay = [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(20.0f, 0, 60, -10) child:contentLay];
 
     ASOverlayLayoutSpec *coverLayout = [ASOverlayLayoutSpec overlayLayoutSpecWithChild:insertLay overlay:self.bgv];
     

@@ -55,7 +55,7 @@
     
     
     self.weatherView.frame = self.view.bounds;
-    [self.view addSubview:self.weatherView];
+    [[UIApplication sharedApplication].keyWindow  addSubview:self.weatherView];
     
     self.weatherView.userInteractionEnabled = NO;
     
@@ -83,7 +83,7 @@
     if (!_scrollView) {
         _scrollView = [UIScrollView new];
         _scrollView.frame = CGRectMake(0, StatusBarHeight + 44, ScreenWidth, ScreenHeight - SafeTabBarHeight - StatusBarHeight - 44);
-        _scrollView.contentSize = CGSizeMake(ScreenWidth * 3, ScreenHeight - SafeTabBarHeight - StatusBarHeight - 44);
+        _scrollView.contentSize = CGSizeMake(ScreenWidth * 2, ScreenHeight - SafeTabBarHeight - StatusBarHeight - 44);
         _scrollView.pagingEnabled = YES;
         _scrollView.delegate = self;
     }
@@ -92,7 +92,7 @@
 
 - (GLYPageView *)pageView {
     if (!_pageView) {
-        _pageView = [[GLYPageView alloc] initWithFrame:CGRectMake(0.f, StatusBarHeight, ScreenWidth, 44.f) titlesArray:@[@"诗",@"画",@"图"]];
+        _pageView = [[GLYPageView alloc] initWithFrame:CGRectMake(0.f, StatusBarHeight, ScreenWidth, 44.f) titlesArray:@[@"诗",@"画"]];
         _pageView.delegate = self;
         _pageView.titleFont = [UIFont fontWithName:@"KohinoorDevanagari-Semibold" size:18];
         _pageView.selectTitleColor = [UIColor blackColor];
