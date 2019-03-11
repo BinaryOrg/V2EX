@@ -81,6 +81,7 @@
 		37C7DA392225475600795D1C /* ZDDInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7DA372225475600795D1C /* ZDDInputView.m */; };
 		37C7DA3C22254A6300795D1C /* ZDDCommentCountNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7DA3B22254A6300795D1C /* ZDDCommentCountNode.m */; };
 		37CA2C1A2235FE99004895D3 /* ZDDMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CA2C192235FE99004895D3 /* ZDDMainController.m */; };
+		37CA2C1D22361354004895D3 /* ZDDMyCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CA2C1C22361354004895D3 /* ZDDMyCollectController.m */; };
 		37DF00032217AED4008F7CEF /* ZDDHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF00022217AED4008F7CEF /* ZDDHomeController.m */; };
 		37DF00092217B358008F7CEF /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF00082217B358008F7CEF /* UIView+ZDD.m */; };
 		37DF000C2217B760008F7CEF /* ZDDHomeCelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF000B2217B760008F7CEF /* ZDDHomeCelNode.m */; };
@@ -241,6 +242,8 @@
 		37C7DA3B22254A6300795D1C /* ZDDCommentCountNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentCountNode.m; sourceTree = "<group>"; };
 		37CA2C182235FE99004895D3 /* ZDDMainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDMainController.h; sourceTree = "<group>"; };
 		37CA2C192235FE99004895D3 /* ZDDMainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDMainController.m; sourceTree = "<group>"; };
+		37CA2C1B22361354004895D3 /* ZDDMyCollectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDMyCollectController.h; sourceTree = "<group>"; };
+		37CA2C1C22361354004895D3 /* ZDDMyCollectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDMyCollectController.m; sourceTree = "<group>"; };
 		37DF00012217AED4008F7CEF /* ZDDHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDHomeController.h; sourceTree = "<group>"; };
 		37DF00022217AED4008F7CEF /* ZDDHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDHomeController.m; sourceTree = "<group>"; };
 		37DF00072217B358008F7CEF /* UIView+ZDD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZDD.h"; sourceTree = "<group>"; };
@@ -598,6 +601,8 @@
 			children = (
 				37B03E8722325D6100F9B8BA /* LHMinController.h */,
 				37B03E8822325D6100F9B8BA /* LHMinController.m */,
+				37CA2C1B22361354004895D3 /* ZDDMyCollectController.h */,
+				37CA2C1C22361354004895D3 /* ZDDMyCollectController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1156,6 +1161,7 @@
 				37B03E4C223241C000F9B8BA /* WHWeatherClound.m in Sources */,
 				5E8462F3221907CF00C011BB /* ZDDBZ2TableViewCell.m in Sources */,
 				5E6DE82921FC065200E2BF78 /* NSMutableDictionary+Attributes.m in Sources */,
+				37CA2C1D22361354004895D3 /* ZDDMyCollectController.m in Sources */,
 				4A14A5F3221F7DA50078C8BC /* ZDDTabFourDetail2ViewController.m in Sources */,
 				37C7DA2E2224EE7300795D1C /* GODUserTool.m in Sources */,
 				5E6DE83C21FC06A300E2BF78 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
