@@ -47,8 +47,8 @@
 
 - (void)touchCollect:(UIButton *)btn {
     
-    self.topModel.isCollected = !self.topModel.isCollected;
-    [self reloadCollectWithMode:self.topModel];
+    [self collectPoem:!self.topModel.isCollected];
+    
     
 }
 
@@ -69,7 +69,7 @@
 - (void)setTopModel:(ZDDPoetryModel *)topModel {
     _topModel = topModel;
     
-    
+    [self reloadCollectWithMode:topModel];
     
     [self loadData];
 }
@@ -98,6 +98,40 @@
     
     
 }
+
+- (void)collectPoem:(BOOL)isCollect {
+    
+    NSString *collectStr = @"collection";
+    if (!isCollect) {
+        collectStr = @"discollection";
+    }
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
+    [MFNETWROK get:collectStr params:@{@"phone" : [GODUserTool shared].user.phone, @"poetry_id" : self.topModel.id} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        [MFHUDManager dismiss];
+        if (statusCode == 200) {
+            if (isCollect) {
+                [MFHUDManager showSuccess:@"收藏成功"];
+            }else {
+                [MFHUDManager showSuccess:@"已取消收藏"];
+            }
+            
+            self.topModel.isCollected = !self.topModel.isCollected;
+            [self reloadCollectWithMode:self.topModel];
+        }else {
+            if (isCollect) {
+                [MFHUDManager showSuccess:@"收藏失败"];
+            }else {
+                [MFHUDManager showSuccess:@"取消收藏失败"];
+            }
+        }
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        
+        [MFHUDManager dismiss];
+        [MFHUDManager showError:@"请求失败"];
+    }];
+    
+}
+
 #pragma mark - 发送评论
 - (void)sendComment {
     
