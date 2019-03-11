@@ -17,6 +17,7 @@
 #import "ZDDGODPersonSettingTableViewCell.h"
 #import "ZDDFuckPersonLogoutTableViewCell.h"
 
+#import "ZDDMyCollectController.h"
 #define whiteBgvW  ScreenWidth
 
 @interface LHMinController ()
@@ -133,10 +134,9 @@ UINavigationControllerDelegate
     if (indexPath.section == 1) {
         if (!indexPath.row) {
             if ([GODUserTool isLogin]) {
-//                FUCKNoteViewController *fuck = [[FUCKNoteViewController alloc] init];
-//                fuck.flag = 1;
-//                
-//                [self.navigationController pushViewController:fuck animated:YES];
+                ZDDMyCollectController *fuck = [[ZDDMyCollectController alloc] init];
+                
+                [self.navigationController pushViewController:fuck animated:YES];
             }
             else {
                 [self presentViewController:[ZDDLogController new] animated:YES completion:nil];
