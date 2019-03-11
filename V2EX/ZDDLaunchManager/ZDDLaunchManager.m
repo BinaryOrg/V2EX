@@ -41,7 +41,7 @@
     
 //    ZDDTabTrheeViewController *three = [[ZDDTabTrheeViewController alloc] initWithImageName:@"tab_qworld_nor" selectedImageName:@"tab_qworld_press" title:@""];
 
-    LHMinController *three = [[LHMinController alloc] initWithImageName:@"tab_qworld_nor" selectedImageName:@"tab_qworld_press" title:@""];
+    LHMinController *three = [[LHMinController alloc] initWithImageName:@"tab_mine_unSelected" selectedImageName:@"tab_mine_selected" title:@""];
     
     
     

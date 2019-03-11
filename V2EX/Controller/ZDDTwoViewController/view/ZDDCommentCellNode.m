@@ -75,6 +75,8 @@
 
 - (void)addContentNode {
     self.contentNode = [[ASTextNode alloc] init];
+    self.contentNode.style.maxWidth = ASDimensionMake(ScreenWidth - 90);
+
     [self addSubnode:self.contentNode];
 }
 

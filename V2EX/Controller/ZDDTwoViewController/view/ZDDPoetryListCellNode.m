@@ -49,7 +49,7 @@
         make.lh_font([UIFont fontWithName:@"PingFangSC-Light" size:24]).lh_color([UIColor blackColor]).lh_paraStyle(paragraphStyle);
     }];
     
-    self.commentAndCollectLb.attributedText = [NSMutableAttributedString lh_makeAttributedString:@"1314收藏 * 2021评论" attributes:^(NSMutableDictionary *make) {
+    self.commentAndCollectLb.attributedText = [NSMutableAttributedString lh_makeAttributedString:[NSString stringWithFormat:@"%ld 收藏 * %ld 评论", model.collect_num, model.comment_num] attributes:^(NSMutableDictionary *make) {
         NSMutableParagraphStyle *aa = [[NSMutableParagraphStyle alloc ] init];
         //文字对齐方式
         aa.alignment =NSTextAlignmentRight;
