@@ -100,6 +100,9 @@
 		4A14A603221F7EC00078C8BC /* ZDDTabFour1TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A14A602221F7EC00078C8BC /* ZDDTabFour1TableViewCell.m */; };
 		4A14A606221F7ECB0078C8BC /* ZDDTabFour2TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A14A605221F7ECB0078C8BC /* ZDDTabFour2TableViewCell.m */; };
 		4A39B41021FE9E8C00437B6A /* UIColor+ZDDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A39B40F21FE9E8C00437B6A /* UIColor+ZDDColor.m */; };
+		4A9E41232236118B00B9E1B2 /* ZDDPersonHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E411D2236118B00B9E1B2 /* ZDDPersonHeadTableViewCell.m */; };
+		4A9E41242236118B00B9E1B2 /* ZDDGODPersonSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E411E2236118B00B9E1B2 /* ZDDGODPersonSettingTableViewCell.m */; };
+		4A9E41252236118B00B9E1B2 /* ZDDFuckPersonLogoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A9E411F2236118B00B9E1B2 /* ZDDFuckPersonLogoutTableViewCell.m */; };
 		5E6DE80421FC00BF00E2BF78 /* ZDDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE80321FC00BF00E2BF78 /* ZDDAppDelegate.m */; };
 		5E6DE80C21FC00BF00E2BF78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6DE80B21FC00BF00E2BF78 /* Assets.xcassets */; };
 		5E6DE81221FC00BF00E2BF78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6DE81121FC00BF00E2BF78 /* main.m */; };
@@ -273,6 +276,12 @@
 		4A14A605221F7ECB0078C8BC /* ZDDTabFour2TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDTabFour2TableViewCell.m; sourceTree = "<group>"; };
 		4A39B40E21FE9E8C00437B6A /* UIColor+ZDDColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZDDColor.h"; sourceTree = "<group>"; };
 		4A39B40F21FE9E8C00437B6A /* UIColor+ZDDColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZDDColor.m"; sourceTree = "<group>"; };
+		4A9E411D2236118B00B9E1B2 /* ZDDPersonHeadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDPersonHeadTableViewCell.m; sourceTree = "<group>"; };
+		4A9E411E2236118B00B9E1B2 /* ZDDGODPersonSettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDGODPersonSettingTableViewCell.m; sourceTree = "<group>"; };
+		4A9E411F2236118B00B9E1B2 /* ZDDFuckPersonLogoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDFuckPersonLogoutTableViewCell.m; sourceTree = "<group>"; };
+		4A9E41202236118B00B9E1B2 /* ZDDFuckPersonLogoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDFuckPersonLogoutTableViewCell.h; sourceTree = "<group>"; };
+		4A9E41212236118B00B9E1B2 /* ZDDGODPersonSettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDGODPersonSettingTableViewCell.h; sourceTree = "<group>"; };
+		4A9E41222236118B00B9E1B2 /* ZDDPersonHeadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDPersonHeadTableViewCell.h; sourceTree = "<group>"; };
 		4AF49DA2221A58E7004F45EB /* V2EX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = V2EX.entitlements; sourceTree = "<group>"; };
 		58C4A74BA29D5A1BC2D94D8F /* Pods-V2EX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2EX.release.xcconfig"; path = "Pods/Target Support Files/Pods-V2EX/Pods-V2EX.release.xcconfig"; sourceTree = "<group>"; };
 		5E6DE7FF21FC00BF00E2BF78 /* V2EX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = V2EX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -411,17 +420,10 @@
 		371C3FEA22262522004CAD56 /* ZDDMine */ = {
 			isa = PBXGroup;
 			children = (
+				4A9E411C2236118100B9E1B2 /* Cell */,
 				37B03E8622325D0C00F9B8BA /* Controller */,
-				371C3FEB22262522004CAD56 /* View */,
 			);
 			path = ZDDMine;
-			sourceTree = "<group>";
-		};
-		371C3FEB22262522004CAD56 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		3736ABDE2223DEE800BE2A7F /* ZDDLogin */ = {
@@ -655,6 +657,19 @@
 				4A14A605221F7ECB0078C8BC /* ZDDTabFour2TableViewCell.m */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		4A9E411C2236118100B9E1B2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4A9E41202236118B00B9E1B2 /* ZDDFuckPersonLogoutTableViewCell.h */,
+				4A9E411F2236118B00B9E1B2 /* ZDDFuckPersonLogoutTableViewCell.m */,
+				4A9E41212236118B00B9E1B2 /* ZDDGODPersonSettingTableViewCell.h */,
+				4A9E411E2236118B00B9E1B2 /* ZDDGODPersonSettingTableViewCell.m */,
+				4A9E41222236118B00B9E1B2 /* ZDDPersonHeadTableViewCell.h */,
+				4A9E411D2236118B00B9E1B2 /* ZDDPersonHeadTableViewCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		5E6DE7F621FC00BF00E2BF78 = {
@@ -1108,6 +1123,7 @@
 				5E8462F6221907D800C011BB /* ZDDBZ3TableViewCell.m in Sources */,
 				37C7DA2B2224EE5C00795D1C /* GODUserModel.m in Sources */,
 				5E8462DA2218DF6800C011BB /* GODTableCard.m in Sources */,
+				4A9E41232236118B00B9E1B2 /* ZDDPersonHeadTableViewCell.m in Sources */,
 				37DF00092217B358008F7CEF /* UIView+ZDD.m in Sources */,
 				37B03E4F223241C000F9B8BA /* WHWeatherBaseView.m in Sources */,
 				5E846308221909A800C011BB /* PicInfo.m in Sources */,
@@ -1142,6 +1158,8 @@
 				37DF001B2217EF31008F7CEF /* NSMutableDictionary+ZDD.m in Sources */,
 				37B03E4B223241C000F9B8BA /* WHWeatherSunView.m in Sources */,
 				377F019D221538C700E00378 /* ZDDManHuaController.m in Sources */,
+				4A9E41252236118B00B9E1B2 /* ZDDFuckPersonLogoutTableViewCell.m in Sources */,
+				4A9E41242236118B00B9E1B2 /* ZDDGODPersonSettingTableViewCell.m in Sources */,
 				5E6DE84721FC089200E2BF78 /* ZDDBaseNavigationViewController.m in Sources */,
 				37DF001E221807EE008F7CEF /* ZDDManHuaListModel.m in Sources */,
 				37DF0021221812AB008F7CEF /* ZDDCatalogController.m in Sources */,
