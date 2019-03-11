@@ -35,11 +35,6 @@
         self.loginButton.frame = self.nameLabel.bounds;
         [self.nameLabel addSubview:self.loginButton];
         
-        self.joinLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, CGRectGetMaxY(self.nameLabel.frame), WIDTH(self.nameLabel), 30)];
-        self.joinLabel.textColor = color(140, 140, 140, 1);
-        [self.contentView addSubview:self.joinLabel];
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
-        
     }
     return self;
 }

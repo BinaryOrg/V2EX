@@ -15,7 +15,7 @@
     if (self) {
         self.funcLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 46)];
         self.funcLabel.text = @"退出登录";
-        self.funcLabel.textColor = [UIColor zdd_redColor];
+        self.funcLabel.textColor = [UIColor customRedColor];
         self.funcLabel.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:self.funcLabel];
     }
