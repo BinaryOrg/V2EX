@@ -60,9 +60,9 @@
     self.weatherView.userInteractionEnabled = NO;
     
     
-    for (UITabBarItem * i in self.tabBarController.tabBar.items) {
-        i.imageInsets = UIEdgeInsetsMake(10, 0, 0, 0);
-    }
+//    for (UITabBarItem * i in self.tabBarController.tabBar.items) {
+//        i.imageInsets = UIEdgeInsetsMake(10, 0, 0, 0);
+//    }
     
 }
 
