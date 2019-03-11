@@ -69,7 +69,9 @@
 - (void)pageViewSelectdIndex:(NSInteger)index {
     
     [self.scrollView setContentOffset:CGPointMake(ScreenWidth * index, 0) animated:YES];
-    [self.weatherView showWeatherAnimationWithType:arc4random()%6];
+    NSInteger x = arc4random()%50;
+    NSInteger type = x % 6;
+    [self.weatherView showWeatherAnimationWithType:type];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
