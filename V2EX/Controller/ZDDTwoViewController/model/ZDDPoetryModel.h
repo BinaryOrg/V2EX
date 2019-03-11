@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) NSString *authors;
 @property (nonatomic, strong) NSString *id;
+
+@property (nonatomic, assign) NSInteger collect_num;
+@property (nonatomic, assign) NSInteger comment_num;
 /** 是否收藏 */
 @property (nonatomic, assign) BOOL isCollected;
 @end

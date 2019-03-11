@@ -72,7 +72,6 @@ UINavigationControllerDelegate
     [self.view addSubview:self.tableView];
     self.navigationItem.title = @"我的";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadCustomInfo) name:@"LoginSuccessNotification" object:nil];
-    NSLog(@"%@", [GODUserTool shared].user.id);
 }
 
 - (void)reloadCustomInfo {
@@ -96,11 +95,11 @@ UINavigationControllerDelegate
     if (!indexPath.section) {
         GODUserModel *user = [GODUserTool shared].user;
         ZDDPersonHeadTableViewCell *cell = [[ZDDPersonHeadTableViewCell alloc] init];
-        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", BASE_AVATAR_URL, user.avatar]] placeholder:[UIImage imageNamed:@"HAO-0"]];
+        NSLog(@"%@", [NSString stringWithFormat:@"%@/%@", BASE_AVATAR_URL, user.avatar]);
+        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASE_AVATAR_URL, user.avatar]] placeholder:[UIImage imageNamed:@"HAO-0"]];
         cell.nameLabel.text = [GODUserTool isLogin] ? user.username : @"登录";
         [cell.loginButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
         [cell.avatarButton addTarget:self action:@selector(changeAvatar) forControlEvents:UIControlEventTouchUpInside];
-//        cell.joinLabel.text = [GODUserTool isLogin] ? [NSString stringWithFormat:@"join in %@", [self formatFromTS:user.create_date]] : @"";
         return cell;
     }
     else if (indexPath.section == 1) {

@@ -14,11 +14,18 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, strong) NSArray *dataArr;
+@property (nonatomic, strong) NSMutableArray *dataArr;
 
 @end
 
 @implementation ZDDMyCollectController
+
+- (NSMutableArray *)dataArr {
+    if (!_dataArr) {
+        _dataArr = @[].mutableCopy;
+    }
+    return _dataArr;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,6 +45,36 @@
     [self tableViewDidTriggerHeaderRefresh];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self reloadData];
+}
+
+- (void)reloadData {
+    NSDictionary *paragmras = @{
+                                @"phone" : [GODUserTool shared].user.phone
+                                };
+    MFNETWROK.requestSerialization = MFJSONRequestSerialization;
+    [MFNETWROK get:@"getcollectionpoetry" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+        [MFHUDManager dismiss];
+        if (statusCode == 200) {
+            if (self.dataArr.count) {
+                [self.dataArr removeAllObjects];
+            }
+            //            self.dataArr = [NSArray yy_modelArrayWithClass:ZDDPoetryModel.class json:result];
+            for (NSDictionary *dic in result) {
+                ZDDPoetryModel *poetry = [ZDDPoetryModel yy_modelWithJSON:dic];
+                poetry.isCollected = YES;
+                [self.dataArr addObject:poetry];
+            }
+            [self.tableView reloadData];
+        }else {
+           
+        }
+    } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
+        
+    }];
+}
 
 - (void)tableViewDidTriggerHeaderRefresh {
     
@@ -49,8 +86,12 @@
     [MFNETWROK get:@"getcollectionpoetry" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
         if (statusCode == 200) {
-            self.dataArr = [NSArray yy_modelArrayWithClass:ZDDPoetryModel.class json:result];
-            
+//            self.dataArr = [NSArray yy_modelArrayWithClass:ZDDPoetryModel.class json:result];
+            for (NSDictionary *dic in result) {
+                ZDDPoetryModel *poetry = [ZDDPoetryModel yy_modelWithJSON:dic];
+                poetry.isCollected = YES;
+                [self.dataArr addObject:poetry];
+            }
             [self.tableView reloadData];
         }else {
             [MFHUDManager showError:@"请求失败"];
