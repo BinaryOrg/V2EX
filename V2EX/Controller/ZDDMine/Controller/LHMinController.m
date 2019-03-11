@@ -91,7 +91,6 @@ UINavigationControllerDelegate
     }
     return 1;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!indexPath.section) {
         GODUserModel *user = [GODUserTool shared].user;
@@ -405,7 +404,7 @@ UINavigationControllerDelegate
 - (UIView *)whiteBgv {
     if (!_whiteBgv) {
         _whiteBgv = [UIView new];
-        _whiteBgv.backgroundColor = [UIColor whiteColor];
+        _whiteBgv.backgroundColor = [UIColor clearColor];
         _whiteBgv.layer.shadowColor = [UIColor customGrayColor].CGColor;//shadowColor阴影颜色
         _whiteBgv.layer.shadowOffset = CGSizeMake(4,4);//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用
     }

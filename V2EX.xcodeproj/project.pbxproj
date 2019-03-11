@@ -80,6 +80,7 @@
 		37C7DA362225441900795D1C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C7DA352225441900795D1C /* Launch Screen.storyboard */; };
 		37C7DA392225475600795D1C /* ZDDInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7DA372225475600795D1C /* ZDDInputView.m */; };
 		37C7DA3C22254A6300795D1C /* ZDDCommentCountNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C7DA3B22254A6300795D1C /* ZDDCommentCountNode.m */; };
+		37CA2C1A2235FE99004895D3 /* ZDDMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CA2C192235FE99004895D3 /* ZDDMainController.m */; };
 		37DF00032217AED4008F7CEF /* ZDDHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF00022217AED4008F7CEF /* ZDDHomeController.m */; };
 		37DF00092217B358008F7CEF /* UIView+ZDD.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF00082217B358008F7CEF /* UIView+ZDD.m */; };
 		37DF000C2217B760008F7CEF /* ZDDHomeCelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 37DF000B2217B760008F7CEF /* ZDDHomeCelNode.m */; };
@@ -238,6 +239,8 @@
 		37C7DA382225475600795D1C /* ZDDInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDInputView.h; sourceTree = "<group>"; };
 		37C7DA3A22254A6300795D1C /* ZDDCommentCountNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDCommentCountNode.h; sourceTree = "<group>"; };
 		37C7DA3B22254A6300795D1C /* ZDDCommentCountNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDCommentCountNode.m; sourceTree = "<group>"; };
+		37CA2C182235FE99004895D3 /* ZDDMainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDMainController.h; sourceTree = "<group>"; };
+		37CA2C192235FE99004895D3 /* ZDDMainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDMainController.m; sourceTree = "<group>"; };
 		37DF00012217AED4008F7CEF /* ZDDHomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDDHomeController.h; sourceTree = "<group>"; };
 		37DF00022217AED4008F7CEF /* ZDDHomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDDHomeController.m; sourceTree = "<group>"; };
 		37DF00072217B358008F7CEF /* UIView+ZDD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZDD.h"; sourceTree = "<group>"; };
@@ -701,6 +704,8 @@
 				5E6DE81821FC05A900E2BF78 /* ZDDLaunchManager */,
 				5E6DE80221FC00BF00E2BF78 /* ZDDAppDelegate.h */,
 				5E6DE80321FC00BF00E2BF78 /* ZDDAppDelegate.m */,
+				37CA2C182235FE99004895D3 /* ZDDMainController.h */,
+				37CA2C192235FE99004895D3 /* ZDDMainController.m */,
 				5E6DE80B21FC00BF00E2BF78 /* Assets.xcassets */,
 				5E6DE81021FC00BF00E2BF78 /* Info.plist */,
 				5E6DE81121FC00BF00E2BF78 /* main.m */,
@@ -1113,6 +1118,7 @@
 				371C3FF322265DC8004CAD56 /* UIWindow+Tools.m in Sources */,
 				5E8462DE2218DF9400C011BB /* ZDDGXTableViewCell.m in Sources */,
 				4A14A603221F7EC00078C8BC /* ZDDTabFour1TableViewCell.m in Sources */,
+				37CA2C1A2235FE99004895D3 /* ZDDMainController.m in Sources */,
 				5E6DE83B21FC06A300E2BF78 /* YYClassInfo.m in Sources */,
 				4A14A5F9221F7DE00078C8BC /* ZDDTX2TableViewCell.m in Sources */,
 				5E8462E22218E7E200C011BB /* ZDDGXModel.m in Sources */,
