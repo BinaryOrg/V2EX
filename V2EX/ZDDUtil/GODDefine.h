@@ -57,5 +57,11 @@ fprintf(stderr, "-------\n");                                               \
 #define BASE_URL_last          @"https://api.godzzzzz.club/api/"
 #define BASE_URL          @"https://api.godzzzzz.club/api/v2ex/"
 
+#define  SCREENWIDTH                       [UIScreen mainScreen].bounds.size.width
+#define  SCREENHEIGHT                      [UIScreen mainScreen].bounds.size.height
+#define  STATUSBARHEIGHT                   [UIApplication sharedApplication].statusBarFrame.size.height
+#define  NAVIGATIONBARHEIGHT               self.navigationController.navigationBar.frame.size.height
+#define  TABBARHEIGHT                      self.tabBarController.tabBar.frame.size.height
+#define  STATUSBARANDNAVIGATIONBARHEIGHT   (STATUSBARHEIGHT + NAVIGATIONBARHEIGHT)
 
 #endif /* GODDefine_h */

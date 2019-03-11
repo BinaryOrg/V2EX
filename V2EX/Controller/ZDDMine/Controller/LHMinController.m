@@ -13,43 +13,152 @@
 #import <QMUIKit.h>
 #import "UIColor+ZDDColor.h"
 
+#import "ZDDPersonHeadTableViewCell.h"
+#import "ZDDGODPersonSettingTableViewCell.h"
+#import "ZDDFuckPersonLogoutTableViewCell.h"
 
 #define whiteBgvW  ScreenWidth
 
-@interface LHMinController ()<
+@interface LHMinController ()
+<
+UITableViewDelegate,
+UITableViewDataSource,
 UIImagePickerControllerDelegate,
-UINavigationControllerDelegate>
+UINavigationControllerDelegate
+>
 
-@property (nonatomic, strong) UIView *whiteBgv;
-@property (nonatomic, strong) UIImageView *iconIV;
-@property (nonatomic, strong) UITextField *nameTV;
-@property (nonatomic, strong) UIButton *clearBtn;
-@property (nonatomic, strong) UIButton *reportBtn;
-@property (nonatomic, strong) UIButton *connectBtn;
-@property (nonatomic, strong) UIButton *fuckBtn;
-
-@property (nonatomic, strong) UIButton *logoutBtn;
-@property (nonatomic, strong) UIView *lineView1;
-@property (nonatomic, strong) UIView *lineView2;
-@property (nonatomic, strong) UIView *lineView3;
-@property (nonatomic, strong) UIView *lineView4;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSArray *funcList;
+@property (nonatomic, strong) QMUITips *tips;
 @end
 
 @implementation LHMinController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-
-    [self setupUI];
-    self.view.backgroundColor = [UIColor clearColor];
-
+- (NSArray *)funcList {
+    if (!_funcList) {
+        _funcList = @[
+                      @"我的收藏",
+                      @"意见反馈",
+                      @"清除缓存",
+                      @"联系我们"
+                      ];
+    }
+    return _funcList;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self reloadSubView];
+- (QMUITips *)tips {
+    if (!_tips) {
+        _tips = [QMUITips createTipsToView:self.view];
+    }
+    return _tips;
+}
 
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT - STATUSBARANDNAVIGATIONBARHEIGHT) style:UITableViewStyleGrouped];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
+        _tableView.estimatedRowHeight = 0;
+        _tableView.tableFooterView = [[UIView alloc] init];
+    }
+    return _tableView;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.view addSubview:self.tableView];
+    self.navigationItem.title = @"我的";
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadCustomInfo) name:@"LoginSuccessNotification" object:nil];
+    NSLog(@"%@", [GODUserTool shared].user.id);
+}
+
+- (void)reloadCustomInfo {
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (!section) {
+        return 1;
+    }
+    else if (section == 1) {
+        return self.funcList.count;
+    }
+    return 1;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!indexPath.section) {
+        GODUserModel *user = [GODUserTool shared].user;
+        ZDDPersonHeadTableViewCell *cell = [[ZDDPersonHeadTableViewCell alloc] init];
+        [cell.avatarImageView yy_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", BASE_AVATAR_URL, user.avatar]] placeholder:[UIImage imageNamed:@"HAO-0"]];
+        cell.nameLabel.text = [GODUserTool isLogin] ? user.username : @"登录";
+        [cell.loginButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
+        [cell.avatarButton addTarget:self action:@selector(changeAvatar) forControlEvents:UIControlEventTouchUpInside];
+//        cell.joinLabel.text = [GODUserTool isLogin] ? [NSString stringWithFormat:@"join in %@", [self formatFromTS:user.create_date]] : @"";
+        return cell;
+    }
+    else if (indexPath.section == 1) {
+        ZDDGODPersonSettingTableViewCell *cell = [[ZDDGODPersonSettingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"setting"];
+        cell.textLabel.text = self.funcList[indexPath.row];
+        return cell;
+    }
+    
+    return [[ZDDFuckPersonLogoutTableViewCell alloc] init];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!indexPath.section) {
+        return 80;
+    }
+    return 46;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (!section) {
+        return CGFLOAT_MIN;
+    }
+    return 20;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if ([MFHUDManager isShowing]) {
+        return;
+    }
+    if (indexPath.section == 1) {
+        if (!indexPath.row) {
+            if ([GODUserTool isLogin]) {
+//                FUCKNoteViewController *fuck = [[FUCKNoteViewController alloc] init];
+//                fuck.flag = 1;
+//                
+//                [self.navigationController pushViewController:fuck animated:YES];
+            }
+            else {
+                [self presentViewController:[ZDDLogController new] animated:YES completion:nil];
+            }
+        }else if (indexPath.row == 1) {
+            if ([GODUserTool isLogin]) {
+//                ABCMyCollectionViewController *fuck = [[ABCMyCollectionViewController alloc] init];
+//                [self.navigationController pushViewController:fuck animated:YES];
+            }
+            else {
+                [self presentViewController:[ZDDLogController new] animated:YES completion:nil];
+            }
+        }else {
+            [self contact];
+        }
+    }
+    else if (indexPath.section == 2) {
+        [[GODUserTool shared] clearUserInfo];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"FBSuccessNotification" object:nil];
+        [self reloadCustomInfo];
+    }
+    
 }
 
 //意见反馈
@@ -121,7 +230,7 @@ UINavigationControllerDelegate>
 }
 
 //点击头像
-- (void)changeIcon {
+- (void)changeAvatar {
     if (![GODUserTool isLogin]) {
         return;
     }
