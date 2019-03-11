@@ -32,14 +32,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(kbWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(kbWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
-    self.collectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.collectBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
-    [self.collectBtn setTitleColor:[UIColor colorWithHexString:@"666666"] forState:UIControlStateNormal];
-    [self.collectBtn setTitle:@"收藏" forState:UIControlStateNormal];
-    [self.collectBtn addTarget:self action:@selector(touchCollect:) forControlEvents:UIControlEventTouchUpInside];
-    [self.collectBtn sizeToFit];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.collectBtn];
-    
     
     [self addTableNode];
     [self addInputView];
@@ -54,6 +46,13 @@
 
 - (void)reloadCollectWithMode:(ZDDPoetryModel *)model {
     
+    if (!self.collectBtn) {
+        self.collectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.collectBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+        [self.collectBtn addTarget:self action:@selector(touchCollect:) forControlEvents:UIControlEventTouchUpInside];
+        [self.collectBtn sizeToFit];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.collectBtn];
+    }
   
     if (model.isCollected) {
         [self.collectBtn setTitle:@"已收藏" forState:UIControlStateNormal];

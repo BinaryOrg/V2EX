@@ -72,7 +72,7 @@
     
     [MFHUDManager showLoading:@"请求中..."];
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK get:[NSString stringWithFormat:@"getTangPoetry?page=%ld&count=20", index] params:nil success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK get:[NSString stringWithFormat:@"getTangPoetry?page=%ld&count=20", index] params:@{@"phone" : [GODUserTool shared].user.phone.length ? [GODUserTool shared].user.phone : @""} success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
         [self.tableNode.view.mj_header endRefreshing];
 

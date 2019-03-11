@@ -1,72 +1,62 @@
 //
-//  ZDDCatalogController.m
+//  ZDDMyCollectController.m
 //  V2EX
 //
-//  Created by Maker on 2019/2/16.
+//  Created by Maker on 2019/3/11.
 //  Copyright © 2019 binary. All rights reserved.
 //
 
-#import "ZDDCatalogController.h"
-#import "ZDDHomeListController.h"
-#import "ZDDManHuaController.h"
+#import "ZDDMyCollectController.h"
+#import "ZDDPoetryModel.h"
+#import "ZDDContentDetailController.h"
 
-
-#import <MJRefresh.h>
-#import "ZDDManHuaCatalogModel.h"
-
-@interface ZDDCatalogController ()<UITableViewDelegate, UITableViewDataSource>
+@interface ZDDMyCollectController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 
-/** <#class#> */
-@property (nonatomic, strong) ZDDManHuaCatalogModel *mainModel;
+@property (nonatomic, strong) NSArray *dataArr;
 
 @end
 
-@implementation ZDDCatalogController
+@implementation ZDDMyCollectController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [self setupUI];
 }
 
 - (void)setupUI {
+    
+    self.title = @"我的收藏";
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
     
-    self.tableView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(tableViewDidTriggerHeaderRefresh)];
-}
-
-- (void)setComic_id:(NSInteger)comic_id {
-    _comic_id = comic_id;
     [self tableViewDidTriggerHeaderRefresh];
-
 }
+
 
 - (void)tableViewDidTriggerHeaderRefresh {
     
     [MFHUDManager showLoading:@"请求中..."];
     NSDictionary *paragmras = @{
+                                @"phone" : [GODUserTool shared].user.phone
                                 };
-    NSString *url = [NSString stringWithFormat:@"getComicInfoBody?id=%ld", (long)self.comic_id];
     MFNETWROK.requestSerialization = MFJSONRequestSerialization;
-    [MFNETWROK get:url params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
+    [MFNETWROK get:@"getcollectionpoetry" params:paragmras success:^(id result, NSInteger statusCode, NSURLSessionDataTask *task) {
         [MFHUDManager dismiss];
-        [self.tableView.mj_header endRefreshing];
         if (statusCode == 200) {
-            self.mainModel = [ZDDManHuaCatalogModel yy_modelWithJSON:result];
+            self.dataArr = [NSArray yy_modelArrayWithClass:ZDDPoetryModel.class json:result];
             
             [self.tableView reloadData];
         }else {
             [MFHUDManager showError:@"请求失败"];
         }
     } failure:^(NSError *error, NSInteger statusCode, NSURLSessionDataTask *task) {
-        [self.tableView.mj_header endRefreshing];
-
+        
         [MFHUDManager dismiss];
         [MFHUDManager showError:@"请求失败"];
     }];
@@ -76,7 +66,7 @@
 #pragma mark - 追问/回答的数据源+代理
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.mainModel.comic_chapter.count;
+    return self.dataArr.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -85,11 +75,10 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    ZDDManHuaCapterModel *model =  self.mainModel.comic_chapter[indexPath.row];
-    cell.textLabel.text = model.chapter_name;
+    ZDDPoetryModel *model =  self.dataArr[indexPath.row];
+    cell.textLabel.text = model.title;
     cell.textLabel.font = [UIFont fontWithName:@"PingFangSC-Light" size:16];
     cell.textLabel.textColor = color(137, 137, 137, 1);
-    //    cell.backgroundColor = LHColor(arc4random()%255, arc4random()%255, arc4random()%255);
     return cell;
 }
 
@@ -100,18 +89,9 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZDDManHuaCapterModel *model =  self.mainModel.comic_chapter[indexPath.row];
-    NSCharacterSet *encode_set= [NSCharacterSet URLUserAllowedCharacterSet];
-    ZDDHomeListController *vc = [ZDDHomeListController new];
-    NSMutableArray *tempArr = [NSMutableArray arrayWithCapacity:model.end_num];
-    for (NSInteger i = 1; i < model.end_num + 1; i ++) {
-        NSString *temp = [model.chapter_image.middle stringByReplacingOccurrencesOfString:@"$$" withString:[NSString stringWithFormat:@"%@", @(i)]];
-        temp = [temp stringByAddingPercentEncodingWithAllowedCharacters:encode_set];
-        NSString *url = [NSString stringWithFormat:@"http://mhpic.jumanhua.com/%@", temp];
-        [tempArr addObject:url];
-    }
-    vc.imagesArray = [tempArr copy];
-
+    ZDDPoetryModel *model =  self.dataArr[indexPath.row];
+    ZDDContentDetailController *vc = [ZDDContentDetailController new];
+    vc.topModel = model;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
